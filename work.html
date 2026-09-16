@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Work | NoExaTech</title>
+    <meta name="description" content="Selected work by NoExaTech — websites, web applications, business systems, e-commerce, and digital products built around real business needs." />
+    <meta name="theme-color" content="#050505" />
+    <link rel="canonical" href="https://noexatech.vercel.app/work.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NoExaTech" />
+    <meta property="og:title" content="Work | NoExaTech" />
+    <meta property="og:description" content="Selected work — ideas we turned into digital products." />
+    <meta property="og:url" content="https://noexatech.vercel.app/work.html" />
+    <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Work | NoExaTech" />
+    <meta name="twitter:description" content="Selected work — ideas we turned into digital products." />
+    <meta name="twitter:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <link rel="icon" href="assets/images/logo/og.png?v=3" type="image/png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/images/logo/og.png?v=3" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/main.css?v=3" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+      /* ================= Work page — scoped styles ================= */
+
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Shared rhythm */
+      .wk-section {
+        padding: 130px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .wk-section--flush { border-top: 0; }
+      .wk-section--tight { padding: 90px 0; }
+
+      .wk-eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 20px;
+      }
+
+      .wk-h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(32px, 4.8vw, 64px);
+        line-height: 1.04;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 24px;
+        max-width: 900px;
+      }
+      .wk-h2 em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .wk-lead {
+        font-size: clamp(15px, 1.5vw, 19px);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.66);
+        max-width: 680px;
+        margin: 0;
+      }
+
+      /* ---------- Hero ---------- */
+      .wk-hero {
+        padding: 160px 0 130px;
+        position: relative;
+        overflow: hidden;
+      }
+      .wk-hero__inner { max-width: 1080px; }
+      .wk-hero__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(40px, 7.4vw, 116px);
+        line-height: 0.96;
+        letter-spacing: -0.035em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 36px;
+      }
+      .wk-hero__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .wk-hero__text {
+        font-size: clamp(16px, 1.7vw, 20px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.62);
+        max-width: 720px;
+      }
+
+      /* ---------- Filter bar ---------- */
+      .wk-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 22px 0;
+        margin-bottom: 50px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .wk-filter {
+        appearance: none;
+        -webkit-appearance: none;
+        padding: 11px 20px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.65);
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 999px;
+        cursor: pointer;
+        transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+      }
+      .wk-filter:hover {
+        border-color: rgba(0, 168, 255, 0.4);
+        color: #FFFFFF;
+      }
+      .wk-filter.is-active {
+        border-color: rgba(0, 168, 255, 0.7);
+        background: rgba(0, 168, 255, 0.08);
+        color: #FFFFFF;
+      }
+
+      /* ---------- Project grid ---------- */
+      .wk-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+      }
+      .wk-grid[data-empty]::after {
+        content: "No projects in this category yet.";
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 80px 20px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 15px;
+        letter-spacing: 0.02em;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .wk-card {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
+        transition: border-color 0.3s ease, transform 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+      .wk-card:hover {
+        border-color: rgba(0, 168, 255, 0.35);
+        transform: translateY(-3px);
+      }
+      .wk-card[hidden] { display: none; }
+
+      .wk-card__visual {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        background:
+          radial-gradient(100% 100% at 20% 0%, rgba(0, 102, 255, 0.16) 0%, transparent 60%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0, 217, 255, 0.12) 0%, transparent 55%),
+          #0A0A0A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+      .wk-card__image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.82;
+        transition: transform 0.5s ease, opacity 0.3s ease;
+      }
+      .wk-card:hover .wk-card__image {
+        transform: scale(1.04);
+        opacity: 1;
+      }
+      .wk-card__visual::after {
+        content: "Project Visual";
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .wk-card__badge {
+        position: absolute;
+        top: 16px; left: 16px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #00D9FF;
+        padding: 5px 10px;
+        border: 1px solid rgba(0, 217, 255, 0.4);
+        border-radius: 100px;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(6px);
+      }
+
+      .wk-card__body { padding: 28px 28px 30px; }
+      .wk-card__cat {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 12px;
+      }
+      .wk-card__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        color: #FFFFFF;
+        margin: 0 0 14px;
+      }
+      .wk-card__desc {
+        font-size: 14.5px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.58);
+        margin: 0 0 22px;
+      }
+      .wk-card__tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 0 0 26px;
+      }
+      .wk-card__tech span {
+        font-size: 11.5px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: rgba(255, 255, 255, 0.55);
+        padding: 5px 11px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 100px;
+      }
+      .wk-card__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0;
+      }
+      .wk-card__cta::after {
+        content: "→";
+        transition: transform 0.25s ease;
+      }
+      .wk-card:hover .wk-card__cta::after { transform: translateX(5px); }
+
+      /* ---------- Buttons (page-scoped) ---------- */
+      .wk-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 26px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      }
+      .wk-btn::after { content: "→"; font-size: 14px; transition: transform 0.25s ease; }
+      .wk-btn:hover {
+        border-color: rgba(0, 168, 255, 0.7);
+        background: rgba(0, 168, 255, 0.08);
+        transform: translateY(-1px);
+      }
+      .wk-btn:hover::after { transform: translateX(4px); }
+      .wk-btn--solid {
+        background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%);
+        border-color: transparent;
+      }
+      .wk-btn--solid:hover {
+        background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%);
+        border-color: transparent;
+        box-shadow: 0 14px 34px -12px rgba(0, 168, 255, 0.6);
+      }
+      .wk-btn--no-arrow::after { content: none; }
+
+      /* ---------- Case study modal ---------- */
+      .wk-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.28s ease, visibility 0.28s ease;
+      }
+      .wk-modal.is-open { opacity: 1; visibility: visible; }
+      .wk-modal[hidden] { display: none; }
+
+      .wk-modal__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.78);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      .wk-modal__dialog {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 780px;
+        max-height: calc(100vh - 48px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        background:
+          radial-gradient(120% 100% at 100% 0%, rgba(0, 168, 255, 0.08) 0%, transparent 55%),
+          #0A0A0A;
+        box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.9);
+        overflow: hidden;
+        transform: translateY(16px) scale(0.98);
+        opacity: 0;
+        transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.28s ease;
+      }
+      .wk-modal.is-open .wk-modal__dialog {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      .wk-modal__header {
+        padding: 34px 34px 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+        flex: 0 0 auto;
+      }
+      .wk-modal__cat {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 14px;
+      }
+      .wk-modal__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(24px, 3.4vw, 34px);
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0;
+        padding-right: 60px;
+      }
+      .wk-modal__close {
+        position: absolute;
+        top: 22px; right: 22px;
+        width: 38px; height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.7);
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+      }
+      .wk-modal__close:hover {
+        border-color: rgba(0, 168, 255, 0.6);
+        color: #FFFFFF;
+        background: rgba(0, 168, 255, 0.08);
+      }
+      .wk-modal__body {
+        padding: 28px 34px 34px;
+        overflow-y: auto;
+        flex: 1 1 auto;
+      }
+      .wk-modal__body::-webkit-scrollbar { width: 8px; }
+      .wk-modal__body::-webkit-scrollbar-track { background: transparent; }
+      .wk-modal__body::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 8px; }
+
+      .wk-modal__section { margin: 0 0 30px; }
+      .wk-modal__section:last-child { margin-bottom: 0; }
+      .wk-modal__section-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 0 0 14px;
+      }
+      .wk-modal__section-title::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(to right, rgba(0,168,255,0.3), rgba(255,255,255,0.04));
+      }
+      .wk-modal__text {
+        font-size: 15px;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.65);
+        margin: 0;
+      }
+      .wk-modal__features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 24px;
+      }
+      .wk-modal__features li {
+        position: relative;
+        padding-left: 18px;
+        font-size: 14px;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.68);
+      }
+      .wk-modal__features li::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 8px;
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: #00A8FF;
+      }
+      .wk-modal__tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .wk-modal__tech span {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 6px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 100px;
+      }
+      .wk-modal__placeholder {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-top: 12px;
+        padding: 16px 20px;
+        border: 1px solid rgba(0, 168, 255, 0.16);
+        border-radius: 10px;
+        background: rgba(0, 168, 255, 0.03);
+        font-size: 13px;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .wk-modal__placeholder::before {
+        content: "i";
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 22px; height: 22px;
+        border-radius: 50%;
+        background: rgba(0, 168, 255, 0.15);
+        color: #00A8FF;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        font-style: italic;
+        line-height: 1;
+      }
+      body.wk-modal-open { overflow: hidden; }
+
+      /* ---------- Technology stack ---------- */
+      .wk-stack {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .wk-stack__item {
+        padding: 30px 20px;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transition: background 0.25s ease;
+      }
+      .wk-stack__item:hover {
+        background: rgba(0, 168, 255, 0.04);
+      }
+      .wk-stack__item span {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: rgba(255, 255, 255, 0.75);
+        transition: color 0.25s ease;
+      }
+      .wk-stack__item:hover span { color: #00A8FF; }
+
+      /* ---------- Philosophy ---------- */
+      .wk-philosophy {
+        padding: 130px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .wk-philosophy__quote {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(26px, 3.6vw, 48px);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        font-weight: 500;
+        color: #FFFFFF;
+        margin: 0 auto 26px;
+        max-width: 900px;
+      }
+      .wk-philosophy__quote em {
+        font-style: normal;
+        color: #00A8FF;
+      }
+      .wk-philosophy__note {
+        font-size: 15px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.55);
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      /* ---------- Final CTA ---------- */
+      .wk-cta {
+        padding: 150px 0 160px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .wk-cta__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(38px, 6vw, 88px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 26px;
+      }
+      .wk-cta__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .wk-cta__text {
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.58);
+        max-width: 620px;
+        margin: 0 auto 44px;
+      }
+      .wk-cta__actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 1080px) {
+        .wk-stack { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      }
+      @media (max-width: 960px) {
+        .wk-section { padding: 90px 0; }
+        .wk-hero { padding: 120px 0 90px; }
+        .wk-grid { grid-template-columns: 1fr; }
+        .wk-philosophy { padding: 100px 0; }
+        .wk-cta { padding: 100px 0 110px; }
+        .wk-modal__features { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 640px) {
+        .wk-hero { padding: 100px 0 60px; }
+        .wk-card__body { padding: 22px 20px 24px; }
+        .wk-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .wk-btn { width: 100%; justify-content: space-between; }
+        .wk-cta__actions .wk-btn { justify-content: center; }
+        .wk-filter { flex: 1 1 calc(50% - 5px); text-align: center; }
+      }
+      @media (max-width: 720px) {
+        .wk-modal { padding: 0; }
+        .wk-modal__dialog {
+          max-width: 100%;
+          max-height: 100vh;
+          height: 100vh;
+          border-radius: 0;
+          border-left: 0;
+          border-right: 0;
+        }
+        .wk-modal__header { padding: 24px 22px 20px; }
+        .wk-modal__close { top: 18px; right: 18px; width: 36px; height: 36px; }
+        .wk-modal__body { padding: 22px 22px 30px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .wk-card, .wk-btn, .wk-modal, .wk-modal__dialog, .wk-stack__item { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <a class="visually-hidden" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="NoExaTech — home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+              <path d="M5 27V5l22 22V5" stroke="url(#nlg)" stroke-width="2.6" stroke-linecap="square"/>
+              <defs>
+                <linearGradient id="nlg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brand__name">NOEXATECH</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html" class="is-active" aria-current="page">Work</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn--primary btn--sm site-header__cta" href="#" data-nx-modal>Start a Project</a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu__nav" aria-label="Mobile">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html"><span>01</span>Home</a></li>
+          <li><a href="about.html"><span>02</span>About</a></li>
+          <li><a href="services.html"><span>03</span>Services</a></li>
+          <li><a href="work.html"><span>04</span>Work</a></li>
+          <li><a href="process.html"><span>05</span>Process</a></li>
+          <li><a href="team.html"><span>06</span>Team</a></li>
+          <li><a href="contact.html"><span>07</span>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__foot">
+        <a class="btn btn--primary" href="#" data-nx-modal>Start a Project</a>
+        <a class="mobile-menu__mail" href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- ============ MAIN ============ -->
+    <main id="main" class="page-shell">
+
+      <!-- ---------- Hero ---------- -->
+      <section class="wk-hero">
+        <div class="container wk-hero__inner">
+          <p class="wk-eyebrow" data-reveal>Selected Work</p>
+          <h1 class="wk-hero__title" data-reveal>
+            Ideas we turned<br>
+            <em>into digital products.</em>
+          </h1>
+          <p class="wk-hero__text" data-reveal>
+            Websites, web applications, business systems, and digital experiences —
+            each built around a specific business need, not a template.
+          </p>
+        </div>
+      </section>
+
+      <!-- ---------- Projects + Filter ---------- -->
+      <section class="wk-section wk-section--flush" aria-labelledby="wk-projects-title">
+        <div class="container">
+          <p class="wk-eyebrow" data-reveal>Featured Projects</p>
+          <h2 class="wk-h2" id="wk-projects-title" data-reveal>
+            A closer look at <em>what we build.</em>
+          </h2>
+          <p class="wk-lead" data-reveal style="margin-bottom: 50px;">
+            Filter by category to see the type of work NoExaTech takes on. Project
+            placeholders are shown until real case studies are published.
+          </p>
+
+          <!-- Filter -->
+          <div class="wk-filters" role="tablist" aria-label="Filter projects by category" data-reveal>
+            <button class="wk-filter is-active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="wk-filter" type="button" data-filter="websites" role="tab" aria-selected="false">Websites</button>
+            <button class="wk-filter" type="button" data-filter="web-apps" role="tab" aria-selected="false">Web Apps</button>
+            <button class="wk-filter" type="button" data-filter="business-systems" role="tab" aria-selected="false">Business Systems</button>
+            <button class="wk-filter" type="button" data-filter="ecommerce" role="tab" aria-selected="false">E-Commerce</button>
+            <button class="wk-filter" type="button" data-filter="ui-ux" role="tab" aria-selected="false">UI/UX</button>
+          </div>
+
+          <!-- Project grid -->
+          <div class="wk-grid" data-project-grid data-reveal>
+
+            <article class="wk-card" data-project="p01" data-category="websites">
+              <div class="wk-card__visual" aria-hidden="true">
+                <img class="wk-card__image" src="assets/images/projects/project-01.jpg" alt="Project 01 preview" loading="lazy" onerror="this.hidden=true" />
+                <span class="wk-card__badge">Project 01</span>
+              </div>
+              <div class="wk-card__body">
+                <p class="wk-card__cat">Website Development</p>
+                <h3 class="wk-card__title">Project Title</h3>
+                <p class="wk-card__desc">Project description will be added once the real details are supplied.</p>
+                <div class="wk-card__tech" aria-label="Technologies">
+                  <span>Technology</span><span>Technology</span><span>Technology</span>
+                </div>
+                <button class="wk-card__cta" type="button" data-case-study="p01">View Case Study</button>
+              </div>
+            </article>
+
+            <article class="wk-card" data-project="p02" data-category="business-systems">
+              <div class="wk-card__visual" aria-hidden="true">
+                <img class="wk-card__image" src="assets/images/projects/project-02.jpg" alt="Project 02 preview" loading="lazy" onerror="this.hidden=true" />
+                <span class="wk-card__badge">Project 02</span>
+              </div>
+              <div class="wk-card__body">
+                <p class="wk-card__cat">Business Management System</p>
+                <h3 class="wk-card__title">Project Title</h3>
+                <p class="wk-card__desc">Project description will be added once the real details are supplied.</p>
+                <div class="wk-card__tech" aria-label="Technologies">
+                  <span>Technology</span><span>Technology</span><span>Technology</span>
+                </div>
+                <button class="wk-card__cta" type="button" data-case-study="p02">View Case Study</button>
+              </div>
+            </article>
+
+            <article class="wk-card" data-project="p03" data-category="ecommerce">
+              <div class="wk-card__visual" aria-hidden="true">
+                <img class="wk-card__image" src="assets/images/projects/project-03.jpg" alt="Project 03 preview" loading="lazy" onerror="this.hidden=true" />
+                <span class="wk-card__badge">Project 03</span>
+              </div>
+              <div class="wk-card__body">
+                <p class="wk-card__cat">E-Commerce</p>
+                <h3 class="wk-card__title">Project Title</h3>
+                <p class="wk-card__desc">Project description will be added once the real details are supplied.</p>
+                <div class="wk-card__tech" aria-label="Technologies">
+                  <span>Technology</span><span>Technology</span><span>Technology</span>
+                </div>
+                <button class="wk-card__cta" type="button" data-case-study="p03">View Case Study</button>
+              </div>
+            </article>
+
+            <article class="wk-card" data-project="p04" data-category="web-apps">
+              <div class="wk-card__visual" aria-hidden="true">
+                <img class="wk-card__image" src="assets/images/projects/project-04.jpg" alt="Project 04 preview" loading="lazy" onerror="this.hidden=true" />
+                <span class="wk-card__badge">Project 04</span>
+              </div>
+              <div class="wk-card__body">
+                <p class="wk-card__cat">Web Application</p>
+                <h3 class="wk-card__title">Project Title</h3>
+                <p class="wk-card__desc">Project description will be added once the real details are supplied.</p>
+                <div class="wk-card__tech" aria-label="Technologies">
+                  <span>Technology</span><span>Technology</span><span>Technology</span>
+                </div>
+                <button class="wk-card__cta" type="button" data-case-study="p04">View Case Study</button>
+              </div>
+            </article>
+
+            <article class="wk-card" data-project="p05" data-category="ui-ux">
+              <div class="wk-card__visual" aria-hidden="true">
+                <img class="wk-card__image" src="assets/images/projects/project-05.jpg" alt="Project 05 preview" loading="lazy" onerror="this.hidden=true" />
+                <span class="wk-card__badge">Project 05</span>
+              </div>
+              <div class="wk-card__body">
+                <p class="wk-card__cat">UI/UX Design</p>
+                <h3 class="wk-card__title">Project Title</h3>
+                <p class="wk-card__desc">Project description will be added once the real details are supplied.</p>
+                <div class="wk-card__tech" aria-label="Technologies">
+                  <span>Technology</span><span>Technology</span><span>Technology</span>
+                </div>
+                <button class="wk-card__cta" type="button" data-case-study="p05">View Case Study</button>
+              </div>
+            </article>
+
+            <article class="wk-card" data-project="p06" data-category="business-systems">
+              <div class="wk-card__visual" aria-hidden="true">
+                <img class="wk-card__image" src="assets/images/projects/project-06.jpg" alt="Project 06 preview" loading="lazy" onerror="this.hidden=true" />
+                <span class="wk-card__badge">Project 06</span>
+              </div>
+              <div class="wk-card__body">
+                <p class="wk-card__cat">Custom Software</p>
+                <h3 class="wk-card__title">Project Title</h3>
+                <p class="wk-card__desc">Project description will be added once the real details are supplied.</p>
+                <div class="wk-card__tech" aria-label="Technologies">
+                  <span>Technology</span><span>Technology</span><span>Technology</span>
+                </div>
+                <button class="wk-card__cta" type="button" data-case-study="p06">View Case Study</button>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- Technology stack ---------- -->
+      <section class="wk-section" aria-labelledby="wk-stack-title">
+        <div class="container">
+          <p class="wk-eyebrow" data-reveal>Technology Stack</p>
+          <h2 class="wk-h2" id="wk-stack-title" data-reveal>
+            Built with tools <em>we trust.</em>
+          </h2>
+          <p class="wk-lead" data-reveal>
+            Technologies selected per project based on what the solution actually needs.
+          </p>
+
+          <div class="wk-stack" data-reveal>
+            <div class="wk-stack__item"><span>HTML</span></div>
+            <div class="wk-stack__item"><span>CSS</span></div>
+            <div class="wk-stack__item"><span>JavaScript</span></div>
+            <div class="wk-stack__item"><span>PHP</span></div>
+            <div class="wk-stack__item"><span>MySQL</span></div>
+            <div class="wk-stack__item"><span>Laravel</span></div>
+            <div class="wk-stack__item"><span>React</span></div>
+            <div class="wk-stack__item"><span>Node.js</span></div>
+            <div class="wk-stack__item"><span>REST APIs</span></div>
+            <div class="wk-stack__item"><span>WordPress</span></div>
+            <div class="wk-stack__item"><span>WooCommerce</span></div>
+            <div class="wk-stack__item"><span>Tailwind</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- Philosophy ---------- -->
+      <section class="wk-philosophy" aria-labelledby="wk-philosophy-title">
+        <div class="container">
+          <p class="wk-eyebrow" data-reveal style="text-align:center;">How We Think About Work</p>
+          <h2 class="wk-philosophy__quote" id="wk-philosophy-title" data-reveal>
+            We don't build for the sake of building.<br>
+            <em>We solve a business problem first, then build the technology around it.</em>
+          </h2>
+          <p class="wk-philosophy__note" data-reveal>
+            Every project on this page exists because a business needed something to
+            work better — a clearer presence, a faster internal process, a real
+            revenue channel. That order matters.
+          </p>
+        </div>
+      </section>
+
+      <!-- ---------- Final CTA ---------- -->
+      <section class="wk-cta" aria-labelledby="wk-cta-title">
+        <div class="container">
+          <h2 class="wk-cta__title" id="wk-cta-title" data-reveal>
+            Have an idea?<br>
+            <em>Let's build something useful.</em>
+          </h2>
+          <p class="wk-cta__text" data-reveal>
+            Tell us what you're trying to solve. We'll take it from there.
+          </p>
+          <div class="wk-cta__actions" data-reveal>
+            <a class="wk-btn wk-btn--solid" href="#" data-nx-modal>Start a Project</a>
+            <a class="wk-btn" href="services.html">View Services</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a class="brand" href="index.html" aria-label="NoExaTech — home">
+              <span class="brand__mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                  <path d="M5 27V5l22 22V5" stroke="url(#flg)" stroke-width="2.6" stroke-linecap="square"/>
+                  <defs>
+                    <linearGradient id="flg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <span class="brand__name">NOEXATECH</span>
+            </a>
+            <p class="footer__tagline">“New Ideas. Powered by Technology.”</p>
+            <a class="btn btn--primary btn--sm footer__cta" href="#" data-nx-modal>Start a Project</a>
+          </div>
+
+          <nav class="footer__nav" aria-label="Footer">
+            <h2 class="footer__heading">Navigation</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="work.html">Work</a></li>
+              <li><a href="process.html">Process</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer__contact">
+            <h2 class="footer__heading">Contact</h2>
+            <a href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+            <ul class="social" data-social></ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© <span data-year>2026</span> NoExaTech. All rights reserved.</p>
+          <p class="footer__built">Designed &amp; built in-house.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <!-- ===================== CASE STUDY MODAL ===================== -->
+    <div class="wk-modal" id="wkCaseStudy" role="dialog" aria-modal="true" aria-labelledby="wkModalTitle" hidden>
+      <div class="wk-modal__backdrop" data-wk-close></div>
+
+      <div class="wk-modal__dialog" role="document">
+        <header class="wk-modal__header">
+          <p class="wk-modal__cat" data-wk-cat>Project Category</p>
+          <h2 class="wk-modal__title" id="wkModalTitle" data-wk-title>Project Title</h2>
+          <button class="wk-modal__close" type="button" aria-label="Close case study" data-wk-close>×</button>
+        </header>
+
+        <div class="wk-modal__body">
+          <div class="wk-modal__section">
+            <h3 class="wk-modal__section-title">Challenge</h3>
+            <p class="wk-modal__text" data-wk-challenge>—</p>
+          </div>
+
+          <div class="wk-modal__section">
+            <h3 class="wk-modal__section-title">Approach</h3>
+            <p class="wk-modal__text" data-wk-approach>—</p>
+          </div>
+
+          <div class="wk-modal__section">
+            <h3 class="wk-modal__section-title">Solution</h3>
+            <p class="wk-modal__text" data-wk-solution>—</p>
+          </div>
+
+          <div class="wk-modal__section">
+            <h3 class="wk-modal__section-title">Key Features</h3>
+            <ul class="wk-modal__features" data-wk-features></ul>
+          </div>
+
+          <div class="wk-modal__section">
+            <h3 class="wk-modal__section-title">Technologies</h3>
+            <div class="wk-modal__tech" data-wk-tech></div>
+          </div>
+
+          <p class="wk-modal__placeholder" data-wk-note>
+            This is a placeholder case study. Real project details, features, and
+            verified outcomes will be added once supplied.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js?v=3" defer></script>
+    <script src="assets/js/project-modal.js" defer></script>
+    <script src="assets/js/work.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="NoExaTech social preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#07141f"/>
+      <stop offset="1" stop-color="#040707"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0066FF"/>
+      <stop offset="1" stop-color="#00D9FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.3">
+    <path d="M0 80h1200M0 180h1200M0 280h1200M0 380h1200M0 480h1200" stroke="#ffffff" stroke-opacity="0.08"/>
+    <path d="M120 0v630M260 0v630M400 0v630M540 0v630M680 0v630M820 0v630M960 0v630M1100 0v630" stroke="#ffffff" stroke-opacity="0.08"/>
+  </g>
+  <path d="M200 430V190h260l-260 240V190" fill="none" stroke="url(#line)" stroke-width="16" stroke-linecap="square"/>
+  <text x="520" y="300" fill="#EAF6FF" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="700" letter-spacing="7">NOEXATECH</text>
+  <text x="520" y="390" fill="#9EC6F0" font-family="Arial, Helvetica, sans-serif" font-size="34" letter-spacing="4">NEW IDEAS. POWERED BY TECHNOLOGY.</text>
+  <rect x="520" y="430" width="220" height="58" rx="29" fill="url(#line)"/>
+  <text x="566" y="468" fill="#051017" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">START PROJECT</text>
+</svg>

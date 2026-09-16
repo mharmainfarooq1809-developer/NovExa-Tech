@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services | NoExaTech</title>
+    <meta name="description" content="Websites, e-commerce, graphic design, Meta marketing, and combined growth packages from NoExaTech. Start small, scale when ready." />
+    <meta name="theme-color" content="#050505" />
+    <link rel="canonical" href="https://noexatech.vercel.app/services.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NoExaTech" />
+    <meta property="og:title" content="Services | NoExaTech" />
+    <meta property="og:description" content="Solutions built around your business — websites, e-commerce, design, Meta marketing, and growth packages." />
+    <meta property="og:url" content="https://noexatech.vercel.app/services.html" />
+    <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Services | NoExaTech" />
+    <meta name="twitter:description" content="Solutions built around your business." />
+    <meta name="twitter:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <link rel="icon" href="assets/images/logo/og.png?v=3" type="image/png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/images/logo/og.png?v=3" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/main.css?v=3" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+      /* ================= Services page — scoped styles (unchanged from before) ================= */
+
+      .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+      .sv-section { padding: 120px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-section--flush { border-top: 0; }
+
+      .sv-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #00A8FF; margin: 0 0 20px; }
+
+      .sv-h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4.8vw, 64px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 700; color: #FFFFFF; margin: 0 0 26px; max-width: 900px; }
+      .sv-h2 em { font-style: normal; background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+      .sv-lead { font-size: clamp(15px, 1.5vw, 19px); line-height: 1.65; color: rgba(255, 255, 255, 0.66); max-width: 660px; margin: 0; }
+
+      .sv-head { display: grid; grid-template-columns: 120px 1fr; gap: 50px; align-items: baseline; margin-bottom: 60px; }
+      .sv-head__num { font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 5vw, 76px); line-height: 1; letter-spacing: -0.04em; font-weight: 700; color: transparent; -webkit-text-stroke: 1.4px rgba(0, 168, 255, 0.6); }
+      .sv-head__body { min-width: 0; }
+      .sv-head__title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(30px, 4.2vw, 54px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 700; color: #FFFFFF; margin: 0 0 16px; }
+      .sv-head__desc { font-size: 16px; line-height: 1.65; color: rgba(255, 255, 255, 0.6); max-width: 700px; margin: 0; }
+
+      .sv-packages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+      .sv-packages--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .sv-card { position: relative; display: flex; flex-direction: column; padding: 34px 30px 34px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%); transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease; overflow: hidden; }
+      .sv-card:hover { border-color: rgba(0, 168, 255, 0.4); transform: translateY(-3px); background: linear-gradient(180deg, rgba(0, 168, 255, 0.04) 0%, rgba(255, 255, 255, 0) 100%); }
+      .sv-card--featured { border-color: rgba(0, 168, 255, 0.35); background: radial-gradient(120% 90% at 100% 0%, rgba(0, 168, 255, 0.10) 0%, transparent 60%), linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%); }
+      .sv-card--featured::before { content: "Most Popular"; position: absolute; top: 18px; right: 18px; font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #00D9FF; padding: 5px 10px; border: 1px solid rgba(0, 217, 255, 0.4); border-radius: 100px; }
+
+      .sv-card__label { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #00A8FF; margin: 0 0 16px; }
+      .sv-card__name { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; color: #FFFFFF; margin: 0 0 18px; }
+      .sv-card__price { display: flex; align-items: baseline; gap: 8px; margin: 0 0 24px; padding-bottom: 22px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-card__price-from { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45); }
+      .sv-card__price-value { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; color: #FFFFFF; }
+      .sv-card__price-suffix { font-size: 14px; color: rgba(255, 255, 255, 0.5); }
+
+      .sv-card__list { list-style: none; padding: 0; margin: 0 0 26px; display: grid; gap: 11px; flex: 1; }
+      .sv-card__list li { display: flex; align-items: baseline; gap: 12px; font-size: 14px; line-height: 1.55; color: rgba(255, 255, 255, 0.7); }
+      .sv-card__list li::before { content: ""; flex: 0 0 auto; width: 5px; height: 5px; border-radius: 50%; background: #00A8FF; transform: translateY(-2px); }
+
+      .sv-card__note { margin: 0 0 20px; padding: 12px 14px; border-radius: 8px; background: rgba(0, 168, 255, 0.05); border: 1px solid rgba(0, 168, 255, 0.14); font-size: 12.5px; line-height: 1.55; color: rgba(255, 255, 255, 0.62); }
+      .sv-card__note strong { color: #FFFFFF; }
+
+      .sv-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF; background: transparent; border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 999px; text-decoration: none; cursor: pointer; transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; align-self: flex-start; font-family: 'Space Grotesk', sans-serif; }
+      .sv-btn::after { content: "→"; font-size: 14px; transition: transform 0.25s ease; }
+      .sv-btn:hover { border-color: rgba(0, 168, 255, 0.7); background: rgba(0, 168, 255, 0.08); transform: translateY(-1px); }
+      .sv-btn:hover::after { transform: translateX(4px); }
+      .sv-btn--solid { background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%); border-color: transparent; }
+      .sv-btn--solid:hover { background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%); border-color: transparent; box-shadow: 0 14px 34px -12px rgba(0, 168, 255, 0.6); }
+      .sv-btn--no-arrow::after { content: none; }
+
+      /* Selected package — richer summary */
+      .nx-project-modal__summary-extras {
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(0, 168, 255, 0.15);
+      }
+      .nx-project-modal__summary-extras:empty { display: none; }
+
+      .nx-project-modal__summary-purpose {
+        font-size: 13px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0 0 12px;
+      }
+
+      .nx-project-modal__summary-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px 20px;
+      }
+      .nx-project-modal__summary-features li {
+        position: relative;
+        padding-left: 16px;
+        font-size: 12.5px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.62);
+      }
+      .nx-project-modal__summary-features li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #00A8FF;
+      }
+
+      .nx-project-modal__summary-extra {
+        margin: 12px 0 0;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #00A8FF;
+      }
+
+      @media (max-width: 560px) {
+        .nx-project-modal__summary-features { grid-template-columns: 1fr; }
+      }
+
+      .sv-hero { padding: 160px 0 130px; position: relative; overflow: hidden; }
+      .sv-hero__inner { max-width: 1080px; }
+      .sv-hero__title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 7.4vw, 116px); line-height: 0.96; letter-spacing: -0.035em; font-weight: 700; color: #FFFFFF; margin: 0 0 36px; }
+      .sv-hero__title em { font-style: normal; background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .sv-hero__text { font-size: clamp(16px, 1.7vw, 20px); line-height: 1.6; color: rgba(255, 255, 255, 0.62); max-width: 720px; }
+
+      .sv-solo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-solo__row { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 20px 40px 20px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-solo__row:nth-child(2n) { padding-left: 40px; padding-right: 0; border-left: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-solo__name { font-size: 15px; color: rgba(255, 255, 255, 0.75); margin: 0; }
+      .sv-solo__price { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: -0.005em; color: #FFFFFF; margin: 0; white-space: nowrap; }
+
+      .sv-note { display: flex; align-items: flex-start; gap: 14px; margin-top: 32px; padding: 20px 24px; border: 1px solid rgba(0, 168, 255, 0.2); border-radius: 10px; background: rgba(0, 168, 255, 0.04); }
+      .sv-note::before { content: "i"; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; background: rgba(0, 168, 255, 0.15); color: #00A8FF; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; font-style: italic; line-height: 1; }
+      .sv-note__text { font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, 0.7); margin: 0; }
+      .sv-note__text strong { color: #FFFFFF; }
+
+      .sv-sub { margin-top: 70px; }
+      .sv-sub__title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; color: #FFFFFF; margin: 0 0 8px; }
+      .sv-sub__desc { font-size: 14.5px; line-height: 1.6; color: rgba(255, 255, 255, 0.55); margin: 0 0 32px; max-width: 640px; }
+
+      .sv-route { padding: 130px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-route__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 60px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-route__item { padding: 40px 32px 40px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); border-right: 1px solid rgba(255, 255, 255, 0.08); text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 14px; transition: padding 0.3s ease, background 0.3s ease; }
+      .sv-route__item:nth-child(3n) { border-right: 0; padding-right: 0; }
+      .sv-route__item:not(:nth-child(3n + 1)) { padding-left: 32px; }
+      .sv-route__item:hover { background: rgba(0, 168, 255, 0.03); }
+      .sv-route__item:hover .sv-route__arrow { transform: translateX(6px); }
+      .sv-route__q { font-family: 'Space Grotesk', sans-serif; font-size: clamp(17px, 1.9vw, 22px); font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; color: #FFFFFF; margin: 0; }
+      .sv-route__a { display: inline-flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #00A8FF; margin: 0; }
+      .sv-route__arrow { display: inline-block; transition: transform 0.3s ease; }
+
+      .sv-terms { padding: 120px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-terms__grid { display: grid; grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr); gap: 80px; align-items: start; }
+      .sv-terms__list { list-style: none; padding: 0; margin: 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-terms__list li { display: grid; grid-template-columns: 32px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 14.5px; line-height: 1.65; color: rgba(255, 255, 255, 0.62); }
+      .sv-terms__list li::before { content: attr(data-num); font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #00A8FF; padding-top: 3px; }
+
+      .sv-cta { padding: 150px 0 160px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-cta__title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(38px, 6vw, 88px); line-height: 1.02; letter-spacing: -0.03em; font-weight: 700; color: #FFFFFF; margin: 0 0 26px; }
+      .sv-cta__title em { font-style: normal; background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .sv-cta__text { font-size: clamp(16px, 1.6vw, 19px); line-height: 1.6; color: rgba(255, 255, 255, 0.58); max-width: 620px; margin: 0 auto 44px; }
+      .sv-cta__actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+
+      /* ================= MODAL ================= */
+      .nx-project-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.28s ease, visibility 0.28s ease;
+      }
+      .nx-project-modal.is-open { opacity: 1; visibility: visible; }
+      .nx-project-modal[hidden] { display: none; }
+
+      .nx-project-modal__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.72);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      .nx-project-modal__dialog {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 780px;
+        max-height: calc(100vh - 48px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        background:
+          radial-gradient(120% 100% at 100% 0%, rgba(0, 168, 255, 0.08) 0%, transparent 55%),
+          #0A0A0A;
+        box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.9);
+        overflow: hidden;
+        transform: translateY(16px) scale(0.98);
+        opacity: 0;
+        transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.28s ease;
+      }
+      .nx-project-modal.is-open .nx-project-modal__dialog {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+
+      .nx-project-modal__header {
+        position: relative;
+        padding: 34px 34px 26px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        flex: 0 0 auto;
+      }
+      .nx-project-modal__eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 14px;
+      }
+      .nx-project-modal__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(24px, 3.2vw, 36px);
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 12px;
+      }
+      .nx-project-modal__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .nx-project-modal__text {
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+        max-width: 560px;
+      }
+      .nx-project-modal__close {
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.7);
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+      }
+      .nx-project-modal__close:hover {
+        border-color: rgba(0, 168, 255, 0.6);
+        color: #FFFFFF;
+        background: rgba(0, 168, 255, 0.08);
+      }
+
+      .nx-project-modal__body {
+        padding: 28px 34px 8px;
+        overflow-y: auto;
+        flex: 1 1 auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .nx-project-modal__body::-webkit-scrollbar { width: 8px; }
+      .nx-project-modal__body::-webkit-scrollbar-track { background: transparent; }
+      .nx-project-modal__body::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 8px; }
+      .nx-project-modal__body::-webkit-scrollbar-thumb:hover { background: rgba(0, 168, 255, 0.3); }
+
+      /* Selected package summary */
+      .nx-project-modal__summary {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 16px 20px;
+        margin: 0 0 28px;
+        border: 1px solid rgba(0, 168, 255, 0.22);
+        border-radius: 12px;
+        background: rgba(0, 168, 255, 0.04);
+      }
+      .nx-project-modal__summary-icon {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(0, 168, 255, 0.15);
+        color: #00A8FF;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .nx-project-modal__summary-body { min-width: 0; flex: 1; }
+      .nx-project-modal__summary-label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 6px;
+      }
+      .nx-project-modal__summary-name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: #FFFFFF;
+        margin: 0 0 4px;
+        line-height: 1.3;
+      }
+      .nx-project-modal__summary-price {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+      }
+
+      /* Sections */
+      .nx-project-modal__section {
+        border: 0;
+        padding: 0;
+        margin: 0 0 28px;
+        min-width: 0;
+      }
+      .nx-project-modal__section:last-of-type { margin-bottom: 12px; }
+      .nx-project-modal__legend {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 0;
+        margin: 0 0 18px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        color: #00A8FF;
+      }
+      .nx-project-modal__legend::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(to right, rgba(0,168,255,0.3), rgba(255,255,255,0.04));
+      }
+
+      .nx-project-modal__row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .nx-project-modal__field { display: flex; flex-direction: column; gap: 8px; margin: 0 0 18px; }
+      .nx-project-modal__field:last-child { margin-bottom: 0; }
+
+      .nx-project-modal__label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .nx-project-modal__label .req { color: #00A8FF; margin-left: 2px; }
+
+      .nx-project-modal__field input,
+      .nx-project-modal__field select,
+      .nx-project-modal__field textarea {
+        width: 100%;
+        padding: 14px 16px;
+        font-family: inherit;
+        font-size: 15px;
+        line-height: 1.45;
+        color: #FFFFFF;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 9px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+      .nx-project-modal__field input::placeholder,
+      .nx-project-modal__field textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
+      .nx-project-modal__field input:focus,
+      .nx-project-modal__field select:focus,
+      .nx-project-modal__field textarea:focus {
+        outline: none;
+        border-color: rgba(0, 168, 255, 0.6);
+        box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.15);
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .nx-project-modal__field textarea { resize: vertical; min-height: 110px; font-family: inherit; }
+
+      .nx-project-modal__field select {
+        appearance: none;
+        -webkit-appearance: none;
+        background-image:
+          linear-gradient(45deg, transparent 50%, #00A8FF 50%),
+          linear-gradient(135deg, #00A8FF 50%, transparent 50%);
+        background-position:
+          calc(100% - 20px) calc(50% - 3px),
+          calc(100% - 14px) calc(50% - 3px);
+        background-size: 6px 6px, 6px 6px;
+        background-repeat: no-repeat;
+        padding-right: 42px;
+      }
+      .nx-project-modal__field select option { background: #0A0A0A; color: #FFFFFF; }
+
+      .nx-project-modal__field.has-error input,
+      .nx-project-modal__field.has-error select,
+      .nx-project-modal__field.has-error textarea {
+        border-color: rgba(0, 168, 255, 0.7);
+        box-shadow: 0 0 0 1px rgba(0, 168, 255, 0.4);
+      }
+
+      .nx-project-modal__error {
+        font-size: 12.5px;
+        line-height: 1.5;
+        color: #00A8FF;
+        margin: 0;
+        min-height: 0;
+      }
+      .nx-project-modal__error:empty { display: none; }
+
+      /* Actions */
+      .nx-project-modal__actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+        padding: 20px 34px 26px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.95) 100%);
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+      }
+      .nx-project-modal__status {
+        flex: 1 1 auto;
+        min-width: 0;
+        font-size: 13px;
+        color: #00D9FF;
+        margin: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .nx-project-modal__status.is-visible { opacity: 1; }
+
+      .nx-project-modal__submit.is-loading {
+        opacity: 0.85;
+        pointer-events: none;
+      }
+      .nx-project-modal__submit.is-loading::after {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.35);
+        border-top-color: #FFFFFF;
+        animation: nxSpin 0.7s linear infinite;
+      }
+      @keyframes nxSpin { to { transform: rotate(360deg); } }
+
+      body.nx-modal-open { overflow: hidden; }
+
+      /* Responsive */
+      @media (max-width: 1080px) { .sv-packages--2col { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 960px) {
+        .sv-section { padding: 90px 0; }
+        .sv-hero { padding: 120px 0 90px; }
+        .sv-head { grid-template-columns: 80px 1fr; gap: 30px; margin-bottom: 44px; }
+        .sv-packages, .sv-packages--2col { grid-template-columns: 1fr; gap: 18px; }
+        .sv-solo { grid-template-columns: 1fr; }
+        .sv-solo__row:nth-child(2n) { padding-left: 0; border-left: 0; }
+        .sv-route__grid { grid-template-columns: 1fr; }
+        .sv-route__item, .sv-route__item:not(:nth-child(3n + 1)), .sv-route__item:nth-child(3n) { padding: 30px 0; border-right: 0; }
+        .sv-terms__grid { grid-template-columns: 1fr; gap: 40px; }
+        .sv-terms, .sv-route { padding: 90px 0; }
+        .sv-cta { padding: 100px 0 110px; }
+      }
+      @media (max-width: 560px) {
+        .sv-hero { padding: 100px 0 60px; }
+        .sv-head { grid-template-columns: 1fr; gap: 12px; }
+        .sv-card { padding: 26px 22px; }
+        .sv-card--featured::before { top: 14px; right: 14px; }
+        .sv-btn { width: 100%; justify-content: space-between; }
+        .sv-cta__actions .sv-btn { justify-content: center; }
+      }
+
+      /* Modal responsive */
+      @media (max-width: 720px) {
+        .nx-project-modal { padding: 0; }
+        .nx-project-modal__dialog {
+          max-width: 100%;
+          max-height: 100vh;
+          height: 100vh;
+          border-radius: 0;
+          border-left: 0;
+          border-right: 0;
+        }
+        .nx-project-modal__header { padding: 24px 22px 20px; }
+        .nx-project-modal__close { top: 18px; right: 18px; width: 36px; height: 36px; }
+        .nx-project-modal__body { padding: 22px 22px 8px; }
+        .nx-project-modal__row { grid-template-columns: 1fr; gap: 0; }
+        .nx-project-modal__actions {
+          padding: 16px 22px 20px;
+          gap: 10px;
+          position: sticky;
+          bottom: 0;
+        }
+        .nx-project-modal__actions .sv-btn { flex: 1 1 0; justify-content: center; width: auto; }
+        .nx-project-modal__status { flex: 1 1 100%; text-align: center; order: 3; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .sv-card, .sv-btn, .sv-route__arrow, .nx-project-modal, .nx-project-modal__dialog { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <a class="visually-hidden" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="NoExaTech — home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+              <path d="M5 27V5l22 22V5" stroke="url(#nlg)" stroke-width="2.6" stroke-linecap="square"/>
+              <defs>
+                <linearGradient id="nlg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brand__name">NOEXATECH</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="is-active" aria-current="page">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button class="btn btn--primary btn--sm site-header__cta" type="button" data-nx-modal>
+          Start a Project
+        </button>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu__nav" aria-label="Mobile">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html"><span>01</span>Home</a></li>
+          <li><a href="about.html"><span>02</span>About</a></li>
+          <li><a href="services.html"><span>03</span>Services</a></li>
+          <li><a href="work.html"><span>04</span>Work</a></li>
+          <li><a href="process.html"><span>05</span>Process</a></li>
+          <li><a href="team.html"><span>06</span>Team</a></li>
+          <li><a href="contact.html"><span>07</span>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__foot">
+        <button class="btn btn--primary" type="button" data-nx-modal>Start a Project</button>
+        <a class="mobile-menu__mail" href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- ============ MAIN ============ -->
+    <main id="main" class="page-shell">
+
+      <!-- Hero -->
+      <section class="sv-hero">
+        <div class="container sv-hero__inner">
+          <p class="sv-eyebrow" data-reveal>Services &amp; Packages</p>
+          <h1 class="sv-hero__title" data-reveal>
+            Solutions built<br>
+            <em>around your business.</em>
+          </h1>
+          <p class="sv-hero__text" data-reveal>
+            From websites and e-commerce to creative design and digital growth,
+            NoExaTech provides practical technology and digital solutions that can
+            start small and scale as your business grows.
+          </p>
+        </div>
+      </section>
+
+      <!-- 01 — Website Development -->
+      <section class="sv-section sv-section--flush" aria-labelledby="sv-website-title">
+        <div class="container">
+          <header class="sv-head" data-reveal>
+            <span class="sv-head__num" aria-hidden="true">01</span>
+            <div class="sv-head__body">
+              <h2 class="sv-head__title" id="sv-website-title">Website Development</h2>
+              <p class="sv-head__desc">
+                Business websites, corporate sites, landing pages, and modern web
+                experiences — built to be fast, responsive, and useful from day one.
+              </p>
+            </div>
+          </header>
+
+          <div class="sv-packages" data-reveal>
+            <article class="sv-card">
+              <p class="sv-card__label">Landing Page</p>
+              <h3 class="sv-card__name">Single-page, conversion focused</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 15,000</span></div>
+              <ul class="sv-card__list">
+                <li>1 high-conversion page</li>
+                <li>Responsive design</li>
+                <li>Clear call-to-action</li>
+                <li>WhatsApp / contact integration</li>
+                <li>Basic SEO and speed setup</li>
+                <li>2 revision rounds</li>
+              </ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Website Development"
+                data-package="Landing Page"
+                data-price="PKR 15,000">Start a Project</button>
+            </article>
+
+            <article class="sv-card">
+              <p class="sv-card__label">Starter Business Website</p>
+              <h3 class="sv-card__name">A clean presence for growing businesses</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 25,000</span></div>
+              <ul class="sv-card__list">
+                <li>Up to 5 pages</li>
+                <li>Responsive UI / UX</li>
+                <li>WhatsApp / contact form / Google Maps</li>
+                <li>Basic SEO and performance optimization</li>
+                <li>Revision rounds</li>
+                <li>Post-launch technical support</li>
+              </ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Website Development"
+                data-package="Starter Business Website"
+                data-price="PKR 25,000">Start a Project</button>
+            </article>
+
+            <article class="sv-card sv-card--featured">
+              <p class="sv-card__label">Business Website</p>
+              <h3 class="sv-card__name">Full business site with room to grow</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 40,000</span></div>
+              <ul class="sv-card__list">
+                <li>Up to 8 pages</li>
+                <li>Custom UI / UX</li>
+                <li>Portfolio / gallery, testimonials</li>
+                <li>Blog / news section</li>
+                <li>Advanced inquiry forms</li>
+                <li>Social integrations</li>
+                <li>SEO, analytics, and speed optimization</li>
+              </ul>
+              <button class="sv-btn sv-btn--solid" type="button" data-nx-modal
+                data-project-type="Website Development"
+                data-package="Business Website"
+                data-price="PKR 40,000">Start a Project</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02 — Advanced Web & E-Commerce -->
+      <section class="sv-section" aria-labelledby="sv-advanced-title">
+        <div class="container">
+          <header class="sv-head" data-reveal>
+            <span class="sv-head__num" aria-hidden="true">02</span>
+            <div class="sv-head__body">
+              <h2 class="sv-head__title" id="sv-advanced-title">Advanced Web &amp; E-Commerce</h2>
+              <p class="sv-head__desc">
+                Larger web systems with CMS / admin functionality, e-commerce, order
+                management, user roles, reporting, workflows, and integrations.
+              </p>
+            </div>
+          </header>
+
+          <div class="sv-packages sv-packages--2col" data-reveal>
+            <article class="sv-card">
+              <p class="sv-card__label">Professional Business Website</p>
+              <h3 class="sv-card__name">Custom website with admin control</h3>
+              <div class="sv-card__price"><span class="sv-card__price-from">From</span><span class="sv-card__price-value">PKR 60,000</span></div>
+              <ul class="sv-card__list">
+                <li>Custom UI / UX with full brand application</li>
+                <li>CMS / admin panel for content management</li>
+                <li>Advanced forms, integrations, and analytics</li>
+                <li>SEO, performance, and security configuration</li>
+              </ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Advanced Web &amp; E-Commerce"
+                data-package="Professional Business Website"
+                data-price="PKR 60,000+">Start a Project</button>
+            </article>
+
+            <article class="sv-card">
+              <p class="sv-card__label">E-Commerce Starter</p>
+              <h3 class="sv-card__name">Launch your first online store</h3>
+              <div class="sv-card__price"><span class="sv-card__price-from">From</span><span class="sv-card__price-value">PKR 50,000</span></div>
+              <ul class="sv-card__list">
+                <li>Product catalogue and storefront</li>
+                <li>Cart, checkout, and basic order flow</li>
+                <li>Product management dashboard</li>
+                <li>Payment / delivery integration as required</li>
+              </ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="E-Commerce"
+                data-package="E-Commerce Starter"
+                data-price="PKR 50,000+">Start a Project</button>
+            </article>
+
+            <article class="sv-card">
+              <p class="sv-card__label">E-Commerce Business</p>
+              <h3 class="sv-card__name">A store built to scale</h3>
+              <div class="sv-card__price"><span class="sv-card__price-from">From</span><span class="sv-card__price-value">PKR 80,000</span></div>
+              <ul class="sv-card__list">
+                <li>Advanced catalogue, categories, and variants</li>
+                <li>Order management, statuses, and reporting</li>
+                <li>User roles and access control</li>
+                <li>Marketing integrations and analytics</li>
+              </ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="E-Commerce"
+                data-package="E-Commerce Business"
+                data-price="PKR 80,000+">Start a Project</button>
+            </article>
+
+            <article class="sv-card">
+              <p class="sv-card__label">Custom Web System</p>
+              <h3 class="sv-card__name">Software built around your operations</h3>
+              <div class="sv-card__price"><span class="sv-card__price-from">From</span><span class="sv-card__price-value">PKR 100,000</span></div>
+              <ul class="sv-card__list">
+                <li>Business management or internal systems</li>
+                <li>Custom workflows, roles, and reporting</li>
+                <li>Integrations with existing tools / APIs</li>
+                <li>Scalable architecture with long-term maintenance in mind</li>
+              </ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Custom Technology Solution"
+                data-package="Custom Web System"
+                data-price="From PKR 100,000">Start a Project</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 — Graphic Design -->
+      <section class="sv-section" aria-labelledby="sv-design-title">
+        <div class="container">
+          <header class="sv-head" data-reveal>
+            <span class="sv-head__num" aria-hidden="true">03</span>
+            <div class="sv-head__body">
+              <h2 class="sv-head__title" id="sv-design-title">Graphic Design</h2>
+              <p class="sv-head__desc">
+                Solo design services for one-off needs, plus monthly design retainers
+                for businesses that publish regularly.
+              </p>
+            </div>
+          </header>
+
+          <div class="sv-solo" data-reveal>
+            <div class="sv-solo__row"><p class="sv-solo__name">Social Media Post</p><p class="sv-solo__price">PKR 1,000 – 2,000</p></div>
+            <div class="sv-solo__row"><p class="sv-solo__name">Instagram / Facebook Creative</p><p class="sv-solo__price">PKR 1,000 – 2,500</p></div>
+            <div class="sv-solo__row"><p class="sv-solo__name">Story Design</p><p class="sv-solo__price">PKR 700 – 1,500</p></div>
+            <div class="sv-solo__row"><p class="sv-solo__name">Flyer</p><p class="sv-solo__price">PKR 2,000 – 4,000</p></div>
+            <div class="sv-solo__row"><p class="sv-solo__name">Poster</p><p class="sv-solo__price">PKR 2,000 – 5,000</p></div>
+            <div class="sv-solo__row"><p class="sv-solo__name">YouTube Thumbnail</p><p class="sv-solo__price">PKR 800 – 1,500</p></div>
+            <div class="sv-solo__row"><p class="sv-solo__name">Logo Design</p><p class="sv-solo__price">PKR 3,000 – 8,000</p></div>
+            <div class="sv-solo__row"><p class="sv-solo__name">Business Card</p><p class="sv-solo__price">PKR 1,500 – 3,000</p></div>
+            <div class="sv-solo__row"><p class="sv-solo__name">Menu Design</p><p class="sv-solo__price">PKR 3,000 – 7,000</p></div>
+            <div class="sv-solo__row"><p class="sv-solo__name">Brochure</p><p class="sv-solo__price">PKR 4,000 – 10,000+</p></div>
+          </div>
+
+          <div class="sv-sub">
+            <h3 class="sv-sub__title">Monthly Design Retainers</h3>
+            <p class="sv-sub__desc">
+              For businesses that need a consistent flow of design work each month.
+            </p>
+
+            <div class="sv-packages" data-reveal>
+              <article class="sv-card">
+                <p class="sv-card__label">Design Starter</p>
+                <h4 class="sv-card__name">Consistent design, every month</h4>
+                <div class="sv-card__price"><span class="sv-card__price-value">PKR 15,000</span><span class="sv-card__price-suffix">/ month</span></div>
+                <ul class="sv-card__list"><li>10 social media designs</li></ul>
+                <button class="sv-btn" type="button" data-nx-modal
+                  data-project-type="Graphic Design"
+                  data-package="Design Starter"
+                  data-price="PKR 15,000 / month">Start a Project</button>
+              </article>
+
+              <article class="sv-card">
+                <p class="sv-card__label">Design Business</p>
+                <h4 class="sv-card__name">More volume, more formats</h4>
+                <div class="sv-card__price"><span class="sv-card__price-value">PKR 25,000</span><span class="sv-card__price-suffix">/ month</span></div>
+                <ul class="sv-card__list"><li>20 designs</li><li>Stories and posts</li><li>Basic photo editing</li></ul>
+                <button class="sv-btn" type="button" data-nx-modal
+                  data-project-type="Graphic Design"
+                  data-package="Design Business"
+                  data-price="PKR 25,000 / month">Start a Project</button>
+              </article>
+
+              <article class="sv-card">
+                <p class="sv-card__label">Design Professional</p>
+                <h4 class="sv-card__name">Priority design, higher output</h4>
+                <div class="sv-card__price"><span class="sv-card__price-value">PKR 40,000</span><span class="sv-card__price-suffix">/ month</span></div>
+                <ul class="sv-card__list"><li>30+ designs</li><li>Posts, stories, and banners</li><li>Advanced Photoshop editing</li><li>Priority delivery</li></ul>
+                <button class="sv-btn" type="button" data-nx-modal
+                  data-project-type="Graphic Design"
+                  data-package="Design Professional"
+                  data-price="PKR 40,000 / month">Start a Project</button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 — Meta Marketing -->
+      <section class="sv-section" aria-labelledby="sv-meta-title">
+        <div class="container">
+          <header class="sv-head" data-reveal>
+            <span class="sv-head__num" aria-hidden="true">04</span>
+            <div class="sv-head__body">
+              <h2 class="sv-head__title" id="sv-meta-title">Meta Marketing</h2>
+              <p class="sv-head__desc">
+                Monthly Meta (Facebook / Instagram) content and advertising packages
+                with audience targeting, optimization, and reporting.
+              </p>
+            </div>
+          </header>
+
+          <div class="sv-packages" data-reveal>
+            <article class="sv-card">
+              <p class="sv-card__label">Meta Starter</p>
+              <h3 class="sv-card__name">Get visible on Meta</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 10,000</span><span class="sv-card__price-suffix">/ month</span></div>
+              <ul class="sv-card__list"><li>6 posts + 2 reels</li><li>1 Meta Ads campaign</li><li>Basic monitoring</li><li>Monthly update</li></ul>
+              <p class="sv-card__note">Recommended ad spend: <strong>PKR 10,000 – 15,000</strong></p>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Meta Marketing"
+                data-package="Meta Starter"
+                data-price="PKR 10,000 / month">Start a Project</button>
+            </article>
+
+            <article class="sv-card sv-card--featured">
+              <p class="sv-card__label">Meta Premium</p>
+              <h3 class="sv-card__name">Active audience and campaign management</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 15,000</span><span class="sv-card__price-suffix">/ month</span></div>
+              <ul class="sv-card__list"><li>10 posts + 4 reels</li><li>Meta Ads management</li><li>Audience targeting</li><li>Optimization</li><li>Monthly report</li><li>Content strategy</li></ul>
+              <p class="sv-card__note">Recommended ad spend: <strong>PKR 15,000 – 25,000</strong></p>
+              <button class="sv-btn sv-btn--solid" type="button" data-nx-modal
+                data-project-type="Meta Marketing"
+                data-package="Meta Premium"
+                data-price="PKR 15,000 / month">Start a Project</button>
+            </article>
+
+            <article class="sv-card">
+              <p class="sv-card__label">Meta Business</p>
+              <h3 class="sv-card__name">Full-funnel content and lead generation</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 20,000</span><span class="sv-card__price-suffix">/ month</span></div>
+              <ul class="sv-card__list"><li>12 posts + 6 reels</li><li>Content strategy</li><li>Audience / competitor research</li><li>Lead-generation strategy</li><li>Priority support</li></ul>
+              <p class="sv-card__note">Recommended ad spend: <strong>PKR 20,000 – 40,000</strong></p>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Meta Marketing"
+                data-package="Meta Business"
+                data-price="PKR 20,000 / month">Start a Project</button>
+            </article>
+          </div>
+
+          <div class="sv-note" data-reveal>
+            <p class="sv-note__text">
+              <strong>Ad spend is separate from the NoExaTech management fee.</strong>
+              The amounts above cover content and campaign management only — the
+              advertising budget itself is paid directly to Meta.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 — Combined Growth Packages -->
+      <section class="sv-section" aria-labelledby="sv-growth-title">
+        <div class="container">
+          <header class="sv-head" data-reveal>
+            <span class="sv-head__num" aria-hidden="true">05</span>
+            <div class="sv-head__body">
+              <h2 class="sv-head__title" id="sv-growth-title">Combined Growth Packages</h2>
+              <p class="sv-head__desc">
+                Website, design, and marketing combined — for businesses that want to
+                start with one partner and cover more than one need at once.
+              </p>
+            </div>
+          </header>
+
+          <div class="sv-packages sv-packages--2col" data-reveal>
+            <article class="sv-card">
+              <p class="sv-card__label">Local Business Launch</p>
+              <h3 class="sv-card__name">A complete starter kit for local businesses</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 30,000</span></div>
+              <ul class="sv-card__list"><li>Website</li><li>3 creatives</li><li>WhatsApp / Google Maps setup</li><li>Basic SEO</li></ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Website Development"
+                data-package="Local Business Launch"
+                data-price="PKR 30,000">Start a Project</button>
+            </article>
+
+            <article class="sv-card">
+              <p class="sv-card__label">Digital Starter</p>
+              <h3 class="sv-card__name">Site, social presence, and lead channel</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 35,000</span></div>
+              <ul class="sv-card__list"><li>Starter website</li><li>5 designs</li><li>Social CTA setup</li><li>WhatsApp lead channel</li><li>Basic SEO</li></ul>
+              <p class="sv-card__note">Optional: <strong>Meta Starter at PKR 10,000 / month</strong> + ad spend.</p>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Website Development"
+                data-package="Digital Starter"
+                data-price="PKR 35,000">Start a Project</button>
+            </article>
+
+            <article class="sv-card">
+              <p class="sv-card__label">Business Growth</p>
+              <h3 class="sv-card__name">Business site + Meta Starter</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 50,000</span><span class="sv-card__price-suffix">/ first month</span></div>
+              <ul class="sv-card__list"><li>Business website</li><li>Meta Starter</li><li>6 posts + 2 reels</li><li>1 Meta Ads campaign</li></ul>
+              <p class="sv-card__note">Ad spend separate.</p>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Website Development"
+                data-package="Business Growth"
+                data-price="PKR 50,000 / first month">Start a Project</button>
+            </article>
+
+            <article class="sv-card">
+              <p class="sv-card__label">Growth Partner</p>
+              <h3 class="sv-card__name">Full site + Meta Business + strategy</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 60,000</span><span class="sv-card__price-suffix">/ first month</span></div>
+              <ul class="sv-card__list"><li>Business website</li><li>Meta Business</li><li>12 posts + 6 reels</li><li>Lead-generation strategy</li><li>Audience / competitor research</li></ul>
+              <p class="sv-card__note">Ongoing months: <strong>PKR 20,000 / month</strong> + ad spend.</p>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Website Development"
+                data-package="Growth Partner"
+                data-price="PKR 60,000 / first month">Start a Project</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 — E-Commerce & Brand Growth -->
+      <section class="sv-section" aria-labelledby="sv-ecom-title">
+        <div class="container">
+          <header class="sv-head" data-reveal>
+            <span class="sv-head__num" aria-hidden="true">06</span>
+            <div class="sv-head__body">
+              <h2 class="sv-head__title" id="sv-ecom-title">E-Commerce &amp; Brand Growth</h2>
+              <p class="sv-head__desc">
+                Store + content + ads combined — for product sellers who need
+                everything working together from day one.
+              </p>
+            </div>
+          </header>
+
+          <div class="sv-packages" data-reveal>
+            <article class="sv-card">
+              <p class="sv-card__label">Product Seller Starter</p>
+              <h3 class="sv-card__name">Store + Meta Starter + ordering workflow</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 60,000</span><span class="sv-card__price-suffix">/ first month</span></div>
+              <ul class="sv-card__list"><li>E-Commerce Starter</li><li>Meta Starter</li><li>6 posts + 2 reels</li><li>WhatsApp ordering workflow</li></ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="E-Commerce"
+                data-package="Product Seller Starter"
+                data-price="PKR 60,000 / first month">Start a Project</button>
+            </article>
+
+            <article class="sv-card sv-card--featured">
+              <p class="sv-card__label">E-Commerce Growth</p>
+              <h3 class="sv-card__name">Store + Meta Premium + targeting</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 95,000</span><span class="sv-card__price-suffix">/ first month</span></div>
+              <ul class="sv-card__list"><li>E-Commerce Business</li><li>Meta Premium</li><li>10 posts + 4 reels</li><li>Targeting and optimization</li><li>Content strategy</li></ul>
+              <button class="sv-btn sv-btn--solid" type="button" data-nx-modal
+                data-project-type="E-Commerce"
+                data-package="E-Commerce Growth"
+                data-price="PKR 95,000 / first month">Start a Project</button>
+            </article>
+
+            <article class="sv-card">
+              <p class="sv-card__label">Brand Content + Ads</p>
+              <h3 class="sv-card__name">Consistent monthly brand content</h3>
+              <div class="sv-card__price"><span class="sv-card__price-value">PKR 35,000</span><span class="sv-card__price-suffix">/ month</span></div>
+              <ul class="sv-card__list"><li>20 designs</li><li>Meta Starter</li><li>6 posts + 2 reels</li><li>1 Meta Ads campaign</li></ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-project-type="Meta Marketing"
+                data-package="Brand Content + Ads"
+                data-price="PKR 35,000 / month">Start a Project</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Routing -->
+      <section class="sv-route" aria-labelledby="sv-route-title">
+        <div class="container">
+          <p class="sv-eyebrow" data-reveal>Which One Fits?</p>
+          <h2 class="sv-h2" id="sv-route-title" data-reveal>
+            Which solution is <em>right for you?</em>
+          </h2>
+          <p class="sv-lead" data-reveal>
+            A quick way to find the right starting point based on what you need right
+            now.
+          </p>
+
+          <div class="sv-route__grid" data-reveal>
+            <a class="sv-route__item" href="#sv-website-title">
+              <p class="sv-route__q">Need only a website?</p>
+              <p class="sv-route__a">Website Development <span class="sv-route__arrow">→</span></p>
+            </a>
+            <a class="sv-route__item" href="#sv-design-title">
+              <p class="sv-route__q">Need only designs?</p>
+              <p class="sv-route__a">Solo Design / Monthly Design <span class="sv-route__arrow">→</span></p>
+            </a>
+            <a class="sv-route__item" href="#sv-meta-title">
+              <p class="sv-route__q">Already have a website but need customers?</p>
+              <p class="sv-route__a">Meta Marketing <span class="sv-route__arrow">→</span></p>
+            </a>
+            <a class="sv-route__item" href="#sv-growth-title">
+              <p class="sv-route__q">Starting from zero?</p>
+              <p class="sv-route__a">Digital Starter / Local Business Launch <span class="sv-route__arrow">→</span></p>
+            </a>
+            <a class="sv-route__item" href="#sv-ecom-title">
+              <p class="sv-route__q">Selling products?</p>
+              <p class="sv-route__a">Product Seller Starter / E-Commerce Growth <span class="sv-route__arrow">→</span></p>
+            </a>
+            <a class="sv-route__item" href="#" data-nx-modal>
+              <p class="sv-route__q">Not sure yet?</p>
+              <p class="sv-route__a">Talk to NoExaTech <span class="sv-route__arrow">→</span></p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Terms -->
+      <section class="sv-terms" aria-labelledby="sv-terms-title">
+        <div class="container sv-terms__grid">
+          <div>
+            <p class="sv-eyebrow" data-reveal>Terms &amp; Pricing</p>
+            <h2 class="sv-h2" id="sv-terms-title" data-reveal>
+              Clear from <em>the start.</em>
+            </h2>
+            <p class="sv-lead" data-reveal>
+              Package prices are general starting points. Final quotations depend on
+              confirmed requirements, scope, and timeline.
+            </p>
+          </div>
+
+          <ul class="sv-terms__list" data-reveal>
+            <li data-num="01">
+              Package prices are starting points. Final quotations are confirmed
+              after the requirements, scope, and timeline are agreed.
+            </li>
+            <li data-num="02">
+              Domain, hosting, paid plugins, APIs, software, and other third-party
+              charges are separate where applicable.
+            </li>
+            <li data-num="03">
+              Major changes to the agreed scope may require additional fees and can
+              affect the timeline.
+            </li>
+            <li data-num="04">
+              Meta advertising spend is paid directly to Meta and is separate from
+              the NoExaTech management fee.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="sv-cta" aria-labelledby="sv-cta-title">
+        <div class="container">
+          <p class="sv-eyebrow" data-reveal style="text-align:center;">Not Sure What You Need?</p>
+          <h2 class="sv-cta__title" id="sv-cta-title" data-reveal>
+            Tell us about your business.<br>
+            <em>We'll point you the right way.</em>
+          </h2>
+          <p class="sv-cta__text" data-reveal>
+            We'll help you identify the right starting point — nothing more than what
+            you actually need.
+          </p>
+          <div class="sv-cta__actions" data-reveal>
+            <button class="sv-btn sv-btn--solid" type="button" data-nx-modal>Start a Project</button>
+            <a class="sv-btn" href="contact.html">Talk to NoExaTech</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a class="brand" href="index.html" aria-label="NoExaTech — home">
+              <span class="brand__mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                  <path d="M5 27V5l22 22V5" stroke="url(#flg)" stroke-width="2.6" stroke-linecap="square"/>
+                  <defs>
+                    <linearGradient id="flg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <span class="brand__name">NOEXATECH</span>
+            </a>
+            <p class="footer__tagline">“New Ideas. Powered by Technology.”</p>
+            <button class="btn btn--primary btn--sm footer__cta" type="button" data-nx-modal>Start a Project</button>
+          </div>
+
+          <nav class="footer__nav" aria-label="Footer">
+            <h2 class="footer__heading">Navigation</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="work.html">Work</a></li>
+              <li><a href="process.html">Process</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer__contact">
+            <h2 class="footer__heading">Contact</h2>
+            <a href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+            <ul class="social" data-social></ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© <span data-year>2026</span> NoExaTech. All rights reserved.</p>
+          <p class="footer__built">Designed &amp; built in-house.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <!-- ===================== PROJECT CONSULTATION MODAL ===================== -->
+    <div class="nx-project-modal" id="nxProjectModal" role="dialog" aria-modal="true" aria-labelledby="nxModalTitle" hidden>
+      <div class="nx-project-modal__backdrop" data-modal-close></div>
+
+      <div class="nx-project-modal__dialog" role="document">
+        <header class="nx-project-modal__header">
+          <p class="nx-project-modal__eyebrow">Start a Project</p>
+          <h2 class="nx-project-modal__title" id="nxModalTitle">
+            Let's build <em>something useful.</em>
+          </h2>
+          <p class="nx-project-modal__text">
+            Tell us a little about your project. Your details will be prepared into a
+            WhatsApp message so we can continue the conversation directly.
+          </p>
+          <button class="nx-project-modal__close" type="button" aria-label="Close project form" data-modal-close>×</button>
+        </header>
+
+        <div class="nx-project-modal__body">
+          <div class="nx-project-modal__summary" id="nxModalSummary">
+            <span class="nx-project-modal__summary-icon" aria-hidden="true">◇</span>
+            <div class="nx-project-modal__summary-body">
+              <p class="nx-project-modal__summary-label">Selected Package</p>
+              <p class="nx-project-modal__summary-name" data-summary-name>Custom Project</p>
+              <p class="nx-project-modal__summary-price" data-summary-price>No package selected</p>
+              <div class="nx-project-modal__summary-extras" data-summary-extras></div>
+            </div>
+          </div>
+
+          <form class="nx-project-modal__form" id="nxProjectForm" novalidate>
+
+            <!-- SECTION 01 -->
+            <fieldset class="nx-project-modal__section">
+              <legend class="nx-project-modal__legend">01 — Your Details</legend>
+
+              <div class="nx-project-modal__row">
+                <div class="nx-project-modal__field">
+                  <label class="nx-project-modal__label" for="nxName">Full Name <span class="req" aria-hidden="true">*</span></label>
+                  <input id="nxName" name="fullName" type="text" placeholder="Your full name" autocomplete="name" inputmode="text" maxlength="80" required aria-describedby="nxNameError" />
+                  <p class="nx-project-modal__error" id="nxNameError" role="alert"></p>
+                </div>
+
+                <div class="nx-project-modal__field">
+                  <label class="nx-project-modal__label" for="nxEmail">Email <span class="req" aria-hidden="true">*</span></label>
+                  <input id="nxEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="nxEmailError" />
+                  <p class="nx-project-modal__error" id="nxEmailError" role="alert"></p>
+                </div>
+              </div>
+
+              <div class="nx-project-modal__row">
+                <div class="nx-project-modal__field">
+                  <label class="nx-project-modal__label" for="nxWhatsApp">WhatsApp Number <span class="req" aria-hidden="true">*</span></label>
+                  <input id="nxWhatsApp" name="whatsapp" type="tel" placeholder="+92..." autocomplete="tel" inputmode="tel" maxlength="24" required aria-describedby="nxWhatsAppError" />
+                  <p class="nx-project-modal__error" id="nxWhatsAppError" role="alert"></p>
+                </div>
+
+                <div class="nx-project-modal__field">
+                  <label class="nx-project-modal__label" for="nxBusiness">Business / Company</label>
+                  <input id="nxBusiness" name="business" type="text" placeholder="Your business or company name" autocomplete="organization" maxlength="120" />
+                  <p class="nx-project-modal__error"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- SECTION 02 -->
+            <fieldset class="nx-project-modal__section">
+              <legend class="nx-project-modal__legend">02 — Project</legend>
+
+              <div class="nx-project-modal__field" data-field="projectType">
+                <label class="nx-project-modal__label" for="nxProjectType">Project Type <span class="req" aria-hidden="true">*</span></label>
+                <select id="nxProjectType" name="projectType" required aria-describedby="nxProjectTypeError">
+                  <option value="">Select project type</option>
+                  <option value="Website Development">Website Development</option>
+                  <option value="E-Commerce">E-Commerce</option>
+                  <option value="Web Application">Web Application</option>
+                  <option value="Software Development">Software Development</option>
+                  <option value="Business Management System">Business Management System</option>
+                  <option value="Graphic Design">Graphic Design</option>
+                  <option value="Meta Marketing">Meta Marketing</option>
+                  <option value="Creative Content">Creative Content</option>
+                  <option value="Automation">Automation</option>
+                  <option value="Advanced Web &amp; E-Commerce">Advanced Web &amp; E-Commerce</option>
+                  <option value="Custom Technology Solution">Custom Technology Solution</option>
+                  <option value="Other">Other</option>
+                </select>
+                <p class="nx-project-modal__error" id="nxProjectTypeError" role="alert"></p>
+              </div>
+
+              <div class="nx-project-modal__field" data-field="budget" hidden>
+                <label class="nx-project-modal__label" for="nxBudget">Estimated Budget</label>
+                <select id="nxBudget" name="budget">
+                  <option value="">Not sure yet</option>
+                  <option value="Under PKR 25,000">Under PKR 25,000</option>
+                  <option value="PKR 25,000 – 50,000">PKR 25,000 – 50,000</option>
+                  <option value="PKR 50,000 – 100,000">PKR 50,000 – 100,000</option>
+                  <option value="PKR 100,000 – 250,000">PKR 100,000 – 250,000</option>
+                  <option value="PKR 250,000+">PKR 250,000+</option>
+                  <option value="Custom / Discuss">Custom / Discuss</option>
+                </select>
+                <p class="nx-project-modal__error" role="alert"></p>
+              </div>
+            </fieldset>
+
+            <!-- SECTION 03 -->
+            <fieldset class="nx-project-modal__section">
+              <legend class="nx-project-modal__legend">03 — Project Information</legend>
+
+              <div class="nx-project-modal__field">
+                <label class="nx-project-modal__label" for="nxDescription">Project Description <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="nxDescription" name="description" rows="5" placeholder="Tell us about your business, what you want to build, and the problem you're trying to solve..." maxlength="2000" required aria-describedby="nxDescriptionError"></textarea>
+                <p class="nx-project-modal__error" id="nxDescriptionError" role="alert"></p>
+              </div>
+
+              <div class="nx-project-modal__field">
+                <label class="nx-project-modal__label" for="nxTimeline">Timeline</label>
+                <select id="nxTimeline" name="timeline">
+                  <option value="">Not sure yet</option>
+                  <option value="As soon as possible">As soon as possible</option>
+                  <option value="1–2 weeks">1–2 weeks</option>
+                  <option value="1 month">1 month</option>
+                  <option value="1–3 months">1–3 months</option>
+                  <option value="3+ months">3+ months</option>
+                  <option value="Flexible">Flexible</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <!-- SECTION 04 -->
+            <fieldset class="nx-project-modal__section">
+              <legend class="nx-project-modal__legend">04 — Optional</legend>
+
+              <div class="nx-project-modal__field">
+                <label class="nx-project-modal__label" for="nxWebsite">Current Website</label>
+                <input id="nxWebsite" name="website" type="url" placeholder="https://example.com" autocomplete="url" inputmode="url" maxlength="300" aria-describedby="nxWebsiteError" />
+                <p class="nx-project-modal__error" id="nxWebsiteError" role="alert"></p>
+              </div>
+
+              <div class="nx-project-modal__field">
+                <label class="nx-project-modal__label" for="nxNotes">Additional Notes</label>
+                <textarea id="nxNotes" name="notes" rows="3" placeholder="Anything else you'd like us to know?" maxlength="1000"></textarea>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <footer class="nx-project-modal__actions">
+          <p class="nx-project-modal__status" data-modal-status aria-live="polite"></p>
+          <button class="sv-btn sv-btn--no-arrow" type="button" data-modal-close>Cancel</button>
+          <button class="sv-btn sv-btn--solid nx-project-modal__submit" type="submit" form="nxProjectForm" data-modal-submit>Request Consultation</button>
+        </footer>
+      </div>
+    </div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js?v=3" defer></script>
+    <script src="assets/js/project-modal.js" defer></script>
+  </body>
+</html>

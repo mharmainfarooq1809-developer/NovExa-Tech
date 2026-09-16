@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | NoExaTech</title>
+    <meta name="description" content="Get in touch with NoExaTech. Email, WhatsApp, LinkedIn, Instagram, and TikTok — or start a project brief." />
+    <meta name="theme-color" content="#050505" />
+    <link rel="canonical" href="https://noexatech.vercel.app/contact.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NoExaTech" />
+    <meta property="og:title" content="Contact | NoExaTech" />
+    <meta property="og:description" content="Get in touch with NoExaTech. Email, WhatsApp, or find us on social." />
+    <meta property="og:url" content="https://noexatech.vercel.app/contact.html" />
+    <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact | NoExaTech" />
+    <meta name="twitter:description" content="Get in touch with NoExaTech. Email, WhatsApp, or find us on social." />
+    <meta name="twitter:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <link rel="icon" href="assets/images/logo/og.png?v=3" type="image/png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/images/logo/og.png?v=3" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/main.css?v=3" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+      /* ================= Contact page — editorial layout ================= */
+
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* ---------- Hero ---------- */
+      .ctc-hero {
+        padding: 160px 0 110px;
+        position: relative;
+        overflow: hidden;
+      }
+      .ctc-hero__inner { max-width: 900px; }
+
+      .ctc-hero__label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 22px;
+      }
+      .ctc-hero__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(52px, 10vw, 148px);
+        line-height: 0.92;
+        letter-spacing: -0.035em;
+        font-weight: 700;
+        margin: 0 0 32px;
+        color: #FFFFFF;
+      }
+      .ctc-hero__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .ctc-hero__text {
+        font-size: clamp(15px, 1.5vw, 19px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 620px;
+        margin: 0;
+      }
+
+      /* ---------- Contact methods ---------- */
+      .ctc-methods {
+        padding: 40px 0 120px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ctc-methods__grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0;
+      }
+
+      .ctc-block {
+        grid-column: span 6;
+        padding: 56px 48px 56px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+      }
+      .ctc-block:nth-child(2n) {
+        grid-column: span 6;
+        padding-left: 48px;
+        padding-right: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .ctc-block__num {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        color: #00A8FF;
+        margin: 0 0 22px;
+      }
+      .ctc-block__label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        margin: 0 0 16px;
+      }
+      .ctc-block__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(26px, 3.4vw, 40px);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        font-weight: 600;
+        color: #FFFFFF;
+        margin: 0 0 18px;
+        word-break: break-word;
+      }
+      .ctc-block__title a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.25s ease;
+        word-break: break-all;
+      }
+      .ctc-block__title a:hover { color: #00A8FF; }
+
+      .ctc-block__desc {
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0 0 30px;
+        max-width: 420px;
+      }
+
+      /* Action buttons (agency-grade, not default .btn) */
+      .ctc-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 26px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+      }
+      .ctc-action::after {
+        content: "→";
+        font-size: 14px;
+        letter-spacing: 0;
+        transition: transform 0.25s ease;
+      }
+      .ctc-action:hover {
+        border-color: rgba(0, 168, 255, 0.7);
+        background: rgba(0, 168, 255, 0.08);
+        transform: translateY(-1px);
+      }
+      .ctc-action:hover::after { transform: translateX(4px); }
+
+      .ctc-action--solid {
+        background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%);
+        border-color: transparent;
+      }
+      .ctc-action--solid:hover {
+        background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%);
+        border-color: transparent;
+        box-shadow: 0 14px 34px -12px rgba(0, 168, 255, 0.6);
+      }
+
+      /* Social row */
+      .ctc-socials {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 4px;
+      }
+      .ctc-socials a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 22px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        text-decoration: none;
+        transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      }
+      .ctc-socials a::before {
+        content: "";
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: #00A8FF;
+        transition: transform 0.25s ease;
+      }
+      .ctc-socials a:hover {
+        border-color: rgba(0, 168, 255, 0.6);
+        color: #FFFFFF;
+        background: rgba(0, 168, 255, 0.06);
+        transform: translateY(-1px);
+      }
+      .ctc-socials a:hover::before { transform: scale(1.4); }
+
+      /* Availability block */
+      .ctc-availability {
+        grid-column: span 12;
+        padding: 72px 0 0;
+        border-bottom: 0;
+      }
+      .ctc-availability__status {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 22px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+      }
+      .ctc-status-dot {
+        position: relative;
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        background: #00A8FF;
+        box-shadow: 0 0 0 0 rgba(0, 168, 255, 0.7);
+        animation: ctcPulse 2.2s ease-out infinite;
+      }
+      @keyframes ctcPulse {
+        0%   { box-shadow: 0 0 0 0 rgba(0, 168, 255, 0.55); }
+        70%  { box-shadow: 0 0 0 14px rgba(0, 168, 255, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 168, 255, 0); }
+      }
+      .ctc-availability__text {
+        font-size: clamp(16px, 1.6vw, 20px);
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.62);
+        max-width: 640px;
+        margin: 0;
+      }
+
+      /* ---------- Quick paths strip ---------- */
+      .ctc-paths {
+        padding: 110px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ctc-paths__heading {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 46px;
+      }
+      .ctc-paths__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+      }
+      .ctc-path {
+        padding: 4px 40px 4px 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: padding 0.3s ease;
+      }
+      .ctc-path:last-child { border-right: 0; padding-right: 0; }
+      .ctc-path:not(:first-child) { padding-left: 40px; }
+
+      .ctc-path__q {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(18px, 2vw, 24px);
+        font-weight: 600;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0;
+      }
+      .ctc-path__a {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0;
+        transition: gap 0.25s ease;
+      }
+      .ctc-path__a::after {
+        content: "→";
+        transition: transform 0.25s ease;
+      }
+      .ctc-path:hover .ctc-path__a::after { transform: translateX(5px); }
+
+      /* ---------- Final CTA ---------- */
+      .ctc-cta {
+        padding: 140px 0 150px;
+        text-align: center;
+      }
+      .ctc-cta__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(40px, 6.4vw, 92px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 28px;
+      }
+      .ctc-cta__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .ctc-cta__text {
+        font-size: clamp(15px, 1.5vw, 18px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.55);
+        max-width: 540px;
+        margin: 0 auto 40px;
+      }
+      .ctc-cta__actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 900px) {
+        .ctc-hero { padding: 120px 0 80px; }
+        .ctc-block,
+        .ctc-block:nth-child(2n) {
+          grid-column: span 12;
+          padding: 48px 0;
+          border-left: 0;
+        }
+        .ctc-availability { padding-top: 56px; }
+        .ctc-paths { padding: 80px 0; }
+        .ctc-paths__grid { grid-template-columns: 1fr; }
+        .ctc-path,
+        .ctc-path:not(:first-child) {
+          padding: 34px 0;
+          border-right: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .ctc-path:last-child { border-bottom: 0; }
+        .ctc-cta { padding: 100px 0 110px; }
+      }
+      @media (max-width: 560px) {
+        .ctc-hero { padding: 100px 0 60px; }
+        .ctc-action { padding: 13px 22px; width: 100%; justify-content: space-between; }
+        .ctc-cta__actions .ctc-action { width: 100%; justify-content: center; }
+        .ctc-socials a { flex: 1 1 100%; justify-content: center; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ctc-status-dot { animation: none; }
+        .ctc-action, .ctc-socials a, .ctc-path__a::after { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <a class="visually-hidden" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="NoExaTech — home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+              <path d="M5 27V5l22 22V5" stroke="url(#nlg)" stroke-width="2.6" stroke-linecap="square"/>
+              <defs>
+                <linearGradient id="nlg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brand__name">NOEXATECH</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html" class="is-active" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn--primary btn--sm site-header__cta" href="#" data-nx-modal>Start a Project</a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu__nav" aria-label="Mobile">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html"><span>01</span>Home</a></li>
+          <li><a href="about.html"><span>02</span>About</a></li>
+          <li><a href="services.html"><span>03</span>Services</a></li>
+          <li><a href="work.html"><span>04</span>Work</a></li>
+          <li><a href="process.html"><span>05</span>Process</a></li>
+          <li><a href="team.html"><span>06</span>Team</a></li>
+          <li><a href="contact.html"><span>07</span>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__foot">
+        <a class="btn btn--primary" href="#" data-nx-modal>Start a Project</a>
+        <a class="mobile-menu__mail" href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- ============ MAIN ============ -->
+    <main id="main" class="page-shell">
+
+      <!-- ---------- Hero ---------- -->
+      <section class="ctc-hero">
+        <div class="container ctc-hero__inner">
+          <p class="ctc-hero__label">Contact</p>
+          <h1 class="ctc-hero__title">
+            Let's <em>connect.</em>
+          </h1>
+          <p class="ctc-hero__text">
+            Have a question, want to discuss an opportunity, or simply want to
+            reach the NoExaTech team? We're here.
+          </p>
+        </div>
+      </section>
+
+      <!-- ---------- Contact methods ---------- -->
+      <section class="ctc-methods" aria-label="Ways to reach NoExaTech">
+        <div class="container">
+          <div class="ctc-methods__grid">
+
+            <!-- 01 — Email -->
+            <article class="ctc-block">
+              <span class="ctc-block__num">01</span>
+              <p class="ctc-block__label">Email</p>
+              <h2 class="ctc-block__title">
+                <a href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+              </h2>
+              <p class="ctc-block__desc">
+                Best for detailed enquiries, documents, briefs, and anything
+                that needs a paper trail.
+              </p>
+              <a class="ctc-action" href="mailto:novexatech1809@gmail.com">Send an Email</a>
+            </article>
+
+            <!-- 02 — WhatsApp -->
+            <article class="ctc-block">
+              <span class="ctc-block__num">02</span>
+              <p class="ctc-block__label">WhatsApp</p>
+              <h2 class="ctc-block__title">Chat directly with NoExaTech</h2>
+              <p class="ctc-block__desc">
+                The fastest way to reach us. Opens WhatsApp with a short
+                pre-filled message — you press Send.
+              </p>
+              <a
+                class="ctc-action ctc-action--solid"
+                href="#"
+                data-whatsapp-link
+                data-whatsapp-message="Hello NoExaTech, I'd like to get in touch."
+                target="_blank"
+                rel="noopener noreferrer"
+              >Open WhatsApp</a>
+            </article>
+
+            <!-- 03 — Social -->
+            <article class="ctc-block">
+              <span class="ctc-block__num">03</span>
+              <p class="ctc-block__label">Social</p>
+              <h2 class="ctc-block__title">Follow &amp; connect</h2>
+              <p class="ctc-block__desc">
+                Behind-the-scenes, case studies, and product thinking —
+                wherever you prefer to scroll.
+              </p>
+              <div class="ctc-socials" data-social-pills></div>
+            </article>
+
+            <!-- 04 — Availability -->
+            <article class="ctc-block ctc-availability">
+              <span class="ctc-block__num">04</span>
+              <p class="ctc-block__label">Business Availability</p>
+              <p class="ctc-availability__status">
+                <span class="ctc-status-dot" aria-hidden="true"></span>
+                Currently Open
+              </p>
+              <p class="ctc-availability__text">
+                Available for new projects, partnerships, and technology
+                discussions. If you're building something and think we'd be a
+                good fit, we'd like to hear about it.
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- Quick paths ---------- -->
+      <section class="ctc-paths" aria-labelledby="ctc-paths-heading">
+        <div class="container">
+          <p class="ctc-paths__heading" id="ctc-paths-heading">Pick the right path</p>
+          <div class="ctc-paths__grid">
+
+            <a class="ctc-path" href="#" data-nx-modal>
+              <p class="ctc-path__q">Need a project quote?</p>
+              <p class="ctc-path__a">Start a Project</p>
+            </a>
+
+            <a class="ctc-path" href="mailto:novexatech1809@gmail.com">
+              <p class="ctc-path__q">Have a general question?</p>
+              <p class="ctc-path__a">Email Us</p>
+            </a>
+
+            <a
+              class="ctc-path"
+              href="#"
+              data-whatsapp-link
+              data-whatsapp-message="Hello NoExaTech, I have a quick question."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p class="ctc-path__q">Want to talk directly?</p>
+              <p class="ctc-path__a">WhatsApp Us</p>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- Final CTA ---------- -->
+      <section class="ctc-cta" aria-labelledby="ctc-cta-title">
+        <div class="container">
+          <h2 class="ctc-cta__title" id="ctc-cta-title">
+            Have a project in mind?<br>
+            <em>Let's build it.</em>
+          </h2>
+          <p class="ctc-cta__text">
+            Share the challenge, the goal, and the timeline. We'll take it from there.
+          </p>
+          <div class="ctc-cta__actions">
+            <a class="ctc-action ctc-action--solid" href="#" data-nx-modal>Start a Project</a>
+            <a class="ctc-action" href="work.html">See Our Work</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a class="brand" href="index.html" aria-label="NoExaTech — home">
+              <span class="brand__mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                  <path d="M5 27V5l22 22V5" stroke="url(#flg)" stroke-width="2.6" stroke-linecap="square"/>
+                  <defs>
+                    <linearGradient id="flg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <span class="brand__name">NOEXATECH</span>
+            </a>
+            <p class="footer__tagline">“New Ideas. Powered by Technology.”</p>
+            <a class="btn btn--primary btn--sm footer__cta" href="#" data-nx-modal>Start a Project</a>
+          </div>
+
+          <nav class="footer__nav" aria-label="Footer">
+            <h2 class="footer__heading">Navigation</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="work.html">Work</a></li>
+              <li><a href="process.html">Process</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer__contact">
+            <h2 class="footer__heading">Contact</h2>
+            <a href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+            <ul class="social" data-social></ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© <span data-year>2026</span> NoExaTech. All rights reserved.</p>
+          <p class="footer__built">Designed &amp; built in-house.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js?v=3" defer></script>
+    <script src="assets/js/project-modal.js" defer></script>
+  </body>
+</html>

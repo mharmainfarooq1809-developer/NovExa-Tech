@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team | NoExaTech</title>
+    <meta name="description" content="The people behind NoExaTech — technology, design, creative, and growth skills working in one direction." />
+    <meta name="theme-color" content="#050505" />
+    <link rel="canonical" href="https://noexatech.vercel.app/team.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NoExaTech" />
+    <meta property="og:title" content="Team | NoExaTech" />
+    <meta property="og:description" content="The people behind the work. Technology, design, creative, and growth — one direction." />
+    <meta property="og:url" content="https://noexatech.vercel.app/team.html" />
+    <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Team | NoExaTech" />
+    <meta name="twitter:description" content="The people behind the work." />
+    <meta name="twitter:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <link rel="icon" href="assets/images/logo/og.png?v=3" type="image/png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/images/logo/og.png?v=3" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/main.css?v=3" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+      /* ================= Team page — scoped styles ================= */
+
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Shared rhythm */
+      .tm-section {
+        padding: 130px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-section--flush { border-top: 0; }
+
+      .tm-eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 20px;
+      }
+
+      .tm-h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(32px, 4.8vw, 64px);
+        line-height: 1.04;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 24px;
+        max-width: 900px;
+      }
+      .tm-h2 em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .tm-lead {
+        font-size: clamp(15px, 1.5vw, 19px);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.66);
+        max-width: 680px;
+        margin: 0;
+      }
+
+      /* ---------- Hero ---------- */
+      .tm-hero {
+        padding: 160px 0 130px;
+        position: relative;
+        overflow: hidden;
+      }
+      .tm-hero__inner { max-width: 1080px; }
+      .tm-hero__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(42px, 7.6vw, 124px);
+        line-height: 0.94;
+        letter-spacing: -0.035em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 36px;
+      }
+      .tm-hero__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .tm-hero__text {
+        font-size: clamp(16px, 1.7vw, 20px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.62);
+        max-width: 720px;
+      }
+
+      /* ---------- Leadership block ---------- */
+      .tm-leader {
+        padding: 130px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-leader__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+        gap: 80px;
+        align-items: start;
+      }
+      .tm-leader__portrait {
+        position: relative;
+        aspect-ratio: 4 / 5;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        background:
+          radial-gradient(120% 100% at 20% 0%, rgba(0, 102, 255, 0.18) 0%, transparent 60%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0, 217, 255, 0.14) 0%, transparent 55%),
+          #0A0A0A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tm-leader__portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .tm-leader__portrait::after {
+        content: "Portrait placeholder";
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.32);
+      }
+      .tm-leader--cfo .tm-leader__portrait::after { content: none; }
+      .tm-card__photo-label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #00D9FF;
+      }
+
+      .tm-leader__name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(32px, 4vw, 52px);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: #FFFFFF;
+        margin: 0 0 12px;
+        line-height: 1.05;
+      }
+      .tm-leader__role {
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 32px;
+      }
+      .tm-leader__bio {
+        font-size: 16px;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.62);
+        margin: 0 0 22px;
+        max-width: 620px;
+      }
+
+      .tm-leader__focus {
+        margin-top: 36px;
+        padding: 26px 28px;
+        border: 1px solid rgba(0, 168, 255, 0.2);
+        border-radius: 12px;
+        background: rgba(0, 168, 255, 0.04);
+      }
+      .tm-leader__focus-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 16px;
+      }
+      .tm-leader__focus-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 24px;
+      }
+      .tm-leader__focus-list li {
+        position: relative;
+        padding-left: 18px;
+        font-size: 14px;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.72);
+      }
+      .tm-leader__focus-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #00A8FF;
+      }
+      .tm-leader__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      /* ---------- Buttons (page-scoped) ---------- */
+      .tm-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 26px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        text-decoration: none;
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      }
+      .tm-btn::after { content: "→"; font-size: 14px; transition: transform 0.25s ease; }
+      .tm-btn:hover {
+        border-color: rgba(0, 168, 255, 0.7);
+        background: rgba(0, 168, 255, 0.08);
+        transform: translateY(-1px);
+      }
+      .tm-btn:hover::after { transform: translateX(4px); }
+
+      .tm-btn--solid {
+        background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%);
+        border-color: transparent;
+      }
+      .tm-btn--solid:hover {
+        background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%);
+        border-color: transparent;
+        box-shadow: 0 14px 34px -12px rgba(0, 168, 255, 0.6);
+      }
+
+      /* ---------- Team categories ---------- */
+      .tm-categories {
+        display: grid;
+        gap: 70px;
+        margin-top: 60px;
+      }
+      .tm-category { display: grid; gap: 24px; }
+      .tm-category__head {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-category__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0;
+      }
+      .tm-category__line {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(to right, rgba(0,168,255,0.2), rgba(255,255,255,0.02));
+      }
+      .tm-category__count {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .tm-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .tm-card {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
+        transition: border-color 0.3s ease, transform 0.3s ease;
+      }
+      .tm-card:hover {
+        border-color: rgba(0, 168, 255, 0.35);
+        transform: translateY(-3px);
+      }
+      .tm-card__photo {
+        aspect-ratio: 1 / 1;
+        position: relative;
+        background:
+          radial-gradient(100% 100% at 30% 20%, rgba(0, 102, 255, 0.16) 0%, transparent 60%),
+          #0A0A0A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-card__photo::after {
+        content: "Photo";
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .tm-card__body { padding: 26px 24px 30px; }
+      .tm-card__name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0 0 6px;
+        line-height: 1.3;
+      }
+      .tm-card__role {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 14px;
+      }
+      .tm-card__desc {
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+      }
+
+      .tm-note {
+        margin-top: 40px;
+        padding: 20px 24px;
+        border: 1px solid rgba(0, 168, 255, 0.15);
+        border-radius: 10px;
+        background: rgba(0, 168, 255, 0.03);
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+      .tm-note::before {
+        content: "i";
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(0, 168, 255, 0.15);
+        color: #00A8FF;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        font-style: italic;
+        line-height: 1;
+      }
+      .tm-note__text {
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0;
+      }
+
+      /* ---------- What each team does ---------- */
+      .tm-caps {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-cap {
+        padding: 44px 48px 44px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-cap:nth-child(2n) {
+        padding-left: 48px;
+        padding-right: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-cap__label {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 14px;
+      }
+      .tm-cap__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0 0 12px;
+      }
+      .tm-cap__desc {
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.58);
+        margin: 0;
+        max-width: 480px;
+      }
+
+      /* ---------- How we work together (flow) ---------- */
+      .tm-flow {
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-flow__step {
+        display: grid;
+        grid-template-columns: 80px 1fr minmax(0, 1.4fr);
+        gap: 40px;
+        align-items: baseline;
+        padding: 30px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: padding 0.3s ease;
+      }
+      .tm-flow__step:hover { padding-left: 12px; }
+      .tm-flow__num {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        color: #00A8FF;
+      }
+      .tm-flow__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(18px, 2.2vw, 26px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        color: #FFFFFF;
+        margin: 0;
+        line-height: 1.2;
+      }
+      .tm-flow__desc {
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+      }
+
+      .tm-flow__claim {
+        margin: 56px 0 0;
+        padding: 34px 40px;
+        border: 1px solid rgba(0, 168, 255, 0.22);
+        border-radius: 14px;
+        background:
+          radial-gradient(120% 100% at 100% 0%, rgba(0, 168, 255, 0.08) 0%, transparent 60%),
+          rgba(255, 255, 255, 0.015);
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(22px, 2.8vw, 34px);
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+        font-weight: 500;
+        color: #FFFFFF;
+        text-align: center;
+      }
+      .tm-flow__claim em {
+        font-style: normal;
+        color: #00A8FF;
+      }
+
+      /* ---------- Values ---------- */
+      .tm-values {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-value {
+        padding: 40px 30px 40px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-value:nth-child(4n) { border-right: 0; padding-right: 0; }
+      .tm-value:not(:nth-child(4n + 1)) { padding-left: 30px; }
+      .tm-value__num {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        color: #00A8FF;
+        margin: 0 0 16px;
+      }
+      .tm-value__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0 0 10px;
+        line-height: 1.3;
+      }
+      .tm-value__desc {
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+      }
+
+      /* ---------- Final CTA ---------- */
+      .tm-cta {
+        padding: 150px 0 160px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .tm-cta__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(38px, 6vw, 88px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 26px;
+      }
+      .tm-cta__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .tm-cta__text {
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.58);
+        max-width: 620px;
+        margin: 0 auto 44px;
+      }
+      .tm-cta__actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 1080px) {
+        .tm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .tm-values { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .tm-value:nth-child(4n) { border-right: 1px solid rgba(255, 255, 255, 0.08); padding-right: 30px; }
+        .tm-value:nth-child(2n) { border-right: 0; padding-right: 0; }
+        .tm-value:not(:nth-child(4n + 1)) { padding-left: 30px; }
+        .tm-value:nth-child(2n + 1) { padding-left: 0; }
+      }
+      @media (max-width: 960px) {
+        .tm-section { padding: 90px 0; }
+        .tm-hero { padding: 120px 0 90px; }
+        .tm-leader__grid { grid-template-columns: 1fr; gap: 40px; }
+        .tm-leader { padding: 100px 0; }
+        .tm-caps { grid-template-columns: 1fr; }
+        .tm-cap, .tm-cap:nth-child(2n) { padding: 30px 0; border-left: 0; }
+        .tm-flow__step { grid-template-columns: 60px 1fr; gap: 20px; }
+        .tm-flow__desc { grid-column: 2; }
+        .tm-leader__focus-list { grid-template-columns: 1fr; }
+        .tm-cta { padding: 100px 0 110px; }
+      }
+      @media (max-width: 640px) {
+        .tm-hero { padding: 100px 0 60px; }
+        .tm-grid { grid-template-columns: 1fr; }
+        .tm-values { grid-template-columns: 1fr; }
+        .tm-value, .tm-value:nth-child(2n), .tm-value:nth-child(4n), .tm-value:not(:nth-child(4n + 1)), .tm-value:nth-child(2n + 1) {
+          padding: 30px 0;
+          border-right: 0;
+        }
+        .tm-flow__claim { padding: 26px 22px; }
+        .tm-btn { width: 100%; justify-content: space-between; }
+        .tm-cta__actions .tm-btn { justify-content: center; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .tm-card, .tm-btn, .tm-flow__step { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <a class="visually-hidden" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="NoExaTech — home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+              <path d="M5 27V5l22 22V5" stroke="url(#nlg)" stroke-width="2.6" stroke-linecap="square"/>
+              <defs>
+                <linearGradient id="nlg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brand__name">NOEXATECH</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="team.html" class="is-active" aria-current="page">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn--primary btn--sm site-header__cta" href="#" data-nx-modal>Start a Project</a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu__nav" aria-label="Mobile">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html"><span>01</span>Home</a></li>
+          <li><a href="about.html"><span>02</span>About</a></li>
+          <li><a href="services.html"><span>03</span>Services</a></li>
+          <li><a href="work.html"><span>04</span>Work</a></li>
+          <li><a href="process.html"><span>05</span>Process</a></li>
+          <li><a href="team.html"><span>06</span>Team</a></li>
+          <li><a href="contact.html"><span>07</span>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__foot">
+        <a class="btn btn--primary" href="#" data-nx-modal>Start a Project</a>
+        <a class="mobile-menu__mail" href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- ============ MAIN ============ -->
+    <main id="main" class="page-shell">
+
+      <!-- ---------- Hero ---------- -->
+      <section class="tm-hero">
+        <div class="container tm-hero__inner">
+          <p class="tm-eyebrow" data-reveal>Team</p>
+          <h1 class="tm-hero__title" data-reveal>
+            The people behind<br>
+            <em>the work.</em>
+          </h1>
+          <p class="tm-hero__text" data-reveal>
+            NoExaTech brings together technology, design, creative, and growth skills
+            to build practical digital solutions for businesses.
+          </p>
+        </div>
+      </section>
+
+      <!-- ---------- 01 — Leadership ---------- -->
+      <section class="tm-leader" aria-labelledby="tm-leader-title">
+        <div class="container tm-leader__grid">
+          <div class="tm-leader__portrait" role="img" aria-label="Portrait of Muhammad Harmain">
+            <img src="assets/images/team/founder.jpg" alt="Portrait of Muhammad Harmain" loading="lazy" onerror="this.hidden=true" />
+          </div>
+
+          <div data-reveal>
+            <p class="tm-eyebrow">Leadership</p>
+            <h2 class="tm-leader__name" id="tm-leader-title">Muhammad Harmain</h2>
+            <p class="tm-leader__role">Founder &amp; CEO — NoExaTech</p>
+
+            <p class="tm-leader__bio">
+              Muhammad Harmain leads NoExaTech's direction, client solutions, and
+              digital service delivery. His focus is on building practical technology
+              for businesses and turning ideas into professional, long-lasting digital
+              products.
+            </p>
+            <p class="tm-leader__bio">
+              He works directly with clients on direction and scope, and stays
+              involved across the projects the studio delivers — from the first
+              conversation to launch and beyond.
+            </p>
+
+            <div class="tm-leader__focus" data-reveal>
+              <p class="tm-leader__focus-title">Leadership Focus</p>
+              <ul class="tm-leader__focus-list">
+                <li>Practical technology solutions</li>
+                <li>Professional digital experiences</li>
+                <li>Business-focused website development</li>
+                <li>Flexible digital growth services</li>
+                <li>Long-term, scalable solutions</li>
+              </ul>
+            </div>
+
+            <div class="tm-leader__actions">
+              <a class="tm-btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="tm-btn" href="contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 02 — Finance Leadership ---------- -->
+      <section class="tm-leader tm-leader--cfo" aria-labelledby="tm-cfo-title">
+        <div class="container tm-leader__grid">
+          <div class="tm-leader__portrait" role="img" aria-label="Portrait placeholder for the NoExaTech CFO">
+            <span class="tm-card__photo-label">CFO</span>
+          </div>
+
+          <div data-reveal>
+            <p class="tm-eyebrow">Finance Leadership</p>
+            <h2 class="tm-leader__name" id="tm-cfo-title">Chief Financial Officer</h2>
+            <p class="tm-leader__role">CFO — NoExaTech</p>
+
+            <p class="tm-leader__bio">
+              The CFO supports NoExaTech's financial direction, planning, and sustainable
+              growth as the studio builds long-term partnerships with businesses.
+            </p>
+            <p class="tm-leader__bio">
+              This profile will be updated with the CFO's name, portrait, and full
+              background once the details are confirmed.
+            </p>
+
+            <div class="tm-leader__focus" data-reveal>
+              <p class="tm-leader__focus-title">Finance Focus</p>
+              <ul class="tm-leader__focus-list">
+                <li>Financial planning and oversight</li>
+                <li>Sustainable business growth</li>
+                <li>Operational budgeting</li>
+                <li>Client and project profitability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 03 — Our Team ---------- -->
+      <section class="tm-section" aria-labelledby="tm-team-title">
+        <div class="container">
+          <p class="tm-eyebrow" data-reveal>Our Team</p>
+          <h2 class="tm-h2" id="tm-team-title" data-reveal>
+            The people who <em>build, design, and grow.</em>
+          </h2>
+          <p class="tm-lead" data-reveal>
+            Team members are shown once they are confirmed. Placeholders below
+            represent the roles NoExaTech is structured around.
+          </p>
+
+          <div class="tm-categories">
+
+            <!-- TECHNOLOGY -->
+            <div class="tm-category" data-reveal>
+              <div class="tm-category__head">
+                <h3 class="tm-category__title">Technology</h3>
+                <span class="tm-category__line" aria-hidden="true"></span>
+                <span class="tm-category__count">Web · App · Software</span>
+              </div>
+              <div class="tm-grid">
+                <article class="tm-card">
+                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+                  <div class="tm-card__body">
+                    <h4 class="tm-card__name">Team Member</h4>
+                    <p class="tm-card__role">Web Developer</p>
+                    <p class="tm-card__desc">Builds fast, responsive websites and front-end experiences.</p>
+                  </div>
+                </article>
+                <article class="tm-card">
+                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+                  <div class="tm-card__body">
+                    <h4 class="tm-card__name">Team Member</h4>
+                    <p class="tm-card__role">App Developer</p>
+                    <p class="tm-card__desc">Works on mobile and cross-platform applications.</p>
+                  </div>
+                </article>
+                <article class="tm-card">
+                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+                  <div class="tm-card__body">
+                    <h4 class="tm-card__name">Team Member</h4>
+                    <p class="tm-card__role">Software Developer</p>
+                    <p class="tm-card__desc">Handles custom systems, integrations, and back-end logic.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- DESIGN & CREATIVE -->
+            <div class="tm-category" data-reveal>
+              <div class="tm-category__head">
+                <h3 class="tm-category__title">Design &amp; Creative</h3>
+                <span class="tm-category__line" aria-hidden="true"></span>
+                <span class="tm-category__count">UI/UX · Graphic · Video</span>
+              </div>
+              <div class="tm-grid">
+                <article class="tm-card">
+                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+                  <div class="tm-card__body">
+                    <h4 class="tm-card__name">Team Member</h4>
+                    <p class="tm-card__role">UI/UX Designer</p>
+                    <p class="tm-card__desc">Designs user interfaces, flows, and product experiences.</p>
+                  </div>
+                </article>
+                <article class="tm-card">
+                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+                  <div class="tm-card__body">
+                    <h4 class="tm-card__name">Team Member</h4>
+                    <p class="tm-card__role">Graphic Designer</p>
+                    <p class="tm-card__desc">Creates brand visuals, social creatives, and print assets.</p>
+                  </div>
+                </article>
+                <article class="tm-card">
+                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+                  <div class="tm-card__body">
+                    <h4 class="tm-card__name">Team Member</h4>
+                    <p class="tm-card__role">Video Editor</p>
+                    <p class="tm-card__desc">Produces reels, promotional videos, and campaign content.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- GROWTH -->
+            <div class="tm-category" data-reveal>
+              <div class="tm-category__head">
+                <h3 class="tm-category__title">Growth</h3>
+                <span class="tm-category__line" aria-hidden="true"></span>
+                <span class="tm-category__count">Marketing · Ads · Content</span>
+              </div>
+              <div class="tm-grid">
+                <article class="tm-card">
+                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+                  <div class="tm-card__body">
+                    <h4 class="tm-card__name">Team Member</h4>
+                    <p class="tm-card__role">Digital Marketer</p>
+                    <p class="tm-card__desc">Plans campaigns and manages digital growth across channels.</p>
+                  </div>
+                </article>
+                <article class="tm-card">
+                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+                  <div class="tm-card__body">
+                    <h4 class="tm-card__name">Team Member</h4>
+                    <p class="tm-card__role">Meta Ads Specialist</p>
+                    <p class="tm-card__desc">Runs Facebook and Instagram campaigns, targeting, and optimization.</p>
+                  </div>
+                </article>
+                <article class="tm-card">
+                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+                  <div class="tm-card__body">
+                    <h4 class="tm-card__name">Team Member</h4>
+                    <p class="tm-card__role">Content Specialist</p>
+                    <p class="tm-card__desc">Shapes messaging, social content, and audience strategy.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tm-note" data-reveal>
+            <p class="tm-note__text">
+              Placeholders above represent team roles, not real people. Names and
+              profiles will be published once each team member is confirmed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 03 — What each team does ---------- -->
+      <section class="tm-section" aria-labelledby="tm-caps-title">
+        <div class="container">
+          <p class="tm-eyebrow" data-reveal>What Each Team Does</p>
+          <h2 class="tm-h2" id="tm-caps-title" data-reveal>
+            Different skills. <em>One direction.</em>
+          </h2>
+          <p class="tm-lead" data-reveal>
+            Each part of the studio owns a specific layer of the work — and hands it
+            to the next with the full picture in mind.
+          </p>
+
+          <div class="tm-caps" data-reveal>
+            <div class="tm-cap">
+              <span class="tm-cap__label">Technology</span>
+              <h3 class="tm-cap__title">Builds the product</h3>
+              <p class="tm-cap__desc">
+                Websites, applications, software, business systems, and custom
+                solutions — built to be reliable and grow with the business.
+              </p>
+            </div>
+            <div class="tm-cap">
+              <span class="tm-cap__label">Design</span>
+              <h3 class="tm-cap__title">Shapes the experience</h3>
+              <p class="tm-cap__desc">
+                User interfaces, brand visuals, social creatives, and the visual
+                direction of every product and campaign.
+              </p>
+            </div>
+            <div class="tm-cap">
+              <span class="tm-cap__label">Creative</span>
+              <h3 class="tm-cap__title">Produces the content</h3>
+              <p class="tm-cap__desc">
+                Videos, reels, promotional content, and campaign assets that carry the
+                brand across every channel.
+              </p>
+            </div>
+            <div class="tm-cap">
+              <span class="tm-cap__label">Growth</span>
+              <h3 class="tm-cap__title">Reaches the audience</h3>
+              <p class="tm-cap__desc">
+                Social media, Meta advertising, audience strategy, and lead generation
+                — connecting the product to the people who need it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 04 — How we work together ---------- -->
+      <section class="tm-section" aria-labelledby="tm-flow-title">
+        <div class="container">
+          <p class="tm-eyebrow" data-reveal>How We Work Together</p>
+          <h2 class="tm-h2" id="tm-flow-title" data-reveal>
+            The same project, <em>six different hands.</em>
+          </h2>
+
+          <ol class="tm-flow" data-reveal>
+            <li class="tm-flow__step">
+              <span class="tm-flow__num">01</span>
+              <h3 class="tm-flow__title">Business Requirement</h3>
+              <p class="tm-flow__desc">Understanding what the business actually needs.</p>
+            </li>
+            <li class="tm-flow__step">
+              <span class="tm-flow__num">02</span>
+              <h3 class="tm-flow__title">Strategy</h3>
+              <p class="tm-flow__desc">Defining the direction, scope, and priorities before anything is built.</p>
+            </li>
+            <li class="tm-flow__step">
+              <span class="tm-flow__num">03</span>
+              <h3 class="tm-flow__title">Design + Technology</h3>
+              <p class="tm-flow__desc">Interfaces and engineering shaped together, not in isolation.</p>
+            </li>
+            <li class="tm-flow__step">
+              <span class="tm-flow__num">04</span>
+              <h3 class="tm-flow__title">Content + Growth</h3>
+              <p class="tm-flow__desc">Creative and marketing prepared alongside the product.</p>
+            </li>
+            <li class="tm-flow__step">
+              <span class="tm-flow__num">05</span>
+              <h3 class="tm-flow__title">Launch</h3>
+              <p class="tm-flow__desc">Product, content, and campaigns go live together.</p>
+            </li>
+            <li class="tm-flow__step">
+              <span class="tm-flow__num">06</span>
+              <h3 class="tm-flow__title">Ongoing Improvement</h3>
+              <p class="tm-flow__desc">Where agreed, the same team continues to refine and extend.</p>
+            </li>
+          </ol>
+
+          <p class="tm-flow__claim" data-reveal>
+            Different skills. <em>One direction.</em>
+          </p>
+        </div>
+      </section>
+
+      <!-- ---------- 05 — Team values ---------- -->
+      <section class="tm-section" aria-labelledby="tm-values-title">
+        <div class="container">
+          <p class="tm-eyebrow" data-reveal>How We Work</p>
+          <h2 class="tm-h2" id="tm-values-title" data-reveal>
+            A few things <em>we hold to.</em>
+          </h2>
+
+          <div class="tm-values" data-reveal>
+            <div class="tm-value">
+              <span class="tm-value__num">01</span>
+              <h3 class="tm-value__title">Own the Work</h3>
+              <p class="tm-value__desc">Take responsibility for quality — from the first draft to the final release.</p>
+            </div>
+            <div class="tm-value">
+              <span class="tm-value__num">02</span>
+              <h3 class="tm-value__title">Solve the Actual Problem</h3>
+              <p class="tm-value__desc">Don't build unnecessary technology. Build what the business actually needs.</p>
+            </div>
+            <div class="tm-value">
+              <span class="tm-value__num">03</span>
+              <h3 class="tm-value__title">Communicate Clearly</h3>
+              <p class="tm-value__desc">Keep decisions and progress understandable — for the client and the team.</p>
+            </div>
+            <div class="tm-value">
+              <span class="tm-value__num">04</span>
+              <h3 class="tm-value__title">Keep Learning</h3>
+              <p class="tm-value__desc">Technology and digital platforms keep changing. So do we.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 06 — Final CTA ---------- -->
+      <section class="tm-cta" aria-labelledby="tm-cta-title">
+        <div class="container">
+          <h2 class="tm-cta__title" id="tm-cta-title" data-reveal>
+            Looking for a team<br>
+            <em>to build with?</em>
+          </h2>
+          <p class="tm-cta__text" data-reveal>
+            Tell us what you're trying to create.
+          </p>
+          <div class="tm-cta__actions" data-reveal>
+            <a class="tm-btn tm-btn--solid" href="#" data-nx-modal>Start a Project</a>
+            <a class="tm-btn" href="work.html">See Our Work</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a class="brand" href="index.html" aria-label="NoExaTech — home">
+              <span class="brand__mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                  <path d="M5 27V5l22 22V5" stroke="url(#flg)" stroke-width="2.6" stroke-linecap="square"/>
+                  <defs>
+                    <linearGradient id="flg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <span class="brand__name">NOEXATECH</span>
+            </a>
+            <p class="footer__tagline">“New Ideas. Powered by Technology.”</p>
+            <a class="btn btn--primary btn--sm footer__cta" href="#" data-nx-modal>Start a Project</a>
+          </div>
+
+          <nav class="footer__nav" aria-label="Footer">
+            <h2 class="footer__heading">Navigation</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="work.html">Work</a></li>
+              <li><a href="process.html">Process</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer__contact">
+            <h2 class="footer__heading">Contact</h2>
+            <a href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+            <ul class="social" data-social></ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© <span data-year>2026</span> NoExaTech. All rights reserved.</p>
+          <p class="footer__built">Designed &amp; built in-house.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js?v=3" defer></script>
+    <script src="assets/js/project-modal.js" defer></script>
+  </body>
+</html>

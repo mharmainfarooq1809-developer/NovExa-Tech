@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | NoExaTech</title>
+    <meta name="description" content="NoExaTech is a technology company, digital product studio, and creative digital agency. We build technology around the business — not the other way around." />
+    <meta name="theme-color" content="#050505" />
+    <link rel="canonical" href="https://noexatech.vercel.app/about.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NoExaTech" />
+    <meta property="og:title" content="About | NoExaTech" />
+    <meta property="og:description" content="We build technology around the business. NoExaTech is a technology company, digital product studio, and creative digital agency." />
+    <meta property="og:url" content="https://noexatech.vercel.app/about.html" />
+    <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About | NoExaTech" />
+    <meta name="twitter:description" content="We build technology around the business." />
+    <meta name="twitter:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <link rel="icon" href="assets/images/logo/og.png?v=3" type="image/png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/images/logo/og.png?v=3" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/main.css?v=3" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+      /* ================= About page — scoped editorial styles ================= */
+
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* ---------- Shared section rhythm ---------- */
+      .ab-section {
+        padding: 130px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-section--flush { border-top: 0; }
+      .ab-section--tight { padding: 90px 0; }
+
+      .ab-eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 22px;
+      }
+
+      .ab-h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(34px, 5vw, 68px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 32px;
+        max-width: 900px;
+      }
+      .ab-h2 em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .ab-lead {
+        font-size: clamp(16px, 1.6vw, 20px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.68);
+        max-width: 640px;
+        margin: 0;
+      }
+
+      .ab-body {
+        font-size: 16px;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.62);
+      }
+      .ab-body p { margin: 0 0 22px; }
+      .ab-body p:last-child { margin-bottom: 0; }
+      .ab-body strong { color: #FFFFFF; font-weight: 600; }
+
+      /* ---------- Hero ---------- */
+      .ab-hero {
+        padding: 160px 0 120px;
+        position: relative;
+        overflow: hidden;
+      }
+      .ab-hero__inner { max-width: 1100px; }
+      .ab-hero__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(44px, 8vw, 124px);
+        line-height: 0.94;
+        letter-spacing: -0.035em;
+        font-weight: 700;
+        margin: 0 0 40px;
+        color: #FFFFFF;
+      }
+      .ab-hero__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .ab-hero__text {
+        font-size: clamp(16px, 1.7vw, 20px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.62);
+        max-width: 680px;
+      }
+
+      /* ---------- Two-column editorial layout ---------- */
+      .ab-split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+        gap: 80px;
+        align-items: start;
+      }
+      .ab-split__side {
+        position: sticky;
+        top: 120px;
+      }
+      .ab-split__side .ab-eyebrow { margin-bottom: 18px; }
+      .ab-split__side .ab-h2 { margin-bottom: 0; }
+
+      /* ---------- Philosophy statement ---------- */
+      .ab-philosophy {
+        padding: 140px 0;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-philosophy__quote {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(30px, 4.6vw, 60px);
+        line-height: 1.18;
+        letter-spacing: -0.025em;
+        font-weight: 500;
+        color: #FFFFFF;
+        margin: 0 auto 36px;
+        max-width: 960px;
+      }
+      .ab-philosophy__quote em {
+        font-style: normal;
+        color: #00A8FF;
+      }
+      .ab-philosophy__note {
+        font-size: 15px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.5);
+        max-width: 620px;
+        margin: 0 auto;
+      }
+
+      /* ---------- Principles grid ---------- */
+      .ab-principles {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-principle {
+        padding: 44px 48px 44px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-principle:nth-child(2n) {
+        padding-left: 48px;
+        padding-right: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-principle__num {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        color: #00A8FF;
+        margin: 0 0 16px;
+      }
+      .ab-principle__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0 0 12px;
+      }
+      .ab-principle__desc {
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+        max-width: 420px;
+      }
+
+      /* ---------- Positioning band ---------- */
+      .ab-position {
+        padding: 120px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-position__list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        margin: 56px 0 0;
+      }
+      .ab-position__item {
+        padding: 8px 40px 8px 0;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-position__item:last-child { border-right: 0; padding-right: 0; }
+      .ab-position__item:not(:first-child) { padding-left: 40px; }
+      .ab-position__label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(20px, 2.2vw, 28px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        color: #FFFFFF;
+        margin: 0 0 14px;
+        line-height: 1.25;
+      }
+      .ab-position__desc {
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+      }
+
+      /* ---------- Process list ---------- */
+      .ab-process {
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-process__step {
+        display: grid;
+        grid-template-columns: 80px 1fr minmax(0, 1.4fr);
+        gap: 40px;
+        align-items: baseline;
+        padding: 32px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: padding 0.3s ease;
+      }
+      .ab-process__step:hover { padding-left: 12px; }
+      .ab-process__num {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        color: #00A8FF;
+      }
+      .ab-process__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(20px, 2.4vw, 30px);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+        margin: 0;
+        line-height: 1.2;
+      }
+      .ab-process__desc {
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+      }
+
+      /* ---------- Founder block ---------- */
+      .ab-founder {
+        padding: 140px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-founder__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+        gap: 80px;
+        align-items: center;
+      }
+      .ab-founder__portrait {
+        position: relative;
+        aspect-ratio: 4 / 5;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        background:
+          radial-gradient(120% 100% at 20% 0%, rgba(0, 102, 255, 0.18) 0%, transparent 60%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0, 217, 255, 0.14) 0%, transparent 55%),
+          #0A0A0A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ab-founder__portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .ab-founder__portrait::after {
+        content: "Portrait placeholder";
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+      }
+      .ab-founder__name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(32px, 4vw, 52px);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: #FFFFFF;
+        margin: 0 0 12px;
+        line-height: 1.05;
+      }
+      .ab-founder__role {
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 32px;
+      }
+      .ab-founder__bio {
+        font-size: 16px;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.62);
+        margin: 0 0 22px;
+      }
+      .ab-founder__vision {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 17px;
+        line-height: 1.55;
+        color: #FFFFFF;
+        padding: 22px 26px;
+        border-left: 2px solid #00A8FF;
+        background: rgba(0, 168, 255, 0.04);
+        margin: 30px 0 34px;
+      }
+      .ab-founder__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      /* ---------- Buttons (page-scoped, complement .btn) ---------- */
+      .ab-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 26px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        text-decoration: none;
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      }
+      .ab-btn::after { content: "→"; font-size: 14px; transition: transform 0.25s ease; }
+      .ab-btn:hover {
+        border-color: rgba(0, 168, 255, 0.7);
+        background: rgba(0, 168, 255, 0.08);
+        transform: translateY(-1px);
+      }
+      .ab-btn:hover::after { transform: translateX(4px); }
+
+      .ab-btn--solid {
+        background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%);
+        border-color: transparent;
+      }
+      .ab-btn--solid:hover {
+        background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%);
+        box-shadow: 0 14px 34px -12px rgba(0, 168, 255, 0.6);
+      }
+
+      /* ---------- Team preview ---------- */
+      .ab-team {
+        padding: 130px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-team__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+        margin-top: 60px;
+      }
+      .ab-team-card {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.015);
+        transition: border-color 0.3s ease, transform 0.3s ease;
+      }
+      .ab-team-card:hover {
+        border-color: rgba(0, 168, 255, 0.4);
+        transform: translateY(-3px);
+      }
+      .ab-team-card__photo {
+        aspect-ratio: 1 / 1;
+        background:
+          radial-gradient(100% 100% at 30% 20%, rgba(0, 102, 255, 0.18) 0%, transparent 60%),
+          #0A0A0A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-team-card__photo::after {
+        content: "Photo";
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+      }
+      .ab-team-card__body { padding: 26px 24px 30px; }
+      .ab-team-card__name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0 0 6px;
+      }
+      .ab-team-card__role {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 14px;
+      }
+      .ab-team-card__desc {
+        font-size: 14px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+      }
+      .ab-team__cta {
+        margin-top: 56px;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* ---------- Capabilities grid ---------- */
+      .ab-capabilities {
+        padding: 130px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-capabilities__grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-capability {
+        padding: 34px 24px 34px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        text-decoration: none;
+        color: inherit;
+        transition: padding 0.3s ease;
+        display: block;
+      }
+      .ab-capability:nth-child(4n) { border-right: 0; padding-right: 0; }
+      .ab-capability:not(:nth-child(4n + 1)) { padding-left: 24px; }
+      .ab-capability:hover { padding-left: 32px; }
+      .ab-capability:nth-child(4n):hover { padding-left: 24px; padding-right: 8px; }
+      .ab-capability__name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0;
+      }
+      .ab-capability:hover .ab-capability__name { color: #00A8FF; }
+
+      .ab-capabilities__cta { margin-top: 56px; }
+
+      /* ---------- Why band ---------- */
+      .ab-why {
+        padding: 130px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-why__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-why__item {
+        padding: 40px 48px 40px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-why__item:nth-child(2n) {
+        padding-left: 48px;
+        padding-right: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-why__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0 0 12px;
+      }
+      .ab-why__desc {
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+        max-width: 460px;
+      }
+
+      /* ---------- Final CTA ---------- */
+      .ab-cta {
+        padding: 150px 0 160px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .ab-cta__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(40px, 6.4vw, 92px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 26px;
+      }
+      .ab-cta__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .ab-cta__text {
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.58);
+        max-width: 560px;
+        margin: 0 auto 44px;
+      }
+      .ab-cta__actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 960px) {
+        .ab-section { padding: 90px 0; }
+        .ab-section--tight { padding: 70px 0; }
+        .ab-hero { padding: 120px 0 80px; }
+        .ab-split,
+        .ab-founder__grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .ab-split__side { position: static; }
+        .ab-position__list { grid-template-columns: 1fr; }
+        .ab-position__item,
+        .ab-position__item:not(:first-child) {
+          padding: 30px 0;
+          border-right: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .ab-position__item:last-child { border-bottom: 0; }
+        .ab-process__step {
+          grid-template-columns: 60px 1fr;
+          gap: 20px;
+        }
+        .ab-process__desc { grid-column: 2; }
+        .ab-team__grid { grid-template-columns: 1fr; }
+        .ab-capabilities__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .ab-capability:nth-child(4n) { border-right: 1px solid rgba(255, 255, 255, 0.08); padding-right: 24px; }
+        .ab-capability:nth-child(2n) { border-right: 0; padding-right: 0; }
+        .ab-capability:not(:nth-child(4n + 1)) { padding-left: 24px; }
+        .ab-capability:nth-child(2n + 1) { padding-left: 0; }
+        .ab-philosophy { padding: 100px 0; }
+        .ab-founder { padding: 100px 0; }
+        .ab-team, .ab-capabilities, .ab-why { padding: 90px 0; }
+        .ab-cta { padding: 100px 0 110px; }
+      }
+      @media (max-width: 560px) {
+        .ab-hero { padding: 100px 0 60px; }
+        .ab-principles { grid-template-columns: 1fr; }
+        .ab-principle,
+        .ab-principle:nth-child(2n) {
+          padding: 34px 0;
+          border-left: 0;
+        }
+        .ab-why__grid { grid-template-columns: 1fr; }
+        .ab-why__item,
+        .ab-why__item:nth-child(2n) {
+          padding: 30px 0;
+          border-left: 0;
+        }
+        .ab-capabilities__grid { grid-template-columns: 1fr; }
+        .ab-capability,
+        .ab-capability:nth-child(2n),
+        .ab-capability:nth-child(4n) {
+          padding: 26px 0;
+          border-right: 0;
+        }
+        .ab-capability:hover { padding-left: 0; color: inherit; }
+        .ab-btn { width: 100%; justify-content: space-between; }
+        .ab-cta__actions .ab-btn { justify-content: center; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ab-capability, .ab-team-card, .ab-btn, .ab-process__step { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <a class="visually-hidden" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="NoExaTech — home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+              <path d="M5 27V5l22 22V5" stroke="url(#nlg)" stroke-width="2.6" stroke-linecap="square"/>
+              <defs>
+                <linearGradient id="nlg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brand__name">NOEXATECH</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="is-active" aria-current="page">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn--primary btn--sm site-header__cta" href="#" data-nx-modal>Start a Project</a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu__nav" aria-label="Mobile">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html"><span>01</span>Home</a></li>
+          <li><a href="about.html"><span>02</span>About</a></li>
+          <li><a href="services.html"><span>03</span>Services</a></li>
+          <li><a href="work.html"><span>04</span>Work</a></li>
+          <li><a href="process.html"><span>05</span>Process</a></li>
+          <li><a href="team.html"><span>06</span>Team</a></li>
+          <li><a href="contact.html"><span>07</span>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__foot">
+        <a class="btn btn--primary" href="#" data-nx-modal>Start a Project</a>
+        <a class="mobile-menu__mail" href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- ============ MAIN ============ -->
+    <main id="main" class="page-shell">
+
+      <!-- ---------- 1. Hero ---------- -->
+      <section class="ab-hero">
+        <div class="container ab-hero__inner">
+          <p class="ab-eyebrow" data-reveal>About NoExaTech</p>
+          <h1 class="ab-hero__title" data-reveal>
+            We build technology<br>
+            <em>around the business.</em>
+          </h1>
+          <p class="ab-hero__text" data-reveal>
+            NoExaTech helps businesses turn ideas, challenges, and opportunities into
+            digital products and technology solutions — without forcing the business to
+            adapt to the technology.
+          </p>
+        </div>
+      </section>
+
+      <!-- ---------- 2. Our Story ---------- -->
+      <section class="ab-section ab-section--flush" aria-labelledby="ab-story-title">
+        <div class="container ab-split">
+          <div class="ab-split__side">
+            <p class="ab-eyebrow">Our Story</p>
+            <h2 class="ab-h2" id="ab-story-title">Why NoExaTech exists.</h2>
+          </div>
+          <div class="ab-body" data-reveal>
+            <p>
+              NoExaTech started from a simple frustration: too many digital projects
+              begin with the technology and only later ask what the business actually
+              needs. That order is backwards — and it shows in the result.
+            </p>
+            <p>
+              We founded NoExaTech to work the other way around. <strong>Understand the
+              business first. Understand the problem. Then choose the technology that
+              fits.</strong> Sometimes that's a website. Sometimes it's a custom system.
+              Sometimes it's nothing more than a better-configured tool the business
+              already owns.
+            </p>
+            <p>
+              We're not interested in selling the same template to every client. We're
+              interested in building something that works for the specific business in
+              front of us — its users, its goals, its constraints, and its budget.
+            </p>
+            <p>
+              What we want NoExaTech to become is a long-term technology partner for
+              the businesses we work with. Not a vendor that disappears after launch.
+              Not a one-time project. A studio that keeps understanding, building, and
+              improving as the business grows.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 3. What We Believe ---------- -->
+      <section class="ab-philosophy" aria-labelledby="ab-philosophy-title">
+        <div class="container">
+          <p class="ab-eyebrow" style="text-align:center;">What We Believe</p>
+          <h2 class="ab-philosophy__quote" id="ab-philosophy-title" data-reveal>
+            Understand the business first.<br>
+            <em>Build technology around the business.</em>
+          </h2>
+          <p class="ab-philosophy__note" data-reveal>
+            We don't believe every business needs the same technology. The right
+            solution should fit the business, the users, the goals, and the budget —
+            not the other way around.
+          </p>
+
+          <div class="ab-principles" data-reveal>
+            <article class="ab-principle">
+              <span class="ab-principle__num">01</span>
+              <h3 class="ab-principle__title">Business First</h3>
+              <p class="ab-principle__desc">
+                Understand the problem before choosing the technology.
+              </p>
+            </article>
+            <article class="ab-principle">
+              <span class="ab-principle__num">02</span>
+              <h3 class="ab-principle__title">Purpose Built</h3>
+              <p class="ab-principle__desc">
+                Build solutions around actual requirements, not assumptions.
+              </p>
+            </article>
+            <article class="ab-principle">
+              <span class="ab-principle__num">03</span>
+              <h3 class="ab-principle__title">Quality Matters</h3>
+              <p class="ab-principle__desc">
+                Focus on useful, polished, reliable digital experiences.
+              </p>
+            </article>
+            <article class="ab-principle">
+              <span class="ab-principle__num">04</span>
+              <h3 class="ab-principle__title">Long-Term Thinking</h3>
+              <p class="ab-principle__desc">
+                Build relationships, not just one-time projects.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 4. What NoExaTech Is ---------- -->
+      <section class="ab-position" aria-labelledby="ab-position-title">
+        <div class="container">
+          <p class="ab-eyebrow" data-reveal>What NoExaTech Is</p>
+          <h2 class="ab-h2" id="ab-position-title" data-reveal>
+            A technology company.<br>
+            A digital product studio.<br>
+            A creative digital agency.
+          </h2>
+          <p class="ab-lead" data-reveal>
+            We work across development, design, digital growth, automation, and custom
+            technology — under one brand, with one point of contact, and one
+            understanding of the business.
+          </p>
+
+          <div class="ab-position__list" data-reveal>
+            <div class="ab-position__item">
+              <h3 class="ab-position__label">Technology Company</h3>
+              <p class="ab-position__desc">
+                We engineer software, systems, and web platforms built to run reliably
+                and scale with the business.
+              </p>
+            </div>
+            <div class="ab-position__item">
+              <h3 class="ab-position__label">Digital Product Studio</h3>
+              <p class="ab-position__desc">
+                We design and build digital products — from interface and experience
+                to the architecture underneath.
+              </p>
+            </div>
+            <div class="ab-position__item">
+              <h3 class="ab-position__label">Creative Digital Agency</h3>
+              <p class="ab-position__desc">
+                We craft brand content, campaigns, and digital experiences that help
+                the business reach the right audience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 5. How We Work ---------- -->
+      <section class="ab-section" aria-labelledby="ab-process-title">
+        <div class="container">
+          <p class="ab-eyebrow" data-reveal>How We Work</p>
+          <h2 class="ab-h2" id="ab-process-title" data-reveal>
+            A process built around <em>understanding.</em>
+          </h2>
+
+          <ol class="ab-process" data-reveal>
+            <li class="ab-process__step">
+              <span class="ab-process__num">01</span>
+              <h3 class="ab-process__title">Discover</h3>
+              <p class="ab-process__desc">Understand the business, the audience, the goals, and the problem.</p>
+            </li>
+            <li class="ab-process__step">
+              <span class="ab-process__num">02</span>
+              <h3 class="ab-process__title">Strategize</h3>
+              <p class="ab-process__desc">Define the product direction, technical approach, and roadmap.</p>
+            </li>
+            <li class="ab-process__step">
+              <span class="ab-process__num">03</span>
+              <h3 class="ab-process__title">Design</h3>
+              <p class="ab-process__desc">Create the structure, interface, user experience, and visual direction.</p>
+            </li>
+            <li class="ab-process__step">
+              <span class="ab-process__num">04</span>
+              <h3 class="ab-process__title">Develop</h3>
+              <p class="ab-process__desc">Build the technology with clean, maintainable, and scalable architecture.</p>
+            </li>
+            <li class="ab-process__step">
+              <span class="ab-process__num">05</span>
+              <h3 class="ab-process__title">Test</h3>
+              <p class="ab-process__desc">Test functionality, responsiveness, performance, and usability.</p>
+            </li>
+            <li class="ab-process__step">
+              <span class="ab-process__num">06</span>
+              <h3 class="ab-process__title">Launch</h3>
+              <p class="ab-process__desc">Deploy the product and prepare it for real users.</p>
+            </li>
+            <li class="ab-process__step">
+              <span class="ab-process__num">07</span>
+              <h3 class="ab-process__title">Support</h3>
+              <p class="ab-process__desc">Continue improving, maintaining, and optimizing the solution.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ---------- 6. Founder ---------- -->
+      <section class="ab-founder" aria-labelledby="ab-founder-title">
+        <div class="container ab-founder__grid">
+              <div class="ab-founder__portrait" role="img" aria-label="Portrait of Muhammad Harmain">
+                <img src="assets/images/team/founder.jpg" alt="Portrait of Muhammad Harmain" loading="lazy" onerror="this.hidden=true" />
+              </div>
+
+          <div data-reveal>
+            <p class="ab-eyebrow">Founder</p>
+            <h2 class="ab-founder__name" id="ab-founder-title">Muhammad Harmain</h2>
+            <p class="ab-founder__role">Founder &amp; CEO — NoExaTech</p>
+
+            <p class="ab-founder__bio">
+              Muhammad Harmain is the founder and CEO of NoExaTech, focused on building
+              practical technology solutions for businesses and turning ideas into
+              digital products.
+            </p>
+
+            <blockquote class="ab-founder__vision">
+              “Technology should fit the business — not the other way around.
+              That belief is why NoExaTech exists.”
+            </blockquote>
+
+            <div class="ab-founder__actions">
+              <a
+                class="ab-btn"
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >LinkedIn</a>
+              <a class="ab-btn" href="contact.html">Contact</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 7. Team preview ---------- -->
+      <section class="ab-team" aria-labelledby="ab-team-title">
+        <div class="container">
+          <p class="ab-eyebrow" data-reveal>Our Team</p>
+          <h2 class="ab-h2" id="ab-team-title" data-reveal>
+            The people behind <em>NoExaTech.</em>
+          </h2>
+          <p class="ab-lead" data-reveal>
+            Great digital products are built by people who understand technology,
+            creativity, and the problems businesses actually face.
+          </p>
+
+          <div class="ab-team__grid" data-reveal>
+            <article class="ab-team-card">
+              <div class="ab-team-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+              <div class="ab-team-card__body">
+                <h3 class="ab-team-card__name">Team Member Name</h3>
+                <p class="ab-team-card__role">Role</p>
+                <p class="ab-team-card__desc">Short description of what this person does at NoExaTech.</p>
+              </div>
+            </article>
+
+            <article class="ab-team-card">
+              <div class="ab-team-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+              <div class="ab-team-card__body">
+                <h3 class="ab-team-card__name">Team Member Name</h3>
+                <p class="ab-team-card__role">Role</p>
+                <p class="ab-team-card__desc">Short description of what this person does at NoExaTech.</p>
+              </div>
+            </article>
+
+            <article class="ab-team-card">
+              <div class="ab-team-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+              <div class="ab-team-card__body">
+                <h3 class="ab-team-card__name">Team Member Name</h3>
+                <p class="ab-team-card__role">Role</p>
+                <p class="ab-team-card__desc">Short description of what this person does at NoExaTech.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="ab-team__cta">
+            <a class="ab-btn" href="team.html">Meet the full team</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 8. What We Do ---------- -->
+      <section class="ab-capabilities" aria-labelledby="ab-capabilities-title">
+        <div class="container">
+          <p class="ab-eyebrow" data-reveal>What We Do</p>
+          <h2 class="ab-h2" id="ab-capabilities-title" data-reveal>
+            One partner. <em>Many capabilities.</em>
+          </h2>
+
+          <div class="ab-capabilities__grid" data-reveal>
+            <a class="ab-capability" href="services.html"><p class="ab-capability__name">Web Development</p></a>
+            <a class="ab-capability" href="services.html"><p class="ab-capability__name">Software</p></a>
+            <a class="ab-capability" href="services.html"><p class="ab-capability__name">Business Systems</p></a>
+            <a class="ab-capability" href="services.html"><p class="ab-capability__name">UI/UX</p></a>
+            <a class="ab-capability" href="services.html"><p class="ab-capability__name">Digital Marketing</p></a>
+            <a class="ab-capability" href="services.html"><p class="ab-capability__name">Creative Content</p></a>
+            <a class="ab-capability" href="services.html"><p class="ab-capability__name">Automation</p></a>
+            <a class="ab-capability" href="services.html"><p class="ab-capability__name">Custom Technology</p></a>
+          </div>
+
+          <div class="ab-capabilities__cta">
+            <a class="ab-btn" href="services.html">Explore our services</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 9. Why Businesses Work With Us ---------- -->
+      <section class="ab-why" aria-labelledby="ab-why-title">
+        <div class="container">
+          <p class="ab-eyebrow" data-reveal>Why NoExaTech</p>
+          <h2 class="ab-h2" id="ab-why-title" data-reveal>
+            Why businesses <em>work with us.</em>
+          </h2>
+
+          <div class="ab-why__grid" data-reveal>
+            <div class="ab-why__item">
+              <h3 class="ab-why__title">Understand Before Building</h3>
+              <p class="ab-why__desc">We start with the business problem, not the tech stack.</p>
+            </div>
+            <div class="ab-why__item">
+              <h3 class="ab-why__title">One Technology Partner</h3>
+              <p class="ab-why__desc">Development, design, marketing, and digital solutions under one brand.</p>
+            </div>
+            <div class="ab-why__item">
+              <h3 class="ab-why__title">Practical Solutions</h3>
+              <p class="ab-why__desc">We focus on technology that serves a real business purpose.</p>
+            </div>
+            <div class="ab-why__item">
+              <h3 class="ab-why__title">Built to Evolve</h3>
+              <p class="ab-why__desc">Digital products can continue improving long after launch.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- 10. Final CTA ---------- -->
+      <section class="ab-cta" aria-labelledby="ab-cta-title">
+        <div class="container">
+          <h2 class="ab-cta__title" id="ab-cta-title" data-reveal>
+            Have an idea worth building?<br>
+            <em>Let's talk.</em>
+          </h2>
+          <p class="ab-cta__text" data-reveal>
+            Let's understand it, shape it, and turn it into something real.
+          </p>
+          <div class="ab-cta__actions" data-reveal>
+            <a class="ab-btn ab-btn--solid" href="#" data-nx-modal>Start a Project</a>
+            <a class="ab-btn" href="work.html">Explore Our Work</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a class="brand" href="index.html" aria-label="NoExaTech — home">
+              <span class="brand__mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                  <path d="M5 27V5l22 22V5" stroke="url(#flg)" stroke-width="2.6" stroke-linecap="square"/>
+                  <defs>
+                    <linearGradient id="flg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <span class="brand__name">NOEXATECH</span>
+            </a>
+            <p class="footer__tagline">“New Ideas. Powered by Technology.”</p>
+            <a class="btn btn--primary btn--sm footer__cta" href="#" data-nx-modal>Start a Project</a>
+          </div>
+
+          <nav class="footer__nav" aria-label="Footer">
+            <h2 class="footer__heading">Navigation</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="work.html">Work</a></li>
+              <li><a href="process.html">Process</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer__contact">
+            <h2 class="footer__heading">Contact</h2>
+            <a href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+            <ul class="social" data-social></ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© <span data-year>2026</span> NoExaTech. All rights reserved.</p>
+          <p class="footer__built">Designed &amp; built in-house.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js?v=3" defer></script>
+    <script src="assets/js/project-modal.js" defer></script>
+  </body>
+</html>

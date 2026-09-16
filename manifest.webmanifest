@@ -1,0 +1,17 @@
+{
+  "name": "NoExaTech",
+  "short_name": "NoExaTech",
+  "description": "Technology and digital product studio building websites, software, and digital systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "assets/images/logo/og.png?v=3",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

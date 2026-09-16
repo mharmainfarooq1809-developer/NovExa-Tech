@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Process | NoExaTech</title>
+    <meta name="description" content="How NoExaTech builds — from idea to impact. Discover, Strategize, Design, Develop, Test, Launch, Support." />
+    <meta name="theme-color" content="#050505" />
+    <link rel="canonical" href="https://noexatech.vercel.app/process.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NoExaTech" />
+    <meta property="og:title" content="Process | NoExaTech" />
+    <meta property="og:description" content="From idea to impact. How NoExaTech takes a project from understanding to launch — and beyond." />
+    <meta property="og:url" content="https://noexatech.vercel.app/process.html" />
+    <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Process | NoExaTech" />
+    <meta name="twitter:description" content="From idea to impact. How NoExaTech builds." />
+    <meta name="twitter:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+
+    <link rel="icon" href="assets/images/logo/og.png?v=3" type="image/png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/images/logo/og.png?v=3" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/main.css?v=3" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+      /* ================= Process page — scoped editorial styles ================= */
+
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* ---------- Shared section rhythm ---------- */
+      .pr-section {
+        padding: 130px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-section--flush { border-top: 0; }
+      .pr-section--tight { padding: 90px 0; }
+
+      .pr-eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: #00A8FF;
+        margin: 0 0 22px;
+      }
+
+      .pr-h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(34px, 5vw, 68px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 32px;
+        max-width: 900px;
+      }
+      .pr-h2 em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .pr-lead {
+        font-size: clamp(16px, 1.6vw, 20px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.68);
+        max-width: 680px;
+        margin: 0;
+      }
+
+      /* ---------- Hero ---------- */
+      .pr-hero {
+        padding: 160px 0 130px;
+        position: relative;
+        overflow: hidden;
+      }
+      .pr-hero__inner { max-width: 1080px; }
+
+      .pr-hero__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(44px, 8.5vw, 132px);
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+        font-weight: 700;
+        margin: 0 0 40px;
+        color: #FFFFFF;
+      }
+      .pr-hero__title small {
+        display: block;
+        font-size: clamp(20px, 2.6vw, 36px);
+        letter-spacing: 0.02em;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      .pr-hero__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .pr-hero__text {
+        font-size: clamp(16px, 1.7vw, 20px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.62);
+        max-width: 680px;
+      }
+
+      /* ---------- Step layout ---------- */
+      .pr-step {
+        display: grid;
+        grid-template-columns: 140px minmax(0, 1fr);
+        gap: 60px;
+        padding: 90px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        align-items: start;
+      }
+      .pr-step:first-of-type { border-top: 0; }
+
+      .pr-step__num {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(48px, 6vw, 96px);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        font-weight: 700;
+        color: transparent;
+        -webkit-text-stroke: 1.5px rgba(0, 168, 255, 0.65);
+        padding-top: 6px;
+        position: sticky;
+        top: 140px;
+      }
+
+      .pr-step__body { min-width: 0; }
+
+      .pr-step__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(34px, 4.6vw, 60px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 20px;
+      }
+
+      .pr-step__tagline {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(18px, 1.9vw, 24px);
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+        font-weight: 500;
+        color: #00A8FF;
+        margin: 0 0 30px;
+        max-width: 620px;
+      }
+
+      .pr-step__text {
+        font-size: 16px;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.62);
+        max-width: 620px;
+        margin: 0 0 40px;
+      }
+
+      .pr-step__points {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-step__points li {
+        padding: 22px 30px 22px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 15px;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.72);
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+      }
+      .pr-step__points li:nth-child(2n) {
+        padding-left: 30px;
+        padding-right: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-step__points li::before {
+        content: "";
+        flex: 0 0 auto;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #00A8FF;
+        transform: translateY(-2px);
+      }
+
+      /* ---------- Timeline ---------- */
+      .pr-timeline {
+        padding: 120px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-timeline__grid {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 60px;
+        position: relative;
+      }
+      .pr-timeline__grid::before {
+        content: "";
+        position: absolute;
+        top: 26px;
+        left: 4%;
+        right: 4%;
+        height: 1px;
+        background: linear-gradient(to right,
+          rgba(0, 168, 255, 0.05) 0%,
+          rgba(0, 168, 255, 0.5) 50%,
+          rgba(0, 168, 255, 0.05) 100%);
+        pointer-events: none;
+      }
+      .pr-timeline__node {
+        position: relative;
+        padding: 0 12px;
+        text-align: center;
+      }
+      .pr-timeline__dot {
+        position: relative;
+        display: inline-block;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: #0A0A0A;
+        border: 1px solid rgba(0, 168, 255, 0.5);
+        margin-bottom: 22px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #00A8FF;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      }
+      .pr-timeline__node:hover .pr-timeline__dot {
+        transform: scale(1.08);
+        border-color: rgba(0, 217, 255, 0.9);
+        color: #00D9FF;
+      }
+      .pr-timeline__label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.72);
+        margin: 0;
+      }
+
+      /* ---------- What to expect ---------- */
+      .pr-expect {
+        padding: 130px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-expect__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-expect__item {
+        padding: 42px 32px 42px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-expect__item:nth-child(3n) { border-right: 0; padding-right: 0; }
+      .pr-expect__item:not(:nth-child(3n + 1)) { padding-left: 32px; }
+
+      .pr-expect__num {
+        display: inline-block;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        color: #00A8FF;
+        margin: 0 0 16px;
+      }
+      .pr-expect__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0 0 12px;
+      }
+      .pr-expect__desc {
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+        max-width: 320px;
+      }
+
+      /* ---------- Transparency ---------- */
+      .pr-transparency {
+        padding: 130px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-transparency__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-transparency__item {
+        padding: 44px 48px 44px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-transparency__item:nth-child(2n) {
+        padding-left: 48px;
+        padding-right: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-transparency__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0 0 12px;
+      }
+      .pr-transparency__desc {
+        font-size: 15px;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.55);
+        margin: 0;
+        max-width: 460px;
+      }
+
+      /* ---------- Buttons (page-scoped) ---------- */
+      .pr-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 26px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        text-decoration: none;
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      }
+      .pr-btn::after { content: "→"; font-size: 14px; transition: transform 0.25s ease; }
+      .pr-btn:hover {
+        border-color: rgba(0, 168, 255, 0.7);
+        background: rgba(0, 168, 255, 0.08);
+        transform: translateY(-1px);
+      }
+      .pr-btn:hover::after { transform: translateX(4px); }
+
+      .pr-btn--solid {
+        background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%);
+        border-color: transparent;
+      }
+      .pr-btn--solid:hover {
+        background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%);
+        box-shadow: 0 14px 34px -12px rgba(0, 168, 255, 0.6);
+      }
+
+      /* ---------- Final CTA ---------- */
+      .pr-cta {
+        padding: 150px 0 160px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pr-cta__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(40px, 6.4vw, 92px);
+        line-height: 1.02;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0 0 26px;
+      }
+      .pr-cta__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .pr-cta__text {
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.58);
+        max-width: 580px;
+        margin: 0 auto 44px;
+      }
+      .pr-cta__actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 1024px) {
+        .pr-timeline__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 40px; }
+        .pr-timeline__grid::before { display: none; }
+      }
+      @media (max-width: 960px) {
+        .pr-section { padding: 90px 0; }
+        .pr-hero { padding: 120px 0 90px; }
+        .pr-step {
+          grid-template-columns: 1fr;
+          gap: 20px;
+          padding: 70px 0;
+        }
+        .pr-step__num {
+          position: static;
+          font-size: 56px;
+        }
+        .pr-expect__grid { grid-template-columns: 1fr; }
+        .pr-expect__item,
+        .pr-expect__item:not(:nth-child(3n + 1)),
+        .pr-expect__item:nth-child(3n) {
+          padding: 30px 0;
+          border-right: 0;
+        }
+        .pr-transparency__grid { grid-template-columns: 1fr; }
+        .pr-transparency__item,
+        .pr-transparency__item:nth-child(2n) {
+          padding: 30px 0;
+          border-left: 0;
+        }
+        .pr-timeline { padding: 90px 0; }
+        .pr-expect, .pr-transparency { padding: 90px 0; }
+        .pr-cta { padding: 100px 0 110px; }
+      }
+      @media (max-width: 640px) {
+        .pr-hero { padding: 100px 0 60px; }
+        .pr-step__points { grid-template-columns: 1fr; }
+        .pr-step__points li:nth-child(2n) {
+          padding-left: 0;
+          border-left: 0;
+        }
+        .pr-timeline__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .pr-btn { width: 100%; justify-content: space-between; }
+        .pr-cta__actions .pr-btn { justify-content: center; }
+      }
+      @media (max-width: 400px) {
+        .pr-timeline__grid { grid-template-columns: 1fr; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pr-timeline__dot, .pr-btn { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <a class="visually-hidden" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="NoExaTech — home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+              <path d="M5 27V5l22 22V5" stroke="url(#nlg)" stroke-width="2.6" stroke-linecap="square"/>
+              <defs>
+                <linearGradient id="nlg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brand__name">NOEXATECH</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="process.html" class="is-active" aria-current="page">Process</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn--primary btn--sm site-header__cta" href="#" data-nx-modal>Start a Project</a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ============ MOBILE MENU ============ -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu__nav" aria-label="Mobile">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html"><span>01</span>Home</a></li>
+          <li><a href="about.html"><span>02</span>About</a></li>
+          <li><a href="services.html"><span>03</span>Services</a></li>
+          <li><a href="work.html"><span>04</span>Work</a></li>
+          <li><a href="process.html"><span>05</span>Process</a></li>
+          <li><a href="team.html"><span>06</span>Team</a></li>
+          <li><a href="contact.html"><span>07</span>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__foot">
+        <a class="btn btn--primary" href="#" data-nx-modal>Start a Project</a>
+        <a class="mobile-menu__mail" href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- ============ MAIN ============ -->
+    <main id="main" class="page-shell">
+
+      <!-- ---------- Hero ---------- -->
+      <section class="pr-hero">
+        <div class="container pr-hero__inner">
+          <p class="pr-eyebrow" data-reveal>How We Build</p>
+          <h1 class="pr-hero__title" data-reveal>
+            <small>From idea</small>
+            to <em>impact.</em>
+          </h1>
+          <p class="pr-hero__text" data-reveal>
+            Every project starts with understanding. We learn the business, define the
+            problem, build the right solution, and continue improving it after launch.
+          </p>
+        </div>
+      </section>
+
+      <!-- ---------- 01 – 07: The Process ---------- -->
+      <section class="pr-section pr-section--flush" aria-label="Our seven-step process">
+        <div class="container">
+
+          <!-- 01 -->
+          <article class="pr-step" data-reveal>
+            <span class="pr-step__num" aria-hidden="true">01</span>
+            <div class="pr-step__body">
+              <h2 class="pr-step__title">Discover</h2>
+              <p class="pr-step__tagline">Understand before we build.</p>
+              <p class="pr-step__text">
+                We learn about the business, its goals, its customers, the current
+                challenges, and what the project needs to achieve. Nothing is
+                recommended until the problem is properly understood.
+              </p>
+              <ul class="pr-step__points">
+                <li>Business goals</li>
+                <li>Target users</li>
+                <li>Current problems</li>
+                <li>Project requirements</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 02 -->
+          <article class="pr-step" data-reveal>
+            <span class="pr-step__num" aria-hidden="true">02</span>
+            <div class="pr-step__body">
+              <h2 class="pr-step__title">Strategize</h2>
+              <p class="pr-step__tagline">Turn the problem into a clear direction.</p>
+              <p class="pr-step__text">
+                We define the scope, priorities, technology approach, project
+                structure, and roadmap. The outcome is a clear plan that both sides
+                agree on before any design or development begins.
+              </p>
+              <ul class="pr-step__points">
+                <li>Requirements</li>
+                <li>Features</li>
+                <li>Technology planning</li>
+                <li>Project roadmap</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 03 -->
+          <article class="pr-step" data-reveal>
+            <span class="pr-step__num" aria-hidden="true">03</span>
+            <div class="pr-step__body">
+              <h2 class="pr-step__title">Design</h2>
+              <p class="pr-step__tagline">Create the experience before writing the code.</p>
+              <p class="pr-step__text">
+                We design the interface, the user experience, the information
+                structure, and the visual direction. This is where the product
+                starts to feel like the real thing — before development.
+              </p>
+              <ul class="pr-step__points">
+                <li>Wireframes</li>
+                <li>UI / UX</li>
+                <li>User flows</li>
+                <li>Design system</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 04 -->
+          <article class="pr-step" data-reveal>
+            <span class="pr-step__num" aria-hidden="true">04</span>
+            <div class="pr-step__body">
+              <h2 class="pr-step__title">Develop</h2>
+              <p class="pr-step__tagline">Turn the design into technology.</p>
+              <p class="pr-step__text">
+                This is where the build happens — clean code, sensible architecture,
+                and implementation that matches the agreed scope. We build to run
+                reliably and to grow with the business.
+              </p>
+              <ul class="pr-step__points">
+                <li>Frontend development</li>
+                <li>Backend / API development where required</li>
+                <li>Integrations</li>
+                <li>Responsive implementation</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 05 -->
+          <article class="pr-step" data-reveal>
+            <span class="pr-step__num" aria-hidden="true">05</span>
+            <div class="pr-step__body">
+              <h2 class="pr-step__title">Test</h2>
+              <p class="pr-step__tagline">Build it. Challenge it. Improve it.</p>
+              <p class="pr-step__text">
+                Before launch, the product is tested across devices, browsers,
+                features, performance, and usability. Issues are found and fixed
+                before real users find them.
+              </p>
+              <ul class="pr-step__points">
+                <li>Functional testing</li>
+                <li>Responsive testing</li>
+                <li>Performance checks</li>
+                <li>Bug fixing &amp; basic quality checks</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 06 -->
+          <article class="pr-step" data-reveal>
+            <span class="pr-step__num" aria-hidden="true">06</span>
+            <div class="pr-step__body">
+              <h2 class="pr-step__title">Launch</h2>
+              <p class="pr-step__tagline">Move from development to the real world.</p>
+              <p class="pr-step__text">
+                We prepare the final product for deployment and make sure everything
+                is ready for real users — from configuration to final verification.
+              </p>
+              <ul class="pr-step__points">
+                <li>Deployment</li>
+                <li>Domain setup</li>
+                <li>Final configuration</li>
+                <li>Launch verification</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 07 -->
+          <article class="pr-step" data-reveal>
+            <span class="pr-step__num" aria-hidden="true">07</span>
+            <div class="pr-step__body">
+              <h2 class="pr-step__title">Support</h2>
+              <p class="pr-step__tagline">Launch isn't the end.</p>
+              <p class="pr-step__text">
+                Where agreed, NoExaTech can continue helping with maintenance,
+                improvements, content updates, performance, and future development.
+                Support is available as a separate arrangement — not bundled by
+                default into every project.
+              </p>
+              <ul class="pr-step__points">
+                <li>Maintenance</li>
+                <li>Content updates</li>
+                <li>Performance improvements</li>
+                <li>Future development</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ---------- Visual timeline ---------- -->
+      <section class="pr-timeline" aria-labelledby="pr-timeline-title">
+        <div class="container">
+          <p class="pr-eyebrow" data-reveal>The Path</p>
+          <h2 class="pr-h2" id="pr-timeline-title" data-reveal>
+            One direction. <em>Every step defined.</em>
+          </h2>
+
+          <ol class="pr-timeline__grid" data-reveal>
+            <li class="pr-timeline__node"><span class="pr-timeline__dot">01</span><p class="pr-timeline__label">Discover</p></li>
+            <li class="pr-timeline__node"><span class="pr-timeline__dot">02</span><p class="pr-timeline__label">Strategize</p></li>
+            <li class="pr-timeline__node"><span class="pr-timeline__dot">03</span><p class="pr-timeline__label">Design</p></li>
+            <li class="pr-timeline__node"><span class="pr-timeline__dot">04</span><p class="pr-timeline__label">Develop</p></li>
+            <li class="pr-timeline__node"><span class="pr-timeline__dot">05</span><p class="pr-timeline__label">Test</p></li>
+            <li class="pr-timeline__node"><span class="pr-timeline__dot">06</span><p class="pr-timeline__label">Launch</p></li>
+            <li class="pr-timeline__node"><span class="pr-timeline__dot">07</span><p class="pr-timeline__label">Support</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ---------- What happens during a project ---------- -->
+      <section class="pr-expect" aria-labelledby="pr-expect-title">
+        <div class="container">
+          <p class="pr-eyebrow" data-reveal>Working With Us</p>
+          <h2 class="pr-h2" id="pr-expect-title" data-reveal>
+            What happens <em>during a project.</em>
+          </h2>
+          <p class="pr-lead" data-reveal>
+            A clear picture of the client-side journey — from the first conversation
+            to a live product.
+          </p>
+
+          <div class="pr-expect__grid" data-reveal>
+            <div class="pr-expect__item">
+              <span class="pr-expect__num">01</span>
+              <h3 class="pr-expect__title">Conversation</h3>
+              <p class="pr-expect__desc">We understand what you're trying to achieve.</p>
+            </div>
+            <div class="pr-expect__item">
+              <span class="pr-expect__num">02</span>
+              <h3 class="pr-expect__title">Scope</h3>
+              <p class="pr-expect__desc">We define what needs to be built.</p>
+            </div>
+            <div class="pr-expect__item">
+              <span class="pr-expect__num">03</span>
+              <h3 class="pr-expect__title">Proposal</h3>
+              <p class="pr-expect__desc">Scope, timeline, and commercial details are agreed.</p>
+            </div>
+            <div class="pr-expect__item">
+              <span class="pr-expect__num">04</span>
+              <h3 class="pr-expect__title">Build</h3>
+              <p class="pr-expect__desc">Design and development begin.</p>
+            </div>
+            <div class="pr-expect__item">
+              <span class="pr-expect__num">05</span>
+              <h3 class="pr-expect__title">Review</h3>
+              <p class="pr-expect__desc">You review progress and provide feedback.</p>
+            </div>
+            <div class="pr-expect__item">
+              <span class="pr-expect__num">06</span>
+              <h3 class="pr-expect__title">Launch</h3>
+              <p class="pr-expect__desc">The finished solution goes live.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- Transparency ---------- -->
+      <section class="pr-transparency" aria-labelledby="pr-transparency-title">
+        <div class="container">
+          <p class="pr-eyebrow" data-reveal>Clear From The Start</p>
+          <h2 class="pr-h2" id="pr-transparency-title" data-reveal>
+            A good project needs <em>clear communication</em> as much as good technology.
+          </h2>
+
+          <div class="pr-transparency__grid" data-reveal>
+            <div class="pr-transparency__item">
+              <h3 class="pr-transparency__title">Clear Scope</h3>
+              <p class="pr-transparency__desc">Everyone understands what is being built.</p>
+            </div>
+            <div class="pr-transparency__item">
+              <h3 class="pr-transparency__title">Regular Communication</h3>
+              <p class="pr-transparency__desc">Progress and important decisions are communicated throughout the project.</p>
+            </div>
+            <div class="pr-transparency__item">
+              <h3 class="pr-transparency__title">Defined Deliverables</h3>
+              <p class="pr-transparency__desc">The project has clear, agreed expected outcomes.</p>
+            </div>
+            <div class="pr-transparency__item">
+              <h3 class="pr-transparency__title">No Unnecessary Complexity</h3>
+              <p class="pr-transparency__desc">Technology is selected according to the actual requirement — nothing more.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- Final CTA ---------- -->
+      <section class="pr-cta" aria-labelledby="pr-cta-title">
+        <div class="container">
+          <p class="pr-eyebrow" data-reveal style="text-align:center;">Ready To Start?</p>
+          <h2 class="pr-cta__title" id="pr-cta-title" data-reveal>
+            Have an idea, business problem,<br>
+            or product <em>you want to build?</em>
+          </h2>
+          <p class="pr-cta__text" data-reveal>
+            Tell us what you're trying to achieve. We'll take it from there.
+          </p>
+          <div class="pr-cta__actions" data-reveal>
+            <a class="pr-btn pr-btn--solid" href="#" data-nx-modal>Start a Project</a>
+            <a class="pr-btn" href="contact.html">Talk to NoExaTech</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a class="brand" href="index.html" aria-label="NoExaTech — home">
+              <span class="brand__mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                  <path d="M5 27V5l22 22V5" stroke="url(#flg)" stroke-width="2.6" stroke-linecap="square"/>
+                  <defs>
+                    <linearGradient id="flg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <span class="brand__name">NOEXATECH</span>
+            </a>
+            <p class="footer__tagline">“New Ideas. Powered by Technology.”</p>
+            <a class="btn btn--primary btn--sm footer__cta" href="#" data-nx-modal>Start a Project</a>
+          </div>
+
+          <nav class="footer__nav" aria-label="Footer">
+            <h2 class="footer__heading">Navigation</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="work.html">Work</a></li>
+              <li><a href="process.html">Process</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer__contact">
+            <h2 class="footer__heading">Contact</h2>
+            <a href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+            <ul class="social" data-social></ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© <span data-year>2026</span> NoExaTech. All rights reserved.</p>
+          <p class="footer__built">Designed &amp; built in-house.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js?v=3" defer></script>
+    <script src="assets/js/project-modal.js" defer></script>
+  </body>
+</html>
