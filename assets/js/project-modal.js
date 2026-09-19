@@ -7,6 +7,16 @@
 
   var existingModal = document.getElementById('nxProjectModal');
   if (!existingModal) {
+    if (window.location.protocol === 'file:') {
+      document.addEventListener('click', function (event) {
+        var trigger = event.target.closest('[data-nx-modal]');
+        if (!trigger) return;
+        event.preventDefault();
+        window.location.href = 'services.html#open-project-modal';
+      });
+      return;
+    }
+
     document.addEventListener('click', function (event) {
       var trigger = event.target.closest('[data-nx-modal]');
       if (!trigger) return;
@@ -439,6 +449,11 @@
     var pendingTrigger = window.__nxPendingModalTrigger;
     window.__nxPendingModalTrigger = null;
     openModal(pendingTrigger.getAttribute('data-package') || '', pendingTrigger);
+  }
+
+  if (window.location.hash === '#open-project-modal') {
+    openModal('', null);
+    history.replaceState(null, '', window.location.pathname + window.location.search);
   }
 
   modal.querySelectorAll('[data-modal-close]').forEach(function (el) {

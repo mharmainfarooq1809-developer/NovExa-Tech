@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Store | NoExaTech</title>
+    <meta name="description" content="Digital products designed and developed by NoExaTech — landing pages, website templates, UI kits, code components, and creative packs." />
+    <meta name="theme-color" content="#050505" />
+    <link rel="canonical" href="https://noexatech.vercel.app/store.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NoExaTech" />
+    <meta property="og:title" content="Store | NoExaTech" />
+    <meta property="og:description" content="Built once. Ready to build with. Premium digital products from NoExaTech." />
+    <meta property="og:url" content="https://noexatech.vercel.app/store.html" />
+    <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og-image.svg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Store | NoExaTech" />
+    <meta name="twitter:description" content="Built once. Ready to build with." />
+    <meta name="twitter:image" content="https://noexatech.vercel.app/assets/images/logo/og-image.svg" />
+
+    <link rel="icon" href="assets/images/logo/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="assets/images/logo/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+      /* ============================================================
+         NoExaTech Store — page-scoped styles
+         ============================================================ */
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px; height: 1px;
+        padding: 0; margin: -1px;
+        overflow: hidden; clip: rect(0 0 0 0);
+        white-space: nowrap; border: 0;
+      }
+
+      .st-section { padding: 120px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+      .st-section--flush { border-top: 0; }
+
+      .st-eyebrow {
+        font-size: 11px; font-weight: 500;
+        letter-spacing: 0.28em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 20px;
+      }
+      .st-h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(32px, 4.8vw, 64px);
+        line-height: 1.04; letter-spacing: -0.03em; font-weight: 700;
+        color: #FFFFFF; margin: 0 0 24px; max-width: 900px;
+      }
+      .st-h2 em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      .st-lead {
+        font-size: clamp(15px, 1.5vw, 19px);
+        line-height: 1.65;
+        color: rgba(255,255,255,0.66);
+        max-width: 680px; margin: 0;
+      }
+
+      /* ---------- HERO with background video ---------- */
+      .st-hero {
+        position: relative;
+        min-height: 92vh;
+        padding: 180px 0 140px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        isolation: isolate;
+      }
+
+      .st-hero__media {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        overflow: hidden;
+      }
+
+      /* Fallback: always visible underneath, animated gradient */
+      .st-hero__video-fallback {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(120% 90% at 20% 10%, rgba(0, 102, 255, 0.32) 0%, transparent 55%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0, 217, 255, 0.24) 0%, transparent 55%),
+          #050505;
+        animation: stHeroShift 22s ease-in-out infinite alternate;
+      }
+      @keyframes stHeroShift {
+        0%   { transform: scale(1)    translate(0, 0); }
+        100% { transform: scale(1.08) translate(-2%, -2%); }
+      }
+
+      /* Video: starts hidden, fades in only when it can actually play */
+      .st-hero__video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        filter: saturate(0.85) contrast(1.05);
+        transition: opacity 1.1s ease;
+        will-change: opacity;
+        pointer-events: none;
+      }
+      .st-hero__video.is-ready {
+        opacity: 0.55;
+      }
+      .st-hero__video.is-missing {
+        display: none;
+      }
+
+      .st-hero__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(180deg, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.75) 65%, #050505 100%),
+          radial-gradient(90% 70% at 15% 20%, rgba(0, 102, 255, 0.18) 0%, transparent 60%);
+      }
+      .st-hero__grid {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image:
+          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        background-size: 68px 68px;
+        -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+        mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+        opacity: 0.55;
+      }
+      .st-hero__noise {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.035;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+        mix-blend-mode: overlay;
+      }
+
+      .st-hero__inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 60px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .st-hero__content { max-width: 640px; }
+      .st-hero__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(44px, 7vw, 108px);
+        line-height: 0.94; letter-spacing: -0.04em; font-weight: 700;
+        color: #FFFFFF; margin: 0 0 30px;
+      }
+      .st-hero__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      .st-hero__text {
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.65;
+        color: rgba(255,255,255,0.7);
+        margin: 0 0 40px;
+        max-width: 560px;
+      }
+      .st-hero__actions {
+        display: flex; flex-wrap: wrap; gap: 14px;
+        margin-bottom: 40px;
+      }
+      .st-hero__meta {
+        list-style: none; padding: 0; margin: 0;
+        display: flex; flex-wrap: wrap; gap: 22px;
+        font-size: 12.5px; letter-spacing: 0.04em;
+        color: rgba(255,255,255,0.55);
+      }
+      .st-hero__meta li { display: inline-flex; align-items: center; gap: 10px; }
+      .st-hero__meta li::before {
+        content: ""; width: 6px; height: 6px;
+        border-radius: 50%; background: #00A8FF;
+        box-shadow: 0 0 12px rgba(0,168,255,0.8);
+      }
+
+      /* Floating product mockups on the right */
+      .st-hero__showcase {
+        position: relative;
+        min-height: 460px;
+      }
+      .st-hero__tile {
+        position: absolute;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%),
+          #0A0A0A;
+        box-shadow: 0 30px 60px -25px rgba(0,0,0,0.9), 0 0 0 1px rgba(0,168,255,0.08) inset;
+        overflow: hidden;
+        backdrop-filter: blur(6px);
+      }
+      .st-hero__tile::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(100% 100% at 20% 0%, rgba(0,102,255,0.22) 0%, transparent 60%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0,217,255,0.14) 0%, transparent 55%);
+        pointer-events: none;
+      }
+      .st-hero__tile--a {
+        top: 0; left: 6%;
+        width: 62%; height: 62%;
+        transform: rotate(-5deg);
+        animation: stFloat 8s ease-in-out infinite alternate;
+      }
+      .st-hero__tile--b {
+        top: 30%; right: 0;
+        width: 55%; height: 55%;
+        transform: rotate(4deg);
+        animation: stFloat 9s ease-in-out -1s infinite alternate;
+      }
+      .st-hero__tile--c {
+        bottom: 0; left: 12%;
+        width: 48%; height: 40%;
+        transform: rotate(-2deg);
+        animation: stFloat 10s ease-in-out -2s infinite alternate;
+      }
+      @keyframes stFloat {
+        0%   { transform: translateY(0) rotate(-4deg); }
+        100% { transform: translateY(-14px) rotate(-3deg); }
+      }
+      .st-hero__tile svg {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+        display: block;
+      }
+
+      /* ---------- Buttons (page-scoped) ---------- */
+      .st-btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+        padding: 15px 26px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 999px;
+        text-decoration: none; cursor: pointer;
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      }
+      .st-btn::after { content: "→"; font-size: 14px; transition: transform 0.25s ease; }
+      .st-btn:hover {
+        border-color: rgba(0,168,255,0.7);
+        background: rgba(0,168,255,0.08);
+        transform: translateY(-1px);
+      }
+      .st-btn:hover::after { transform: translateX(4px); }
+      .st-btn--no-arrow::after { content: none; }
+      .st-btn--solid {
+        background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%);
+        border-color: transparent;
+      }
+      .st-btn--solid:hover {
+        background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%);
+        box-shadow: 0 14px 34px -12px rgba(0,168,255,0.6);
+      }
+      .st-btn.is-loading { opacity: 0.85; pointer-events: none; }
+      .st-btn.is-loading::after { content: none; }
+      .st-btn.is-loading::before {
+        content: "";
+        display: inline-block;
+        width: 12px; height: 12px;
+        border-radius: 50%;
+        border: 2px solid rgba(255,255,255,0.35);
+        border-top-color: #FFFFFF;
+        animation: stSpin 0.7s linear infinite;
+      }
+      @keyframes stSpin { to { transform: rotate(360deg); } }
+
+      /* ---------- Trust marquee strip ---------- */
+      .st-strip {
+        border-top: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.01);
+        overflow: hidden;
+        padding: 20px 0;
+        position: relative;
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+        mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+      }
+      .st-strip__track {
+        display: inline-flex;
+        gap: 46px;
+        white-space: nowrap;
+        animation: stMarquee 42s linear infinite;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12.5px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.42);
+      }
+      .st-strip__track span:not(.sep)::before {
+        content: "◇";
+        color: #00A8FF;
+        margin-right: 12px;
+        font-size: 10px;
+        vertical-align: 2px;
+      }
+      .st-strip__track .sep { color: rgba(0,168,255,0.4); }
+      @keyframes stMarquee {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+
+      /* ---------- Bento category section ---------- */
+      .st-bento {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: 220px;
+        gap: 20px;
+        margin-top: 60px;
+      }
+      .st-bento__tile {
+        position: relative;
+        border-radius: 18px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
+        overflow: hidden;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+        transition: border-color 0.3s ease, transform 0.3s ease;
+      }
+      .st-bento__tile:hover { border-color: rgba(0,168,255,0.45); transform: translateY(-3px); }
+      .st-bento__tile::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(100% 100% at 20% 0%, rgba(0,102,255,0.18) 0%, transparent 60%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0,217,255,0.10) 0%, transparent 55%);
+        pointer-events: none;
+        opacity: 0.9;
+      }
+      .st-bento__tile--xl { grid-column: span 8; grid-row: span 2; padding: 40px; }
+      .st-bento__tile--lg { grid-column: span 4; grid-row: span 2; }
+      .st-bento__tile--md { grid-column: span 4; grid-row: span 1; padding: 22px; }
+      .st-bento__tile--wide { grid-column: span 8; grid-row: span 1; padding: 22px; }
+
+      .st-bento__visual {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        pointer-events: none;
+      }
+      .st-bento__visual svg {
+        width: 100%; height: 100%;
+        opacity: 0.9;
+      }
+      .st-bento__content {
+        position: relative;
+        z-index: 2;
+      }
+      .st-bento__label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px; font-weight: 600;
+        letter-spacing: 0.24em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 10px;
+      }
+      .st-bento__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(20px, 2vw, 30px);
+        font-weight: 600; letter-spacing: -0.02em;
+        line-height: 1.15; color: #FFFFFF; margin: 0 0 8px;
+      }
+      .st-bento__tile--xl .st-bento__title { font-size: clamp(28px, 3vw, 42px); }
+      .st-bento__desc {
+        font-size: 13.5px; line-height: 1.55;
+        color: rgba(255,255,255,0.6);
+        margin: 0 0 12px;
+        max-width: 380px;
+      }
+      .st-bento__cta {
+        display: inline-flex; align-items: center; gap: 8px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px; font-weight: 600;
+        letter-spacing: 0.18em; text-transform: uppercase;
+        color: #00A8FF;
+      }
+      .st-bento__cta::after { content: "→"; transition: transform 0.25s ease; }
+      .st-bento__tile:hover .st-bento__cta::after { transform: translateX(4px); }
+
+      /* ---------- Featured spotlight ---------- */
+      .st-spotlight {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 0;
+        border: 1px solid rgba(0,168,255,0.22);
+        border-radius: 22px;
+        overflow: hidden;
+        background:
+          radial-gradient(120% 100% at 100% 0%, rgba(0,168,255,0.09) 0%, transparent 60%),
+          rgba(255,255,255,0.012);
+        margin-top: 60px;
+      }
+      .st-spotlight__visual {
+        position: relative;
+        min-height: 520px;
+        border-right: 1px solid rgba(0,168,255,0.18);
+        background: #0A0A0A;
+        overflow: hidden;
+      }
+      .st-spotlight__visual svg {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+      }
+      .st-spotlight__badge {
+        position: absolute;
+        top: 22px; left: 22px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px; font-weight: 600;
+        letter-spacing: 0.24em; text-transform: uppercase;
+        color: #00D9FF;
+        padding: 6px 12px;
+        border: 1px solid rgba(0,217,255,0.45);
+        border-radius: 100px;
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(6px);
+      }
+      .st-spotlight__body {
+        padding: 56px 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .st-spotlight__cat {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10.5px; font-weight: 600;
+        letter-spacing: 0.22em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 14px;
+      }
+      .st-spotlight__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(28px, 3.4vw, 44px);
+        line-height: 1.08; letter-spacing: -0.025em;
+        font-weight: 700; color: #FFFFFF;
+        margin: 0 0 18px;
+      }
+      .st-spotlight__desc {
+        font-size: 15.5px; line-height: 1.7;
+        color: rgba(255,255,255,0.65);
+        margin: 0 0 26px;
+        max-width: 460px;
+      }
+      .st-spotlight__features {
+        list-style: none; padding: 0;
+        margin: 0 0 32px;
+        display: grid; gap: 10px;
+      }
+      .st-spotlight__features li {
+        position: relative;
+        padding-left: 22px;
+        font-size: 14px;
+        color: rgba(255,255,255,0.72);
+        line-height: 1.55;
+      }
+      .st-spotlight__features li::before {
+        content: "";
+        position: absolute; left: 0; top: 8px;
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #0066FF, #00D9FF);
+        box-shadow: 0 0 10px rgba(0,168,255,0.6);
+      }
+      .st-spotlight__foot {
+        display: flex; align-items: center;
+        justify-content: space-between;
+        gap: 20px; flex-wrap: wrap;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .st-spotlight__price {
+        display: flex; flex-direction: column; gap: 4px;
+      }
+      .st-spotlight__price-label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px; font-weight: 600;
+        letter-spacing: 0.22em; text-transform: uppercase;
+        color: #00A8FF;
+      }
+      .st-spotlight__price-value {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 32px; font-weight: 700;
+        letter-spacing: -0.02em; color: #FFFFFF;
+        line-height: 1;
+      }
+
+      /* ---------- Category filters ---------- */
+      .st-filters {
+        display: flex; flex-wrap: wrap; gap: 10px;
+        padding: 22px 0; margin-bottom: 50px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .st-filter {
+        appearance: none; -webkit-appearance: none;
+        padding: 11px 20px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11.5px; font-weight: 600;
+        letter-spacing: 0.16em; text-transform: uppercase;
+        color: rgba(255,255,255,0.65);
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 999px; cursor: pointer;
+        transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+      }
+      .st-filter:hover { border-color: rgba(0,168,255,0.4); color: #FFFFFF; }
+      .st-filter.is-active { border-color: rgba(0,168,255,0.7); background: rgba(0,168,255,0.08); color: #FFFFFF; }
+
+      /* ---------- Product grid ---------- */
+      .st-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 26px;
+      }
+      .st-grid[data-empty]::after {
+        content: "No products in this category yet.";
+        grid-column: 1 / -1; text-align: center;
+        padding: 80px 20px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 15px; color: rgba(255,255,255,0.4);
+      }
+      .st-card[hidden] { display: none; }
+
+      .st-card {
+        display: flex; flex-direction: column;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 16px; overflow: hidden;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
+        transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        text-align: left; padding: 0;
+        color: inherit; font: inherit;
+        position: relative;
+      }
+      .st-card:hover {
+        border-color: rgba(0,168,255,0.45);
+        transform: translateY(-4px);
+        box-shadow: 0 30px 60px -30px rgba(0,168,255,0.35);
+      }
+      .st-card__preview {
+        position: relative;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background:
+          radial-gradient(100% 100% at 20% 0%, rgba(0,102,255,0.16) 0%, transparent 60%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0,217,255,0.10) 0%, transparent 55%),
+          #0A0A0A;
+      }
+      .st-card__img {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transform: scale(1.04);
+        transition: opacity 0.7s ease, transform 0.9s ease;
+        will-change: opacity, transform;
+      }
+      .st-card__img.is-loaded { opacity: 1; transform: scale(1); }
+      .st-card__img.is-error { display: none; }
+
+      .st-card__placeholder {
+        position: absolute;
+        inset: 0;
+        display: flex; align-items: center; justify-content: center;
+        transition: opacity 0.6s ease;
+      }
+      .st-card__placeholder svg { width: 100%; height: 100%; opacity: 0.9; }
+      .st-card__img.is-loaded ~ .st-card__placeholder { opacity: 0; }
+
+      .st-card__badge {
+        position: absolute; top: 14px; left: 14px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px; font-weight: 600;
+        letter-spacing: 0.2em; text-transform: uppercase;
+        color: #00D9FF;
+        padding: 5px 10px;
+        border: 1px solid rgba(0,217,255,0.4);
+        border-radius: 100px;
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(6px);
+        z-index: 2;
+      }
+      .st-card__badge--featured {
+        color: #FFFFFF;
+        background: linear-gradient(120deg, #0066FF, #00A8FF);
+        border-color: transparent;
+      }
+
+      .st-card__body { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
+      .st-card__cat {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10.5px; font-weight: 600;
+        letter-spacing: 0.22em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 10px;
+      }
+      .st-card__name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 19px; font-weight: 600;
+        letter-spacing: -0.015em; line-height: 1.25;
+        color: #FFFFFF; margin: 0 0 8px;
+      }
+      .st-card__tagline {
+        font-size: 13.5px; line-height: 1.55;
+        color: rgba(255,255,255,0.55);
+        margin: 0 0 16px;
+      }
+      .st-card__tech {
+        display: flex; flex-wrap: wrap; gap: 6px;
+        margin: 0 0 18px;
+      }
+      .st-card__tech span {
+        font-size: 10.5px; font-weight: 500; letter-spacing: 0.06em;
+        color: rgba(255,255,255,0.5);
+        padding: 3px 9px;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 100px;
+      }
+      .st-card__foot {
+        display: flex; align-items: center;
+        justify-content: space-between;
+        gap: 12px; margin-top: auto;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .st-card__price {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 17px; font-weight: 700;
+        letter-spacing: -0.01em; color: #FFFFFF;
+      }
+      .st-card__cta {
+        display: inline-flex; align-items: center; gap: 6px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px; font-weight: 600;
+        letter-spacing: 0.16em; text-transform: uppercase;
+        color: #00A8FF;
+      }
+      .st-card__cta::after { content: "→"; transition: transform 0.25s ease; }
+      .st-card:hover .st-card__cta::after { transform: translateX(4px); }
+
+      /* ---------- Bundle section ---------- */
+      .st-bundle {
+        padding: 120px 0;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .st-bundle__card {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 0;
+        border: 1px solid rgba(0,168,255,0.25);
+        border-radius: 24px;
+        overflow: hidden;
+        background:
+          radial-gradient(120% 100% at 0% 0%, rgba(0,168,255,0.12) 0%, transparent 60%),
+          rgba(255,255,255,0.012);
+      }
+      .st-bundle__body { padding: 60px 52px; display: flex; flex-direction: column; justify-content: center; }
+      .st-bundle__label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px; font-weight: 600;
+        letter-spacing: 0.24em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 16px;
+      }
+      .st-bundle__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(28px, 3.2vw, 44px);
+        line-height: 1.1; letter-spacing: -0.025em;
+        font-weight: 700; color: #FFFFFF;
+        margin: 0 0 18px;
+      }
+      .st-bundle__text {
+        font-size: 15.5px; line-height: 1.7;
+        color: rgba(255,255,255,0.65);
+        margin: 0 0 32px;
+        max-width: 480px;
+      }
+      .st-bundle__visual {
+        position: relative;
+        min-height: 380px;
+        border-left: 1px solid rgba(0,168,255,0.2);
+        background: #0A0A0A;
+        overflow: hidden;
+      }
+      .st-bundle__visual svg {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+      }
+
+      /* ---------- FAQ ---------- */
+      .st-faq-list {
+        margin-top: 40px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .st-faq {
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .st-faq__btn {
+        width: 100%;
+        background: transparent;
+        border: 0;
+        padding: 28px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        text-align: left;
+        cursor: pointer;
+        font: inherit;
+        color: inherit;
+      }
+      .st-faq__q {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(16px, 1.9vw, 20px);
+        font-weight: 600; letter-spacing: -0.01em;
+        color: #FFFFFF;
+        margin: 0;
+        transition: color 0.2s ease;
+      }
+      .st-faq__btn:hover .st-faq__q { color: #00A8FF; }
+      .st-faq__icon {
+        flex: 0 0 auto;
+        width: 30px; height: 30px;
+        display: inline-flex; align-items: center; justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.15);
+        color: #00A8FF;
+        font-size: 16px;
+        transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+      }
+      .st-faq.is-open .st-faq__icon {
+        transform: rotate(45deg);
+        border-color: rgba(0,168,255,0.6);
+        background: rgba(0,168,255,0.08);
+      }
+      .st-faq__panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, opacity 0.3s ease;
+        opacity: 0;
+      }
+      .st-faq.is-open .st-faq__panel { max-height: 400px; opacity: 1; }
+      .st-faq__panel-inner {
+        padding: 0 0 30px;
+        font-size: 15px; line-height: 1.7;
+        color: rgba(255,255,255,0.62);
+        max-width: 760px;
+      }
+
+      /* ---------- Modal ---------- */
+      .st-modal {
+        position: fixed; inset: 0; z-index: 9999;
+        display: flex; align-items: center; justify-content: center;
+        padding: 24px;
+        opacity: 0; visibility: hidden;
+        transition: opacity 0.28s ease, visibility 0.28s ease;
+      }
+      .st-modal.is-open { opacity: 1; visibility: visible; }
+      .st-modal[hidden] { display: none; }
+      .st-modal__backdrop {
+        position: absolute; inset: 0;
+        background: rgba(0,0,0,0.78);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      .st-modal__dialog {
+        position: relative;
+        display: flex; flex-direction: column;
+        width: 100%; max-width: 920px;
+        max-height: calc(100vh - 48px);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 16px;
+        background:
+          radial-gradient(120% 100% at 100% 0%, rgba(0,168,255,0.08) 0%, transparent 55%),
+          #0A0A0A;
+        box-shadow: 0 40px 100px -30px rgba(0,0,0,0.9);
+        overflow: hidden;
+        transform: translateY(16px) scale(0.98);
+        opacity: 0;
+        transition: transform 0.32s cubic-bezier(0.2,0.8,0.2,1), opacity 0.28s ease;
+      }
+      .st-modal.is-open .st-modal__dialog { transform: translateY(0) scale(1); opacity: 1; }
+
+      .st-modal__header {
+        position: relative;
+        padding: 30px 34px 24px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        flex: 0 0 auto;
+      }
+      .st-modal__cat {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10.5px; font-weight: 600;
+        letter-spacing: 0.22em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 12px;
+      }
+      .st-modal__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(22px, 3vw, 32px);
+        line-height: 1.15; letter-spacing: -0.02em;
+        font-weight: 700; color: #FFFFFF;
+        margin: 0; padding-right: 60px;
+      }
+      .st-modal__close {
+        position: absolute; top: 22px; right: 22px;
+        width: 38px; height: 38px;
+        display: inline-flex; align-items: center; justify-content: center;
+        font-size: 20px; line-height: 1;
+        color: rgba(255,255,255,0.7);
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 50%; cursor: pointer;
+        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+      }
+      .st-modal__close:hover { border-color: rgba(0,168,255,0.6); color: #FFFFFF; background: rgba(0,168,255,0.08); }
+
+      .st-modal__body {
+        padding: 26px 34px 30px;
+        overflow-y: auto;
+        flex: 1 1 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 30px;
+      }
+      .st-modal__body::-webkit-scrollbar { width: 8px; }
+      .st-modal__body::-webkit-scrollbar-track { background: transparent; }
+      .st-modal__body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 8px; }
+
+      .st-modal__preview {
+        grid-column: 1 / 2;
+        aspect-ratio: 4 / 3;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.08);
+        background:
+          radial-gradient(100% 100% at 20% 0%, rgba(0,102,255,0.18) 0%, transparent 60%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0,217,255,0.12) 0%, transparent 55%),
+          #0A0A0A;
+        position: relative;
+        align-self: start;
+      }
+      .st-modal__preview svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+      .st-modal__side { grid-column: 2 / 3; display: flex; flex-direction: column; gap: 22px; }
+
+      .st-modal__section { margin: 0; }
+      .st-modal__section-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px; font-weight: 600;
+        letter-spacing: 0.24em; text-transform: uppercase;
+        color: #00A8FF;
+        display: flex; align-items: center; gap: 14px;
+        margin: 0 0 12px;
+      }
+      .st-modal__section-title::after {
+        content: ""; flex: 1; height: 1px;
+        background: linear-gradient(to right, rgba(0,168,255,0.3), rgba(255,255,255,0.04));
+      }
+      .st-modal__text {
+        font-size: 14px; line-height: 1.7;
+        color: rgba(255,255,255,0.65);
+        margin: 0;
+      }
+      .st-modal__list {
+        list-style: none; padding: 0; margin: 0;
+        display: grid; gap: 8px;
+      }
+      .st-modal__list li {
+        position: relative; padding-left: 18px;
+        font-size: 13.5px; line-height: 1.55;
+        color: rgba(255,255,255,0.68);
+      }
+      .st-modal__list li::before {
+        content: ""; position: absolute; left: 0; top: 8px;
+        width: 6px; height: 6px; border-radius: 50%;
+        background: #00A8FF;
+      }
+      .st-modal__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+      .st-modal__chips span {
+        font-size: 11.5px; font-weight: 500; letter-spacing: 0.04em;
+        color: rgba(255,255,255,0.7);
+        padding: 5px 11px;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 100px;
+      }
+
+      .st-modal__price-row {
+        display: flex; align-items: baseline; gap: 12px;
+        padding: 18px 20px;
+        border: 1px solid rgba(0,168,255,0.22);
+        border-radius: 12px;
+        background: rgba(0,168,255,0.04);
+      }
+      .st-modal__price-label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10.5px; font-weight: 600;
+        letter-spacing: 0.22em; text-transform: uppercase;
+        color: #00A8FF;
+      }
+      .st-modal__price-value {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 24px; font-weight: 700;
+        letter-spacing: -0.02em; color: #FFFFFF;
+        margin-left: auto;
+      }
+
+      .st-modal__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .st-field { display: flex; flex-direction: column; gap: 8px; }
+      .st-field label {
+        font-size: 10.5px; font-weight: 600;
+        letter-spacing: 0.16em; text-transform: uppercase;
+        color: rgba(255,255,255,0.55);
+      }
+      .st-field input {
+        width: 100%;
+        padding: 12px 14px;
+        font-family: inherit;
+        font-size: 14px;
+        color: #FFFFFF;
+        background: rgba(0,0,0,0.35);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 9px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+      .st-field input::placeholder { color: rgba(255,255,255,0.3); }
+      .st-field input:focus {
+        outline: none;
+        border-color: rgba(0,168,255,0.6);
+        box-shadow: 0 0 0 3px rgba(0,168,255,0.15);
+        background: rgba(0,0,0,0.55);
+      }
+      .st-field.has-error input {
+        border-color: rgba(0,168,255,0.7);
+        box-shadow: 0 0 0 1px rgba(0,168,255,0.4);
+      }
+      .st-field__error {
+        font-size: 12px; line-height: 1.5;
+        color: #00A8FF; margin: 0;
+      }
+      .st-field__error:empty { display: none; }
+
+      .st-modal__actions {
+        display: flex; align-items: center; justify-content: flex-end;
+        gap: 12px;
+        padding: 20px 34px 26px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.95) 100%);
+        flex: 0 0 auto;
+        flex-wrap: wrap;
+      }
+      .st-modal__status {
+        flex: 1 1 auto; min-width: 0;
+        font-size: 12.5px;
+        color: #00D9FF;
+        margin: 0; opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .st-modal__status.is-visible { opacity: 1; }
+
+      body.st-modal-open { overflow: hidden; }
+
+      /* ---------- CTA ---------- */
+      .st-cta {
+        padding: 140px 0 150px;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .st-cta__title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(36px, 5.6vw, 84px);
+        line-height: 1.02; letter-spacing: -0.03em;
+        font-weight: 700; color: #FFFFFF;
+        margin: 0 0 24px;
+      }
+      .st-cta__title em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      .st-cta__text {
+        font-size: clamp(15px, 1.5vw, 18px);
+        line-height: 1.6; color: rgba(255,255,255,0.58);
+        max-width: 620px; margin: 0 auto 40px;
+      }
+      .st-cta__actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+
+      /* ---------- Reveal ---------- */
+      [data-st-reveal] {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.9s cubic-bezier(0.2,0.8,0.2,1), transform 0.9s cubic-bezier(0.2,0.8,0.2,1);
+        will-change: opacity, transform;
+      }
+      [data-st-reveal].is-visible { opacity: 1; transform: none; }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 1080px) {
+        .st-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .st-bento { grid-template-columns: repeat(6, 1fr); grid-auto-rows: 200px; }
+        .st-bento__tile--xl { grid-column: span 6; grid-row: span 2; }
+        .st-bento__tile--lg { grid-column: span 3; grid-row: span 1; }
+        .st-bento__tile--md { grid-column: span 3; }
+        .st-bento__tile--wide { grid-column: span 6; }
+      }
+      @media (max-width: 960px) {
+        .st-section { padding: 90px 0; }
+        .st-hero { padding: 140px 0 90px; min-height: auto; }
+        .st-hero__inner { grid-template-columns: 1fr; gap: 60px; }
+        .st-hero__showcase { min-height: 380px; }
+        .st-grid { grid-template-columns: 1fr; }
+        .st-spotlight { grid-template-columns: 1fr; }
+        .st-spotlight__visual { min-height: 320px; border-right: 0; border-bottom: 1px solid rgba(0,168,255,0.18); }
+        .st-spotlight__body { padding: 40px 32px; }
+        .st-bundle__card { grid-template-columns: 1fr; }
+        .st-bundle__body { padding: 40px 32px; }
+        .st-bundle__visual { min-height: 280px; border-left: 0; border-top: 1px solid rgba(0,168,255,0.2); }
+        .st-cta { padding: 100px 0 110px; }
+        .st-bundle { padding: 90px 0; }
+        .st-modal__body { grid-template-columns: 1fr; }
+        .st-modal__preview { grid-column: 1 / -1; }
+        .st-modal__side { grid-column: 1 / -1; }
+      }
+      @media (max-width: 720px) {
+        .st-modal { padding: 0; }
+        .st-modal__dialog {
+          max-width: 100%; max-height: 100vh; height: 100vh;
+          border-radius: 0; border-left: 0; border-right: 0;
+        }
+        .st-modal__header { padding: 24px 22px 20px; }
+        .st-modal__close { top: 18px; right: 18px; width: 36px; height: 36px; }
+        .st-modal__body { padding: 22px 22px 8px; gap: 22px; }
+        .st-modal__actions {
+          padding: 16px 22px 20px; gap: 10px;
+          position: sticky; bottom: 0;
+        }
+        .st-modal__actions .st-btn { flex: 1 1 0; justify-content: center; padding: 12px 18px; }
+        .st-modal__form { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 640px) {
+        .st-hero { padding: 120px 0 70px; }
+        .st-hero__actions .st-btn { width: 100%; justify-content: center; }
+        .st-hero__showcase { min-height: 300px; }
+        .st-bento { grid-template-columns: 1fr; grid-auto-rows: auto; }
+        .st-bento__tile--xl,
+        .st-bento__tile--lg,
+        .st-bento__tile--md,
+        .st-bento__tile--wide {
+          grid-column: span 1; grid-row: auto;
+          min-height: 220px;
+        }
+        .st-filter { flex: 1 1 calc(50% - 5px); text-align: center; }
+        .st-cta__actions .st-btn,
+        .st-bundle__body .st-btn { width: 100%; justify-content: center; }
+        .st-spotlight__foot { flex-direction: column; align-items: flex-start; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .st-hero__video, .st-hero__video-fallback { animation: none; transition: none; }
+        .st-hero__tile { animation: none; }
+        .st-strip__track { animation: none; }
+        .st-card, .st-btn, .st-modal, .st-modal__dialog, .st-bento__tile { transition: none; }
+        [data-st-reveal] { opacity: 1; transform: none; transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="visually-hidden" href="#main">Skip to content</a>
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" id="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="NoExaTech — home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+              <path d="M5 27V5l22 22V5" stroke="url(#nlg)" stroke-width="2.6" stroke-linecap="square"/>
+              <defs><linearGradient id="nlg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+              </linearGradient></defs>
+            </svg>
+          </span>
+          <span class="brand__name">NOEXATECH</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="credentials.html">Credentials</a></li>
+            <li><a href="store.html" class="is-active" aria-current="page">Store</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn--primary btn--sm site-header__cta" href="start-project.html">Start a Project</a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="mobile-menu__nav" aria-label="Mobile">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html"><span>01</span>Home</a></li>
+          <li><a href="about.html"><span>02</span>About</a></li>
+          <li><a href="services.html"><span>03</span>Services</a></li>
+          <li><a href="work.html"><span>04</span>Work</a></li>
+          <li><a href="process.html"><span>05</span>Process</a></li>
+          <li><a href="team.html"><span>06</span>Team</a></li>
+          <li><a href="credentials.html"><span>07</span>Credentials</a></li>
+          <li><a href="store.html"><span>08</span>Store</a></li>
+          <li><a href="contact.html"><span>09</span>Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__foot">
+        <a class="btn btn--primary" href="start-project.html">Start a Project</a>
+        <a class="mobile-menu__mail" href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+      </div>
+    </div>
+
+    <main id="main">
+
+      <!-- ============================================================
+           1. HERO — background video + floating product showcase
+           ============================================================ -->
+      <section class="st-hero">
+        <div class="st-hero__media" aria-hidden="true">
+          <div class="st-hero__video-fallback"></div>
+          <video
+            class="st-hero__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            disablepictureinpicture
+            poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'><defs><radialGradient id='g' cx='50%25' cy='50%25'><stop offset='0' stop-color='%230066FF' stop-opacity='0.35'/><stop offset='1' stop-color='%23050505'/></radialGradient></defs><rect width='1600' height='900' fill='%23050505'/><rect width='1600' height='900' fill='url(%23g)'/></svg>">
+            <source src="assets/video/store.webm" type="video/webm" />
+            <source src="assets/videos/store.mp4" type="video/mp4" />
+          </video>
+          <div class="st-hero__grid"></div>
+          <div class="st-hero__noise"></div>
+          <div class="st-hero__overlay"></div>
+        </div>
+
+        <div class="container st-hero__inner">
+          <div class="st-hero__content">
+            <p class="st-eyebrow" data-st-reveal>Digital Store</p>
+            <h1 class="st-hero__title" data-st-reveal>
+              Built once.<br><em>Ready to build with.</em>
+            </h1>
+            <p class="st-hero__text" data-st-reveal>
+              Premium digital products designed and developed by NoExaTech —
+              landing pages, templates, UI kits, and creative packs. Every file
+              built to the same standard we apply to client work.
+            </p>
+            <div class="st-hero__actions" data-st-reveal>
+              <a class="st-btn st-btn--solid" href="#products">Browse Products</a>
+              <a class="st-btn" href="#categories">Explore Categories</a>
+            </div>
+            <ul class="st-hero__meta" data-st-reveal>
+              <li>Instant delivery</li>
+              <li>Documentation included</li>
+              <li>Commercial license</li>
+            </ul>
+          </div>
+
+          <div class="st-hero__showcase" aria-hidden="true">
+            <div class="st-hero__tile st-hero__tile--a" data-tile="landing"></div>
+            <div class="st-hero__tile st-hero__tile--b" data-tile="ui"></div>
+            <div class="st-hero__tile st-hero__tile--c" data-tile="code"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           2. TRUST MARQUEE
+           ============================================================ -->
+      <div class="st-strip" aria-hidden="true">
+        <div class="st-strip__track">
+          <span>Built in-house</span><span class="sep">◇</span>
+          <span>Documentation included</span><span class="sep">◇</span>
+          <span>Commercial license</span><span class="sep">◇</span>
+          <span>Instant WhatsApp delivery</span><span class="sep">◇</span>
+          <span>Lifetime access</span><span class="sep">◇</span>
+          <span>Free minor updates</span><span class="sep">◇</span>
+          <span>Built in-house</span><span class="sep">◇</span>
+          <span>Documentation included</span><span class="sep">◇</span>
+          <span>Commercial license</span><span class="sep">◇</span>
+          <span>Instant WhatsApp delivery</span><span class="sep">◇</span>
+          <span>Lifetime access</span><span class="sep">◇</span>
+          <span>Free minor updates</span><span class="sep">◇</span>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           3. BENTO CATEGORIES
+           ============================================================ -->
+      <section class="st-section st-section--flush" id="categories" aria-labelledby="st-cats-title">
+        <div class="container">
+          <p class="st-eyebrow" data-st-reveal>Browse By Category</p>
+          <h2 class="st-h2" id="st-cats-title" data-st-reveal>
+            Everything you need, <em>nothing you don't.</em>
+          </h2>
+          <p class="st-lead" data-st-reveal>
+            Six focused product categories. Pick a lane and dive in — or explore
+            everything at once.
+          </p>
+
+          <div class="st-bento" data-st-reveal>
+            <a class="st-bento__tile st-bento__tile--xl" href="#products" data-bento-filter="landing-pages">
+              <div class="st-bento__visual" data-bento-visual="landing-pages"></div>
+              <div class="st-bento__content">
+                <p class="st-bento__label">Featured</p>
+                <h3 class="st-bento__title">Landing Pages</h3>
+                <p class="st-bento__desc">High-conversion single-page templates for products, SaaS, and campaigns.</p>
+                <span class="st-bento__cta">Browse landing pages</span>
+              </div>
+            </a>
+
+            <a class="st-bento__tile st-bento__tile--lg" href="#products" data-bento-filter="website-templates">
+              <div class="st-bento__visual" data-bento-visual="website-templates"></div>
+              <div class="st-bento__content">
+                <p class="st-bento__label">Complete</p>
+                <h3 class="st-bento__title">Website Templates</h3>
+                <span class="st-bento__cta">Browse templates</span>
+              </div>
+            </a>
+
+            <a class="st-bento__tile st-bento__tile--md" href="#products" data-bento-filter="ui-kits">
+              <div class="st-bento__visual" data-bento-visual="ui-kits"></div>
+              <div class="st-bento__content">
+                <p class="st-bento__label">Design</p>
+                <h3 class="st-bento__title">UI Kits</h3>
+                <span class="st-bento__cta">Browse UI kits</span>
+              </div>
+            </a>
+
+            <a class="st-bento__tile st-bento__tile--md" href="#products" data-bento-filter="code-components">
+              <div class="st-bento__visual" data-bento-visual="code-components"></div>
+              <div class="st-bento__content">
+                <p class="st-bento__label">Code</p>
+                <h3 class="st-bento__title">Code Components</h3>
+                <span class="st-bento__cta">Browse components</span>
+              </div>
+            </a>
+
+            <a class="st-bento__tile st-bento__tile--md" href="#products" data-bento-filter="social-kits">
+              <div class="st-bento__visual" data-bento-visual="social-kits"></div>
+              <div class="st-bento__content">
+                <p class="st-bento__label">Creative</p>
+                <h3 class="st-bento__title">Social Media Kits</h3>
+                <span class="st-bento__cta">Browse kits</span>
+              </div>
+            </a>
+
+            <a class="st-bento__tile st-bento__tile--wide" href="#products" data-bento-filter="business-templates">
+              <div class="st-bento__visual" data-bento-visual="business-templates"></div>
+              <div class="st-bento__content">
+                <p class="st-bento__label">Business</p>
+                <h3 class="st-bento__title">Business Templates</h3>
+                <p class="st-bento__desc">Proposals, invoices, and the documents every business ends up needing.</p>
+                <span class="st-bento__cta">Browse business templates</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           4. FEATURED SPOTLIGHT
+           ============================================================ -->
+      <section class="st-section" aria-labelledby="st-spotlight-title">
+        <div class="container">
+          <p class="st-eyebrow" data-st-reveal>Featured Product</p>
+          <h2 class="st-h2" id="st-spotlight-title" data-st-reveal>
+            One product, <em>built to carry a launch.</em>
+          </h2>
+
+          <div class="st-spotlight" data-st-spotlight data-st-reveal>
+            <!-- Populated by store.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           5. PRODUCT GRID WITH FILTERS
+           ============================================================ -->
+      <section class="st-section" id="products" aria-labelledby="st-list-title">
+        <div class="container">
+          <p class="st-eyebrow" data-st-reveal>All Products</p>
+          <h2 class="st-h2" id="st-list-title" data-st-reveal>
+            Premium assets, <em>without the guesswork.</em>
+          </h2>
+          <p class="st-lead" data-st-reveal style="margin-bottom: 50px;">
+            Every product is built with the same standard we apply to client work.
+            Order through WhatsApp — we confirm and send delivery details directly.
+          </p>
+
+          <div class="st-filters" role="tablist" aria-label="Filter products by category" data-st-reveal>
+            <button class="st-filter is-active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="st-filter" type="button" data-filter="landing-pages" role="tab" aria-selected="false">Landing Pages</button>
+            <button class="st-filter" type="button" data-filter="website-templates" role="tab" aria-selected="false">Website Templates</button>
+            <button class="st-filter" type="button" data-filter="ui-kits" role="tab" aria-selected="false">UI Kits</button>
+            <button class="st-filter" type="button" data-filter="code-components" role="tab" aria-selected="false">Code Components</button>
+            <button class="st-filter" type="button" data-filter="social-kits" role="tab" aria-selected="false">Social Media Kits</button>
+            <button class="st-filter" type="button" data-filter="business-templates" role="tab" aria-selected="false">Business Templates</button>
+          </div>
+
+          <div class="st-grid" data-store-grid data-st-reveal></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           6. BUNDLE OFFER
+           ============================================================ -->
+      <section class="st-bundle" aria-labelledby="st-bundle-title">
+        <div class="container">
+          <div class="st-bundle__card" data-st-reveal>
+            <div class="st-bundle__body">
+              <p class="st-bundle__label">The Complete Collection</p>
+              <h2 class="st-bundle__title" id="st-bundle-title">Get everything in one bundle.</h2>
+              <p class="st-bundle__text">
+                Every current product in the store, plus free access to all minor
+                updates. One payment, one delivery, no per-file pricing.
+              </p>
+              <div>
+                <button class="st-btn st-btn--solid" type="button" data-st-bundle-cta>
+                  Ask About The Bundle
+                </button>
+              </div>
+            </div>
+            <div class="st-bundle__visual" data-bundle-visual aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           7. FAQ
+           ============================================================ -->
+      <section class="st-section" aria-labelledby="st-faq-title">
+        <div class="container">
+          <p class="st-eyebrow" data-st-reveal>Questions</p>
+          <h2 class="st-h2" id="st-faq-title" data-st-reveal>
+            Things people ask <em>before buying.</em>
+          </h2>
+
+          <div class="st-faq-list" data-st-reveal>
+            <div class="st-faq">
+              <button class="st-faq__btn" type="button" aria-expanded="false">
+                <span class="st-faq__q">How is the product delivered?</span>
+                <span class="st-faq__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="st-faq__panel">
+                <div class="st-faq__panel-inner">
+                  After we confirm your order on WhatsApp, we send the product files
+                  directly along with documentation. Delivery is typically within a
+                  few minutes of payment confirmation.
+                </div>
+              </div>
+            </div>
+
+            <div class="st-faq">
+              <button class="st-faq__btn" type="button" aria-expanded="false">
+                <span class="st-faq__q">What does the license cover?</span>
+                <span class="st-faq__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="st-faq__panel">
+                <div class="st-faq__panel-inner">
+                  Each product page lists its specific license. In general, our
+                  products are licensed for personal and commercial use on a single
+                  end product. Redistribution or resale of the source files is not
+                  permitted.
+                </div>
+              </div>
+            </div>
+
+            <div class="st-faq">
+              <button class="st-faq__btn" type="button" aria-expanded="false">
+                <span class="st-faq__q">Can I get a custom version built?</span>
+                <span class="st-faq__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="st-faq__panel">
+                <div class="st-faq__panel-inner">
+                  Yes. If a store product is close to what you need but not quite,
+                  start a project and we can quote a custom version built around
+                  your specific requirements.
+                </div>
+              </div>
+            </div>
+
+            <div class="st-faq">
+              <button class="st-faq__btn" type="button" aria-expanded="false">
+                <span class="st-faq__q">Do you offer refunds?</span>
+                <span class="st-faq__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="st-faq__panel">
+                <div class="st-faq__panel-inner">
+                  Because these are digital products delivered immediately, refunds
+                  are not offered once files have been sent. Please review the
+                  product page carefully before ordering — and ask us anything you
+                  need clarified first.
+                </div>
+              </div>
+            </div>
+
+            <div class="st-faq">
+              <button class="st-faq__btn" type="button" aria-expanded="false">
+                <span class="st-faq__q">Can I pay in something other than PKR?</span>
+                <span class="st-faq__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="st-faq__panel">
+                <div class="st-faq__panel-inner">
+                  Yes. Get in touch through WhatsApp and we will confirm the current
+                  exchange rate and the payment methods available to you.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           8. FINAL CTA
+           ============================================================ -->
+      <section class="st-cta" aria-labelledby="st-cta-title">
+        <div class="container">
+          <h2 class="st-cta__title" id="st-cta-title" data-st-reveal>
+            Need something <em>custom-built?</em>
+          </h2>
+          <p class="st-cta__text" data-st-reveal>
+            Store products are ready-made. If you need something built around your
+            business, start a project and we'll take it from there.
+          </p>
+          <div class="st-cta__actions" data-st-reveal>
+            <a class="st-btn st-btn--solid" href="start-project.html">Start a Project</a>
+            <a class="st-btn" href="services.html">View Services</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a class="brand" href="index.html" aria-label="NoExaTech — home">
+              <span class="brand__mark" aria-hidden="true">
+                <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
+                  <path d="M5 27V5l22 22V5" stroke="url(#flg)" stroke-width="2.6" stroke-linecap="square"/>
+                  <defs><linearGradient id="flg" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#0066FF"/><stop offset="1" stop-color="#00D9FF"/>
+                  </linearGradient></defs>
+                </svg>
+              </span>
+              <span class="brand__name">NOEXATECH</span>
+            </a>
+            <p class="footer__tagline">“New Ideas. Powered by Technology.”</p>
+            <a class="btn btn--primary btn--sm footer__cta" href="start-project.html">Start a Project</a>
+          </div>
+
+          <nav class="footer__nav" aria-label="Footer">
+            <h2 class="footer__heading">Navigation</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="work.html">Work</a></li>
+              <li><a href="process.html">Process</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="credentials.html">Credentials</a></li>
+              <li><a href="store.html">Store</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer__contact">
+            <h2 class="footer__heading">Contact</h2>
+            <a href="mailto:novexatech1809@gmail.com">novexatech1809@gmail.com</a>
+            <ul class="social" data-social></ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© <span data-year>2026</span> NoExaTech. All rights reserved.</p>
+          <p class="footer__built">Designed &amp; built in-house.</p>
+        </div>
+      </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <!-- Product modal -->
+    <div class="st-modal" id="stProductModal" role="dialog" aria-modal="true" aria-labelledby="stModalTitle" hidden>
+      <div class="st-modal__backdrop" data-st-close></div>
+
+      <div class="st-modal__dialog" role="document">
+        <header class="st-modal__header">
+          <p class="st-modal__cat" data-st-cat>Category</p>
+          <h2 class="st-modal__title" id="stModalTitle" data-st-title>Product Name</h2>
+          <button class="st-modal__close" type="button" aria-label="Close product" data-st-close>×</button>
+        </header>
+
+        <div class="st-modal__body">
+          <div class="st-modal__preview" data-st-preview aria-hidden="true"></div>
+
+          <div class="st-modal__side">
+            <div class="st-modal__section">
+              <h3 class="st-modal__section-title">Description</h3>
+              <p class="st-modal__text" data-st-desc>—</p>
+            </div>
+
+            <div class="st-modal__section" data-st-includes-section>
+              <h3 class="st-modal__section-title">What's Included</h3>
+              <ul class="st-modal__list" data-st-includes></ul>
+            </div>
+
+            <div class="st-modal__section" data-st-features-section>
+              <h3 class="st-modal__section-title">Features</h3>
+              <ul class="st-modal__list" data-st-features></ul>
+            </div>
+
+            <div class="st-modal__section">
+              <h3 class="st-modal__section-title">Technology</h3>
+              <div class="st-modal__chips" data-st-tech></div>
+            </div>
+
+            <div class="st-modal__section">
+              <h3 class="st-modal__section-title">License</h3>
+              <p class="st-modal__text" data-st-license>—</p>
+            </div>
+
+            <div class="st-modal__price-row">
+              <span class="st-modal__price-label">Price</span>
+              <span class="st-modal__price-value" data-st-price>—</span>
+            </div>
+
+            <div class="st-modal__section">
+              <h3 class="st-modal__section-title">Your Details</h3>
+              <form class="st-modal__form" id="stCheckoutForm" novalidate>
+                <div class="st-field">
+                  <label for="stName">Full Name</label>
+                  <input id="stName" name="name" type="text" placeholder="Your name" autocomplete="name" required aria-describedby="stNameError" />
+                  <p class="st-field__error" id="stNameError" role="alert"></p>
+                </div>
+                <div class="st-field">
+                  <label for="stEmail">Email</label>
+                  <input id="stEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="stEmailError" />
+                  <p class="st-field__error" id="stEmailError" role="alert"></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <footer class="st-modal__actions">
+          <p class="st-modal__status" data-st-status aria-live="polite"></p>
+          <button class="st-btn st-btn--no-arrow" type="button" data-st-close>Cancel</button>
+          <button class="st-btn st-btn--solid" type="submit" form="stCheckoutForm" data-st-submit>Buy on WhatsApp</button>
+        </footer>
+      </div>
+    </div>
+
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/store.js" defer></script>
+
+    <!-- Animation system -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js?v=3" defer></script>
+    <script src="assets/js/cursor-light.js" defer></script>
+  </body>
+</html>

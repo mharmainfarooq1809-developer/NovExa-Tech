@@ -8,7 +8,6 @@
     <meta name="theme-color" content="#050505" />
     <link rel="canonical" href="https://noexatech.vercel.app/team.html" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="NoExaTech" />
     <meta property="og:title" content="Team | NoExaTech" />
@@ -16,7 +15,6 @@
     <meta property="og:url" content="https://noexatech.vercel.app/team.html" />
     <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Team | NoExaTech" />
     <meta name="twitter:description" content="The people behind the work." />
@@ -34,19 +32,17 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
 
     <style>
-      /* ================= Team page — scoped styles ================= */
-
+      /* ============================================================
+         Team page — scoped styles
+         ============================================================ */
       .visually-hidden {
         position: absolute !important;
         width: 1px; height: 1px;
         padding: 0; margin: -1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        white-space: nowrap;
-        border: 0;
+        overflow: hidden; clip: rect(0 0 0 0);
+        white-space: nowrap; border: 0;
       }
 
-      /* Shared rhythm */
       .tm-section {
         padding: 130px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -61,79 +57,292 @@
         color: #00A8FF;
         margin: 0 0 20px;
       }
-
       .tm-h2 {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(32px, 4.8vw, 64px);
-        line-height: 1.04;
-        letter-spacing: -0.03em;
-        font-weight: 700;
-        color: #FFFFFF;
-        margin: 0 0 24px;
-        max-width: 900px;
+        line-height: 1.04; letter-spacing: -0.03em; font-weight: 700;
+        color: #FFFFFF; margin: 0 0 24px; max-width: 900px;
       }
       .tm-h2 em {
         font-style: normal;
         background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        -webkit-background-clip: text; background-clip: text; color: transparent;
       }
-
       .tm-lead {
         font-size: clamp(15px, 1.5vw, 19px);
         line-height: 1.65;
         color: rgba(255, 255, 255, 0.66);
-        max-width: 680px;
-        margin: 0;
+        max-width: 680px; margin: 0;
       }
 
-      /* ---------- Hero ---------- */
+      /* ---------- HERO with background video ---------- */
       .tm-hero {
-        padding: 160px 0 130px;
         position: relative;
+        min-height: 92vh;
+        padding: 180px 0 140px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        isolation: isolate;
+      }
+      .tm-hero__media {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
         overflow: hidden;
       }
-      .tm-hero__inner { max-width: 1080px; }
+      .tm-hero__video-fallback {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(120% 90% at 20% 15%, rgba(0, 102, 255, 0.30) 0%, transparent 55%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0, 217, 255, 0.22) 0%, transparent 55%),
+          #050505;
+        animation: tmHeroShift 24s ease-in-out infinite alternate;
+      }
+      @keyframes tmHeroShift {
+        0%   { transform: scale(1)    translate(0, 0); }
+        100% { transform: scale(1.08) translate(-2%, -2%); }
+      }
+      .tm-hero__video {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        filter: saturate(0.85) contrast(1.05);
+        transition: opacity 1.1s ease;
+        will-change: opacity;
+        pointer-events: none;
+      }
+      .tm-hero__video.is-ready { opacity: 0.5; }
+      .tm-hero__video.is-missing { display: none; }
+
+      .tm-hero__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(180deg, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.78) 70%, #050505 100%),
+          radial-gradient(90% 70% at 15% 20%, rgba(0, 102, 255, 0.18) 0%, transparent 60%);
+      }
+      .tm-hero__grid {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image:
+          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        background-size: 68px 68px;
+        -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+        mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+        opacity: 0.55;
+      }
+      .tm-hero__noise {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.035;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+        mix-blend-mode: overlay;
+      }
+
+      .tm-hero__inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 60px;
+        align-items: center;
+        width: 100%;
+      }
+      .tm-hero__content { max-width: 620px; }
       .tm-hero__title {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(42px, 7.6vw, 124px);
-        line-height: 0.94;
-        letter-spacing: -0.035em;
-        font-weight: 700;
-        color: #FFFFFF;
-        margin: 0 0 36px;
+        font-size: clamp(44px, 7.2vw, 112px);
+        line-height: 0.94; letter-spacing: -0.04em; font-weight: 700;
+        color: #FFFFFF; margin: 0 0 30px;
       }
       .tm-hero__title em {
         font-style: normal;
         background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        -webkit-background-clip: text; background-clip: text; color: transparent;
       }
       .tm-hero__text {
-        font-size: clamp(16px, 1.7vw, 20px);
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.62);
-        max-width: 720px;
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0 0 36px;
+        max-width: 560px;
+      }
+      .tm-hero__meta {
+        list-style: none; padding: 0; margin: 0;
+        display: flex; flex-wrap: wrap; gap: 22px;
+        font-size: 12.5px; letter-spacing: 0.04em;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .tm-hero__meta li { display: inline-flex; align-items: center; gap: 10px; }
+      .tm-hero__meta li::before {
+        content: ""; width: 6px; height: 6px;
+        border-radius: 50%; background: #00A8FF;
+        box-shadow: 0 0 12px rgba(0,168,255,0.8);
       }
 
-      /* ---------- Leadership block ---------- */
+      /* Floating portrait tiles */
+      .tm-hero__showcase {
+        position: relative;
+        min-height: 500px;
+      }
+      .tm-hero__tile {
+        position: absolute;
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%),
+          #0A0A0A;
+        box-shadow: 0 30px 60px -25px rgba(0,0,0,0.9), 0 0 0 1px rgba(0,168,255,0.08) inset;
+        overflow: hidden;
+        backdrop-filter: blur(6px);
+      }
+      .tm-hero__tile::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(100% 100% at 20% 0%, rgba(0,102,255,0.22) 0%, transparent 60%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0,217,255,0.14) 0%, transparent 55%);
+        pointer-events: none;
+        z-index: 1;
+      }
+      .tm-hero__tile img {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.7s ease;
+      }
+      .tm-hero__tile img.is-loaded { opacity: 1; }
+      .tm-hero__tile svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 2; opacity: 0.9; }
+      .tm-hero__tile img.is-loaded ~ svg { opacity: 0.15; }
+
+      .tm-hero__tile--a {
+        top: 0; left: 6%;
+        width: 58%; height: 60%;
+        transform: rotate(-5deg);
+        animation: tmFloat 9s ease-in-out infinite alternate;
+        z-index: 3;
+      }
+      .tm-hero__tile--b {
+        top: 28%; right: 0;
+        width: 52%; height: 56%;
+        transform: rotate(4deg);
+        animation: tmFloat 10s ease-in-out -1.5s infinite alternate;
+        z-index: 2;
+      }
+      .tm-hero__tile--c {
+        bottom: 0; left: 14%;
+        width: 46%; height: 42%;
+        transform: rotate(-2deg);
+        animation: tmFloat 11s ease-in-out -3s infinite alternate;
+        z-index: 4;
+      }
+      @keyframes tmFloat {
+        0%   { transform: translateY(0) rotate(-4deg); }
+        100% { transform: translateY(-14px) rotate(-3deg); }
+      }
+
+      /* ---------- Buttons ---------- */
+      .tm-btn {
+        display: inline-flex; align-items: center; gap: 10px;
+        padding: 15px 26px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        text-decoration: none; cursor: pointer;
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      }
+      .tm-btn::after { content: "→"; font-size: 14px; transition: transform 0.25s ease; }
+      .tm-btn:hover {
+        border-color: rgba(0, 168, 255, 0.7);
+        background: rgba(0, 168, 255, 0.08);
+        transform: translateY(-1px);
+      }
+      .tm-btn:hover::after { transform: translateX(4px); }
+      .tm-btn--solid {
+        background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%);
+        border-color: transparent;
+      }
+      .tm-btn--solid:hover {
+        background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%);
+        box-shadow: 0 14px 34px -12px rgba(0, 168, 255, 0.6);
+      }
+
+      /* ---------- Stat band ---------- */
+      .tm-stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.012);
+      }
+      .tm-stat {
+        padding: 44px 32px;
+        border-right: 1px solid rgba(255,255,255,0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .tm-stat:last-child { border-right: 0; }
+      .tm-stat__value {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(30px, 3.4vw, 44px);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+      .tm-stat__value em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      .tm-stat__label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.45);
+      }
+
+      /* ---------- Leadership ---------- */
       .tm-leader {
         padding: 130px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
       }
+      .tm-leader--flush { border-top: 0; }
       .tm-leader__grid {
         display: grid;
         grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
         gap: 80px;
         align-items: start;
       }
+      .tm-leader--reverse .tm-leader__grid {
+        grid-template-columns: minmax(0, 0.58fr) minmax(0, 0.42fr);
+      }
+      .tm-leader--reverse .tm-leader__portrait { order: 2; }
+      .tm-leader--reverse .tm-leader__body { order: 1; }
+
       .tm-leader__portrait {
         position: relative;
         aspect-ratio: 4 / 5;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
+        border-radius: 14px;
         overflow: hidden;
         background:
           radial-gradient(120% 100% at 20% 0%, rgba(0, 102, 255, 0.18) 0%, transparent 60%),
@@ -144,53 +353,42 @@
         justify-content: center;
       }
       .tm-leader__portrait img {
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
         object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.9s ease;
       }
+      .tm-leader__portrait img.is-loaded { opacity: 1; }
       .tm-leader__portrait::after {
-        content: "Portrait placeholder";
+        content: attr(data-label);
         font-family: 'Space Grotesk', sans-serif;
         font-size: 11px;
         letter-spacing: 0.24em;
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.32);
       }
-      .tm-leader--cfo .tm-leader__portrait::after { content: none; }
-      .tm-card__photo-label {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.24em;
-        text-transform: uppercase;
-        color: #00D9FF;
-      }
+      .tm-leader__portrait img.is-loaded ~ * { display: none; }
 
       .tm-leader__name {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(32px, 4vw, 52px);
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        color: #FFFFFF;
-        margin: 0 0 12px;
+        font-weight: 700; letter-spacing: -0.03em;
+        color: #FFFFFF; margin: 0 0 12px;
         line-height: 1.05;
       }
       .tm-leader__role {
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: #00A8FF;
-        margin: 0 0 32px;
+        font-size: 13px; font-weight: 500;
+        letter-spacing: 0.2em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 32px;
       }
       .tm-leader__bio {
-        font-size: 16px;
-        line-height: 1.75;
+        font-size: 16px; line-height: 1.75;
         color: rgba(255, 255, 255, 0.62);
         margin: 0 0 22px;
         max-width: 620px;
       }
-
       .tm-leader__focus {
         margin-top: 36px;
         padding: 26px 28px;
@@ -200,181 +398,186 @@
       }
       .tm-leader__focus-title {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.24em;
-        text-transform: uppercase;
-        color: #00A8FF;
-        margin: 0 0 16px;
+        font-size: 11px; font-weight: 600;
+        letter-spacing: 0.24em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 16px;
       }
       .tm-leader__focus-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+        list-style: none; padding: 0; margin: 0;
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px 24px;
       }
       .tm-leader__focus-list li {
-        position: relative;
-        padding-left: 18px;
-        font-size: 14px;
-        line-height: 1.55;
+        position: relative; padding-left: 18px;
+        font-size: 14px; line-height: 1.55;
         color: rgba(255, 255, 255, 0.72);
       }
       .tm-leader__focus-list li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 8px;
-        width: 6px;
-        height: 6px;
+        content: ""; position: absolute;
+        left: 0; top: 8px;
+        width: 6px; height: 6px;
         border-radius: 50%;
         background: #00A8FF;
       }
       .tm-leader__actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
+        display: flex; flex-wrap: wrap; gap: 12px;
         margin-top: 34px;
       }
 
-      /* ---------- Buttons (page-scoped) ---------- */
-      .tm-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 15px 26px;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 999px;
-        text-decoration: none;
-        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
-      }
-      .tm-btn::after { content: "→"; font-size: 14px; transition: transform 0.25s ease; }
-      .tm-btn:hover {
-        border-color: rgba(0, 168, 255, 0.7);
-        background: rgba(0, 168, 255, 0.08);
-        transform: translateY(-1px);
-      }
-      .tm-btn:hover::after { transform: translateX(4px); }
-
-      .tm-btn--solid {
-        background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%);
-        border-color: transparent;
-      }
-      .tm-btn--solid:hover {
-        background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%);
-        border-color: transparent;
-        box-shadow: 0 14px 34px -12px rgba(0, 168, 255, 0.6);
-      }
-
-      /* ---------- Team categories ---------- */
-      .tm-categories {
+      /* ---------- Team roster (distinct grid) ---------- */
+      .tm-roster {
         display: grid;
-        gap: 70px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
         margin-top: 60px;
       }
-      .tm-category { display: grid; gap: 24px; }
-      .tm-category__head {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        padding-bottom: 18px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .tm-category__title {
+      .tm-roster[data-empty]::after {
+        content: "No team members in this category yet.";
+        grid-column: 1 / -1; text-align: center;
+        padding: 80px 20px;
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.24em;
-        text-transform: uppercase;
-        color: #00A8FF;
-        margin: 0;
+        font-size: 15px;
+        color: rgba(255,255,255,0.4);
       }
-      .tm-category__line {
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(to right, rgba(0,168,255,0.2), rgba(255,255,255,0.02));
-      }
-      .tm-category__count {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.4);
-      }
+      .tm-roster__card[hidden] { display: none; }
 
-      .tm-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
-      }
-
-      .tm-card {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+      .tm-roster__card {
+        position: relative;
+        display: block;
+        border: 1px solid rgba(255,255,255,0.1);
         border-radius: 14px;
         overflow: hidden;
-        background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
-        transition: border-color 0.3s ease, transform 0.3s ease;
+        background: #0A0A0A;
+        aspect-ratio: 3 / 4;
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.35s ease, transform 0.4s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.35s ease;
       }
-      .tm-card:hover {
-        border-color: rgba(0, 168, 255, 0.35);
-        transform: translateY(-3px);
+      .tm-roster__card:hover {
+        border-color: rgba(0, 168, 255, 0.45);
+        transform: translateY(-4px);
+        box-shadow: 0 30px 60px -30px rgba(0,168,255,0.4);
       }
-      .tm-card__photo {
-        aspect-ratio: 1 / 1;
-        position: relative;
+
+      .tm-roster__photo {
+        position: absolute;
+        inset: 0;
         background:
-          radial-gradient(100% 100% at 30% 20%, rgba(0, 102, 255, 0.16) 0%, transparent 60%),
+          radial-gradient(100% 100% at 30% 20%, rgba(0, 102, 255, 0.18) 0%, transparent 60%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0, 217, 255, 0.10) 0%, transparent 55%),
           #0A0A0A;
+      }
+      .tm-roster__photo img {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transform: scale(1.05);
+        transition: opacity 0.8s ease, transform 1s ease;
+      }
+      .tm-roster__photo img.is-loaded {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .tm-roster__card:hover .tm-roster__photo img.is-loaded {
+        transform: scale(1.05);
+      }
+
+      /* Fallback silhouette / initials */
+      .tm-roster__placeholder {
+        position: absolute;
+        inset: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
-      .tm-card__photo::after {
-        content: "Photo";
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 10px;
-        letter-spacing: 0.28em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.28);
+      .tm-roster__placeholder svg {
+        width: 100%; height: 100%;
+        opacity: 0.85;
       }
-      .tm-card__body { padding: 26px 24px 30px; }
-      .tm-card__name {
+      .tm-roster__photo img.is-loaded ~ .tm-roster__placeholder { opacity: 0; }
+
+      /* Overlay */
+      .tm-roster__overlay {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, transparent 40%, rgba(5,5,5,0.5) 65%, rgba(5,5,5,0.92) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 22px 22px 24px;
+        z-index: 2;
+      }
+      .tm-roster__badge {
+        position: absolute;
+        top: 14px; left: 14px;
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 17px;
+        font-size: 10px; font-weight: 600;
+        letter-spacing: 0.22em; text-transform: uppercase;
+        color: #00D9FF;
+        padding: 5px 10px;
+        border: 1px solid rgba(0,217,255,0.4);
+        border-radius: 100px;
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(6px);
+        z-index: 3;
+      }
+      .tm-roster__name {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 18px;
         font-weight: 600;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.015em;
+        line-height: 1.25;
         color: #FFFFFF;
         margin: 0 0 6px;
-        line-height: 1.3;
       }
-      .tm-card__role {
+      .tm-roster__role {
         font-size: 11px;
         font-weight: 500;
         letter-spacing: 0.18em;
         text-transform: uppercase;
         color: #00A8FF;
-        margin: 0 0 14px;
-      }
-      .tm-card__desc {
-        font-size: 14px;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.55);
         margin: 0;
       }
+      .tm-roster__desc {
+        font-size: 13px;
+        line-height: 1.5;
+        color: rgba(255,255,255,0.6);
+        margin: 10px 0 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.4s ease;
+      }
+      .tm-roster__card:hover .tm-roster__desc {
+        max-height: 100px;
+        opacity: 1;
+      }
+
+      /* Category tabs */
+      .tm-filters {
+        display: flex; flex-wrap: wrap; gap: 10px;
+        padding: 22px 0; margin-bottom: 40px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .tm-filter {
+        appearance: none; -webkit-appearance: none;
+        padding: 11px 20px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11.5px; font-weight: 600;
+        letter-spacing: 0.16em; text-transform: uppercase;
+        color: rgba(255,255,255,0.65);
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 999px; cursor: pointer;
+        transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+      }
+      .tm-filter:hover { border-color: rgba(0,168,255,0.4); color: #FFFFFF; }
+      .tm-filter.is-active { border-color: rgba(0,168,255,0.7); background: rgba(0,168,255,0.08); color: #FFFFFF; }
 
       .tm-note {
         margin-top: 40px;
@@ -388,24 +591,17 @@
       }
       .tm-note::before {
         content: "i";
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        display: inline-flex; align-items: center; justify-content: center;
         flex: 0 0 auto;
-        width: 22px;
-        height: 22px;
+        width: 22px; height: 22px;
         border-radius: 50%;
         background: rgba(0, 168, 255, 0.15);
         color: #00A8FF;
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 13px;
-        font-weight: 700;
-        font-style: italic;
-        line-height: 1;
+        font-size: 13px; font-weight: 700; font-style: italic; line-height: 1;
       }
       .tm-note__text {
-        font-size: 13.5px;
-        line-height: 1.6;
+        font-size: 13.5px; line-height: 1.6;
         color: rgba(255, 255, 255, 0.6);
         margin: 0;
       }
@@ -423,37 +619,29 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
       .tm-cap:nth-child(2n) {
-        padding-left: 48px;
-        padding-right: 0;
+        padding-left: 48px; padding-right: 0;
         border-left: 1px solid rgba(255, 255, 255, 0.08);
       }
       .tm-cap__label {
         display: inline-block;
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 10.5px;
-        font-weight: 600;
-        letter-spacing: 0.24em;
-        text-transform: uppercase;
-        color: #00A8FF;
-        margin: 0 0 14px;
+        font-size: 10.5px; font-weight: 600;
+        letter-spacing: 0.24em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 14px;
       }
       .tm-cap__title {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 22px;
-        font-weight: 600;
+        font-size: 22px; font-weight: 600;
         letter-spacing: -0.01em;
-        color: #FFFFFF;
-        margin: 0 0 12px;
+        color: #FFFFFF; margin: 0 0 12px;
       }
       .tm-cap__desc {
-        font-size: 15px;
-        line-height: 1.65;
+        font-size: 15px; line-height: 1.65;
         color: rgba(255, 255, 255, 0.58);
-        margin: 0;
-        max-width: 480px;
+        margin: 0; max-width: 480px;
       }
 
-      /* ---------- How we work together (flow) ---------- */
+      /* ---------- Flow ---------- */
       .tm-flow {
         margin-top: 60px;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -470,27 +658,21 @@
       .tm-flow__step:hover { padding-left: 12px; }
       .tm-flow__num {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 13px;
-        font-weight: 600;
+        font-size: 13px; font-weight: 600;
         letter-spacing: 0.24em;
         color: #00A8FF;
       }
       .tm-flow__title {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(18px, 2.2vw, 26px);
-        font-weight: 600;
-        letter-spacing: -0.015em;
-        color: #FFFFFF;
-        margin: 0;
-        line-height: 1.2;
+        font-weight: 600; letter-spacing: -0.015em;
+        color: #FFFFFF; margin: 0; line-height: 1.2;
       }
       .tm-flow__desc {
-        font-size: 15px;
-        line-height: 1.65;
+        font-size: 15px; line-height: 1.65;
         color: rgba(255, 255, 255, 0.55);
         margin: 0;
       }
-
       .tm-flow__claim {
         margin: 56px 0 0;
         padding: 34px 40px;
@@ -501,16 +683,11 @@
           rgba(255, 255, 255, 0.015);
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(22px, 2.8vw, 34px);
-        line-height: 1.25;
-        letter-spacing: -0.02em;
-        font-weight: 500;
-        color: #FFFFFF;
+        line-height: 1.25; letter-spacing: -0.02em;
+        font-weight: 500; color: #FFFFFF;
         text-align: center;
       }
-      .tm-flow__claim em {
-        font-style: normal;
-        color: #00A8FF;
-      }
+      .tm-flow__claim em { font-style: normal; color: #00A8FF; }
 
       /* ---------- Values ---------- */
       .tm-values {
@@ -530,24 +707,19 @@
       .tm-value__num {
         display: inline-block;
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 11px;
-        font-weight: 600;
+        font-size: 11px; font-weight: 600;
         letter-spacing: 0.24em;
-        color: #00A8FF;
-        margin: 0 0 16px;
+        color: #00A8FF; margin: 0 0 16px;
       }
       .tm-value__title {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 18px; font-weight: 600;
         letter-spacing: -0.01em;
-        color: #FFFFFF;
-        margin: 0 0 10px;
+        color: #FFFFFF; margin: 0 0 10px;
         line-height: 1.3;
       }
       .tm-value__desc {
-        font-size: 14px;
-        line-height: 1.6;
+        font-size: 14px; line-height: 1.6;
         color: rgba(255, 255, 255, 0.55);
         margin: 0;
       }
@@ -561,36 +733,36 @@
       .tm-cta__title {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(38px, 6vw, 88px);
-        line-height: 1.02;
-        letter-spacing: -0.03em;
-        font-weight: 700;
-        color: #FFFFFF;
+        line-height: 1.02; letter-spacing: -0.03em;
+        font-weight: 700; color: #FFFFFF;
         margin: 0 0 26px;
       }
       .tm-cta__title em {
         font-style: normal;
         background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        -webkit-background-clip: text; background-clip: text; color: transparent;
       }
       .tm-cta__text {
         font-size: clamp(16px, 1.6vw, 19px);
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.58);
-        max-width: 620px;
-        margin: 0 auto 44px;
+        line-height: 1.6; color: rgba(255, 255, 255, 0.58);
+        max-width: 620px; margin: 0 auto 44px;
       }
       .tm-cta__actions {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 14px;
+        display: flex; justify-content: center; flex-wrap: wrap; gap: 14px;
       }
+
+      /* ---------- Reveal ---------- */
+      [data-tm-reveal] {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.9s cubic-bezier(0.2,0.8,0.2,1), transform 0.9s cubic-bezier(0.2,0.8,0.2,1);
+        will-change: opacity, transform;
+      }
+      [data-tm-reveal].is-visible { opacity: 1; transform: none; }
 
       /* ---------- Responsive ---------- */
       @media (max-width: 1080px) {
-        .tm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .tm-roster { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         .tm-values { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .tm-value:nth-child(4n) { border-right: 1px solid rgba(255, 255, 255, 0.08); padding-right: 30px; }
         .tm-value:nth-child(2n) { border-right: 0; padding-right: 0; }
@@ -599,31 +771,51 @@
       }
       @media (max-width: 960px) {
         .tm-section { padding: 90px 0; }
-        .tm-hero { padding: 120px 0 90px; }
-        .tm-leader__grid { grid-template-columns: 1fr; gap: 40px; }
+        .tm-hero { padding: 130px 0 90px; min-height: auto; }
+        .tm-hero__inner { grid-template-columns: 1fr; gap: 60px; }
+        .tm-hero__showcase { min-height: 400px; }
+        .tm-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .tm-stat:nth-child(2n) { border-right: 0; }
+        .tm-stat:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .tm-leader__grid,
+        .tm-leader--reverse .tm-leader__grid { grid-template-columns: 1fr; gap: 40px; }
+        .tm-leader--reverse .tm-leader__portrait,
+        .tm-leader--reverse .tm-leader__body { order: initial; }
         .tm-leader { padding: 100px 0; }
         .tm-caps { grid-template-columns: 1fr; }
         .tm-cap, .tm-cap:nth-child(2n) { padding: 30px 0; border-left: 0; }
         .tm-flow__step { grid-template-columns: 60px 1fr; gap: 20px; }
         .tm-flow__desc { grid-column: 2; }
         .tm-leader__focus-list { grid-template-columns: 1fr; }
+        .tm-roster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .tm-cta { padding: 100px 0 110px; }
       }
       @media (max-width: 640px) {
-        .tm-hero { padding: 100px 0 60px; }
-        .tm-grid { grid-template-columns: 1fr; }
+        .tm-hero { padding: 110px 0 70px; }
+        .tm-hero__showcase { min-height: 340px; }
+        .tm-roster { grid-template-columns: 1fr; gap: 18px; }
         .tm-values { grid-template-columns: 1fr; }
         .tm-value, .tm-value:nth-child(2n), .tm-value:nth-child(4n), .tm-value:not(:nth-child(4n + 1)), .tm-value:nth-child(2n + 1) {
           padding: 30px 0;
           border-right: 0;
         }
+        .tm-stats { grid-template-columns: 1fr; }
+        .tm-stat, .tm-stat:nth-child(2n), .tm-stat:nth-child(-n+2) {
+          border-right: 0;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          padding: 32px 0;
+        }
+        .tm-stat:last-child { border-bottom: 0; }
         .tm-flow__claim { padding: 26px 22px; }
         .tm-btn { width: 100%; justify-content: space-between; }
         .tm-cta__actions .tm-btn { justify-content: center; }
+        .tm-filter { flex: 1 1 calc(50% - 5px); text-align: center; }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .tm-card, .tm-btn, .tm-flow__step { transition: none; }
+        .tm-hero__video, .tm-hero__video-fallback, .tm-hero__tile { animation: none; transition: none; }
+        .tm-card, .tm-btn, .tm-flow__step, .tm-roster__card { transition: none; }
+        [data-tm-reveal] { opacity: 1; transform: none; transition: none; }
       }
     </style>
   </head>
@@ -656,6 +848,8 @@
             <li><a href="work.html">Work</a></li>
             <li><a href="process.html">Process</a></li>
             <li><a href="team.html" class="is-active" aria-current="page">Team</a></li>
+            <li><a href="credentials.html">Credentials</a></li>
+            <li><a href="store.html">Store</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -678,7 +872,9 @@
           <li><a href="work.html"><span>04</span>Work</a></li>
           <li><a href="process.html"><span>05</span>Process</a></li>
           <li><a href="team.html"><span>06</span>Team</a></li>
-          <li><a href="contact.html"><span>07</span>Contact</a></li>
+          <li><a href="credentials.html"><span>07</span>Credentials</a></li>
+          <li><a href="store.html"><span>08</span>Store</a></li>
+          <li><a href="contact.html"><span>09</span>Contact</a></li>
         </ul>
       </nav>
       <div class="mobile-menu__foot">
@@ -688,31 +884,92 @@
     </div>
 
     <!-- ============ MAIN ============ -->
-    <main id="main" class="page-shell">
+    <main id="main">
 
-      <!-- ---------- Hero ---------- -->
+      <!-- ============================================================
+           1. HERO — video + floating portrait tiles
+           ============================================================ -->
       <section class="tm-hero">
+        <div class="tm-hero__media" aria-hidden="true">
+          <div class="tm-hero__video-fallback"></div>
+          <video
+            class="tm-hero__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            disablepictureinpicture
+            poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'><defs><radialGradient id='g' cx='50%25' cy='50%25'><stop offset='0' stop-color='%230066FF' stop-opacity='0.35'/><stop offset='1' stop-color='%23050505'/></radialGradient></defs><rect width='1600' height='900' fill='%23050505'/><rect width='1600' height='900' fill='url(%23g)'/></svg>">
+            <source src="assets/videos/team.mp4" type="video/mp4" />
+          </video>
+          <div class="tm-hero__grid"></div>
+          <div class="tm-hero__noise"></div>
+          <div class="tm-hero__overlay"></div>
+        </div>
+
         <div class="container tm-hero__inner">
-          <p class="tm-eyebrow" data-reveal>Team</p>
-          <h1 class="tm-hero__title" data-reveal>
-            The people behind<br>
-            <em>the work.</em>
-          </h1>
-          <p class="tm-hero__text" data-reveal>
-            NoExaTech brings together technology, design, creative, and growth skills
-            to build practical digital solutions for businesses.
-          </p>
+          <div class="tm-hero__content">
+            <p class="tm-eyebrow" data-tm-reveal>Team</p>
+            <h1 class="tm-hero__title" data-tm-reveal>
+              The people behind<br>
+              <em>the work.</em>
+            </h1>
+            <p class="tm-hero__text" data-tm-reveal>
+              NoExaTech brings together technology, design, creative, and growth
+              skills to build practical digital solutions for businesses.
+            </p>
+            <ul class="tm-hero__meta" data-tm-reveal>
+              <li>Small, focused studio</li>
+              <li>Founder-led delivery</li>
+              <li>Learning as a habit</li>
+            </ul>
+          </div>
+
+          <div class="tm-hero__showcase" aria-hidden="true">
+            <div class="tm-hero__tile tm-hero__tile--a" data-tile="founder">
+              <img data-lazy="assets/images/team/founder.jpg" alt="" loading="lazy" decoding="async" />
+            </div>
+            <div class="tm-hero__tile tm-hero__tile--b" data-tile="design">
+            </div>
+            <div class="tm-hero__tile tm-hero__tile--c" data-tile="growth">
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- ---------- 01 — Leadership ---------- -->
-      <section class="tm-leader" aria-labelledby="tm-leader-title">
+      <!-- ============================================================
+           2. STAT BAND
+           ============================================================ -->
+      <div class="tm-stats" data-tm-reveal>
+        <div class="tm-stat">
+          <span class="tm-stat__value"><em>03</em></span>
+          <span class="tm-stat__label">Core Disciplines</span>
+        </div>
+        <div class="tm-stat">
+          <span class="tm-stat__value"><em>09</em></span>
+          <span class="tm-stat__label">Roles on the Bench</span>
+        </div>
+        <div class="tm-stat">
+          <span class="tm-stat__value"><em>01</em></span>
+          <span class="tm-stat__label">Direction, One Team</span>
+        </div>
+        <div class="tm-stat">
+          <span class="tm-stat__value"><em>∞</em></span>
+          <span class="tm-stat__label">Always Learning</span>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           3. LEADERSHIP — Founder
+           ============================================================ -->
+      <section class="tm-leader tm-leader--flush" aria-labelledby="tm-leader-title">
         <div class="container tm-leader__grid">
-          <div class="tm-leader__portrait" role="img" aria-label="Portrait of Muhammad Harmain">
-            <img src="assets/images/team/founder.jpg" alt="Portrait of Muhammad Harmain" loading="lazy" onerror="this.hidden=true" />
+          <div class="tm-leader__portrait" data-label="Portrait placeholder" role="img" aria-label="Portrait of Muhammad Harmain">
+            <img data-lazy="assets/images/team/founder.jpg" alt="Portrait of Muhammad Harmain" loading="lazy" decoding="async" />
           </div>
 
-          <div data-reveal>
+          <div class="tm-leader__body" data-tm-reveal>
             <p class="tm-eyebrow">Leadership</p>
             <h2 class="tm-leader__name" id="tm-leader-title">Muhammad Harmain</h2>
             <p class="tm-leader__role">Founder &amp; CEO — NoExaTech</p>
@@ -729,7 +986,7 @@
               conversation to launch and beyond.
             </p>
 
-            <div class="tm-leader__focus" data-reveal>
+            <div class="tm-leader__focus">
               <p class="tm-leader__focus-title">Leadership Focus</p>
               <ul class="tm-leader__focus-list">
                 <li>Practical technology solutions</li>
@@ -748,28 +1005,31 @@
         </div>
       </section>
 
-      <!-- ---------- 02 — Finance Leadership ---------- -->
-      <section class="tm-leader tm-leader--cfo" aria-labelledby="tm-cfo-title">
+      <!-- ============================================================
+           4. LEADERSHIP — Finance (reversed layout)
+           ============================================================ -->
+      <section class="tm-leader tm-leader--reverse" aria-labelledby="tm-cfo-title">
         <div class="container tm-leader__grid">
-          <div class="tm-leader__portrait" role="img" aria-label="Portrait placeholder for the NoExaTech CFO">
-            <span class="tm-card__photo-label">CFO</span>
+          <div class="tm-leader__portrait" data-label="CFO portrait placeholder" role="img" aria-label="Portrait of the NoExaTech CFO">
+            <img data-lazy="assets/images/team/CFO.jpg" alt="Portrait of the NoExaTech CFO" loading="lazy" decoding="async" />
           </div>
 
-          <div data-reveal>
+          <div class="tm-leader__body" data-tm-reveal>
             <p class="tm-eyebrow">Finance Leadership</p>
             <h2 class="tm-leader__name" id="tm-cfo-title">Chief Financial Officer</h2>
             <p class="tm-leader__role">CFO — NoExaTech</p>
 
             <p class="tm-leader__bio">
-              The CFO supports NoExaTech's financial direction, planning, and sustainable
-              growth as the studio builds long-term partnerships with businesses.
+              The CFO supports NoExaTech's financial direction, planning, and
+              sustainable growth as the studio builds long-term partnerships with
+              businesses.
             </p>
             <p class="tm-leader__bio">
               This profile will be updated with the CFO's name, portrait, and full
               background once the details are confirmed.
             </p>
 
-            <div class="tm-leader__focus" data-reveal>
+            <div class="tm-leader__focus">
               <p class="tm-leader__focus-title">Finance Focus</p>
               <ul class="tm-leader__focus-list">
                 <li>Financial planning and oversight</li>
@@ -782,149 +1042,55 @@
         </div>
       </section>
 
-      <!-- ---------- 03 — Our Team ---------- -->
-      <section class="tm-section" aria-labelledby="tm-team-title">
+      <!-- ============================================================
+           5. THE ROSTER — distinct portrait-card grid
+           ============================================================ -->
+      <section class="tm-section" id="roster" aria-labelledby="tm-team-title">
         <div class="container">
-          <p class="tm-eyebrow" data-reveal>Our Team</p>
-          <h2 class="tm-h2" id="tm-team-title" data-reveal>
+          <p class="tm-eyebrow" data-tm-reveal>Our Team</p>
+          <h2 class="tm-h2" id="tm-team-title" data-tm-reveal>
             The people who <em>build, design, and grow.</em>
           </h2>
-          <p class="tm-lead" data-reveal>
-            Team members are shown once they are confirmed. Placeholders below
-            represent the roles NoExaTech is structured around.
+          <p class="tm-lead" data-tm-reveal style="margin-bottom: 40px;">
+            NoExaTech brings together product direction, design, engineering, and
+            growth in one focused studio system.
           </p>
 
-          <div class="tm-categories">
-
-            <!-- TECHNOLOGY -->
-            <div class="tm-category" data-reveal>
-              <div class="tm-category__head">
-                <h3 class="tm-category__title">Technology</h3>
-                <span class="tm-category__line" aria-hidden="true"></span>
-                <span class="tm-category__count">Web · App · Software</span>
-              </div>
-              <div class="tm-grid">
-                <article class="tm-card">
-                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
-                  <div class="tm-card__body">
-                    <h4 class="tm-card__name">Team Member</h4>
-                    <p class="tm-card__role">Web Developer</p>
-                    <p class="tm-card__desc">Builds fast, responsive websites and front-end experiences.</p>
-                  </div>
-                </article>
-                <article class="tm-card">
-                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
-                  <div class="tm-card__body">
-                    <h4 class="tm-card__name">Team Member</h4>
-                    <p class="tm-card__role">App Developer</p>
-                    <p class="tm-card__desc">Works on mobile and cross-platform applications.</p>
-                  </div>
-                </article>
-                <article class="tm-card">
-                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
-                  <div class="tm-card__body">
-                    <h4 class="tm-card__name">Team Member</h4>
-                    <p class="tm-card__role">Software Developer</p>
-                    <p class="tm-card__desc">Handles custom systems, integrations, and back-end logic.</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <!-- DESIGN & CREATIVE -->
-            <div class="tm-category" data-reveal>
-              <div class="tm-category__head">
-                <h3 class="tm-category__title">Design &amp; Creative</h3>
-                <span class="tm-category__line" aria-hidden="true"></span>
-                <span class="tm-category__count">UI/UX · Graphic · Video</span>
-              </div>
-              <div class="tm-grid">
-                <article class="tm-card">
-                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
-                  <div class="tm-card__body">
-                    <h4 class="tm-card__name">Team Member</h4>
-                    <p class="tm-card__role">UI/UX Designer</p>
-                    <p class="tm-card__desc">Designs user interfaces, flows, and product experiences.</p>
-                  </div>
-                </article>
-                <article class="tm-card">
-                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
-                  <div class="tm-card__body">
-                    <h4 class="tm-card__name">Team Member</h4>
-                    <p class="tm-card__role">Graphic Designer</p>
-                    <p class="tm-card__desc">Creates brand visuals, social creatives, and print assets.</p>
-                  </div>
-                </article>
-                <article class="tm-card">
-                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
-                  <div class="tm-card__body">
-                    <h4 class="tm-card__name">Team Member</h4>
-                    <p class="tm-card__role">Video Editor</p>
-                    <p class="tm-card__desc">Produces reels, promotional videos, and campaign content.</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <!-- GROWTH -->
-            <div class="tm-category" data-reveal>
-              <div class="tm-category__head">
-                <h3 class="tm-category__title">Growth</h3>
-                <span class="tm-category__line" aria-hidden="true"></span>
-                <span class="tm-category__count">Marketing · Ads · Content</span>
-              </div>
-              <div class="tm-grid">
-                <article class="tm-card">
-                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
-                  <div class="tm-card__body">
-                    <h4 class="tm-card__name">Team Member</h4>
-                    <p class="tm-card__role">Digital Marketer</p>
-                    <p class="tm-card__desc">Plans campaigns and manages digital growth across channels.</p>
-                  </div>
-                </article>
-                <article class="tm-card">
-                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
-                  <div class="tm-card__body">
-                    <h4 class="tm-card__name">Team Member</h4>
-                    <p class="tm-card__role">Meta Ads Specialist</p>
-                    <p class="tm-card__desc">Runs Facebook and Instagram campaigns, targeting, and optimization.</p>
-                  </div>
-                </article>
-                <article class="tm-card">
-                  <div class="tm-card__photo" role="img" aria-label="Team member photo placeholder"></div>
-                  <div class="tm-card__body">
-                    <h4 class="tm-card__name">Team Member</h4>
-                    <p class="tm-card__role">Content Specialist</p>
-                    <p class="tm-card__desc">Shapes messaging, social content, and audience strategy.</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
+          <div class="tm-filters" role="tablist" aria-label="Filter team by discipline" data-tm-reveal>
+            <button class="tm-filter is-active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="tm-filter" type="button" data-filter="technology" role="tab" aria-selected="false">Technology</button>
+            <button class="tm-filter" type="button" data-filter="design" role="tab" aria-selected="false">Design &amp; Creative</button>
+            <button class="tm-filter" type="button" data-filter="growth" role="tab" aria-selected="false">Growth</button>
           </div>
 
-          <div class="tm-note" data-reveal>
+          <div class="tm-roster" data-team-roster data-tm-reveal>
+            <!-- Populated by team.js -->
+          </div>
+
+          <div class="tm-note" data-tm-reveal>
             <p class="tm-note__text">
-              Placeholders above represent team roles, not real people. Names and
-              profiles will be published once each team member is confirmed.
+              The founder and finance leadership are now listed. Additional team
+              profiles will be published as each member is confirmed and approved.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- ---------- 03 — What each team does ---------- -->
+      <!-- ============================================================
+           6. WHAT EACH TEAM DOES
+           ============================================================ -->
       <section class="tm-section" aria-labelledby="tm-caps-title">
         <div class="container">
-          <p class="tm-eyebrow" data-reveal>What Each Team Does</p>
-          <h2 class="tm-h2" id="tm-caps-title" data-reveal>
+          <p class="tm-eyebrow" data-tm-reveal>What Each Team Does</p>
+          <h2 class="tm-h2" id="tm-caps-title" data-tm-reveal>
             Different skills. <em>One direction.</em>
           </h2>
-          <p class="tm-lead" data-reveal>
+          <p class="tm-lead" data-tm-reveal>
             Each part of the studio owns a specific layer of the work — and hands it
             to the next with the full picture in mind.
           </p>
 
-          <div class="tm-caps" data-reveal>
+          <div class="tm-caps" data-tm-reveal>
             <div class="tm-cap">
               <span class="tm-cap__label">Technology</span>
               <h3 class="tm-cap__title">Builds the product</h3>
@@ -961,15 +1127,17 @@
         </div>
       </section>
 
-      <!-- ---------- 04 — How we work together ---------- -->
+      <!-- ============================================================
+           7. HOW WE WORK TOGETHER
+           ============================================================ -->
       <section class="tm-section" aria-labelledby="tm-flow-title">
         <div class="container">
-          <p class="tm-eyebrow" data-reveal>How We Work Together</p>
-          <h2 class="tm-h2" id="tm-flow-title" data-reveal>
+          <p class="tm-eyebrow" data-tm-reveal>How We Work Together</p>
+          <h2 class="tm-h2" id="tm-flow-title" data-tm-reveal>
             The same project, <em>six different hands.</em>
           </h2>
 
-          <ol class="tm-flow" data-reveal>
+          <ol class="tm-flow" data-tm-reveal>
             <li class="tm-flow__step">
               <span class="tm-flow__num">01</span>
               <h3 class="tm-flow__title">Business Requirement</h3>
@@ -1002,21 +1170,23 @@
             </li>
           </ol>
 
-          <p class="tm-flow__claim" data-reveal>
+          <p class="tm-flow__claim" data-tm-reveal>
             Different skills. <em>One direction.</em>
           </p>
         </div>
       </section>
 
-      <!-- ---------- 05 — Team values ---------- -->
+      <!-- ============================================================
+           8. TEAM VALUES
+           ============================================================ -->
       <section class="tm-section" aria-labelledby="tm-values-title">
         <div class="container">
-          <p class="tm-eyebrow" data-reveal>How We Work</p>
-          <h2 class="tm-h2" id="tm-values-title" data-reveal>
+          <p class="tm-eyebrow" data-tm-reveal>How We Work</p>
+          <h2 class="tm-h2" id="tm-values-title" data-tm-reveal>
             A few things <em>we hold to.</em>
           </h2>
 
-          <div class="tm-values" data-reveal>
+          <div class="tm-values" data-tm-reveal>
             <div class="tm-value">
               <span class="tm-value__num">01</span>
               <h3 class="tm-value__title">Own the Work</h3>
@@ -1041,17 +1211,19 @@
         </div>
       </section>
 
-      <!-- ---------- 06 — Final CTA ---------- -->
+      <!-- ============================================================
+           9. FINAL CTA
+           ============================================================ -->
       <section class="tm-cta" aria-labelledby="tm-cta-title">
         <div class="container">
-          <h2 class="tm-cta__title" id="tm-cta-title" data-reveal>
+          <h2 class="tm-cta__title" id="tm-cta-title" data-tm-reveal>
             Looking for a team<br>
             <em>to build with?</em>
           </h2>
-          <p class="tm-cta__text" data-reveal>
+          <p class="tm-cta__text" data-tm-reveal>
             Tell us what you're trying to create.
           </p>
-          <div class="tm-cta__actions" data-reveal>
+          <div class="tm-cta__actions" data-tm-reveal>
             <a class="tm-btn tm-btn--solid" href="#" data-nx-modal>Start a Project</a>
             <a class="tm-btn" href="work.html">See Our Work</a>
           </div>
@@ -1091,6 +1263,8 @@
               <li><a href="work.html">Work</a></li>
               <li><a href="process.html">Process</a></li>
               <li><a href="team.html">Team</a></li>
+              <li><a href="credentials.html">Credentials</a></li>
+              <li><a href="store.html">Store</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
@@ -1116,9 +1290,12 @@
     <!-- ============ SCRIPTS ============ -->
     <script src="assets/js/config.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/team.js" defer></script>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="assets/js/animations.js?v=3" defer></script>
     <script src="assets/js/project-modal.js" defer></script>
+    <script src="assets/js/cursor-light.js" defer></script>
   </body>
 </html>
