@@ -8,15 +8,13 @@
     <meta name="theme-color" content="#050505" />
     <link rel="canonical" href="https://noexatech.vercel.app/about.html" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="NoExaTech" />
     <meta property="og:title" content="About | NoExaTech" />
-    <meta property="og:description" content="We build technology around the business. NoExaTech is a technology company, digital product studio, and creative digital agency." />
+    <meta property="og:description" content="We build technology around the business." />
     <meta property="og:url" content="https://noexatech.vercel.app/about.html" />
     <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="About | NoExaTech" />
     <meta name="twitter:description" content="We build technology around the business." />
@@ -34,98 +32,273 @@
     <link rel="stylesheet" href="assets/css/responsive.css" />
 
     <style>
-      /* ================= About page — scoped editorial styles ================= */
-
+      /* ============================================================
+         About page — scoped styles
+         ============================================================ */
       .visually-hidden {
         position: absolute !important;
         width: 1px; height: 1px;
         padding: 0; margin: -1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        white-space: nowrap;
-        border: 0;
+        overflow: hidden; clip: rect(0 0 0 0);
+        white-space: nowrap; border: 0;
       }
 
-      /* ---------- Shared section rhythm ---------- */
-      .ab-section {
-        padding: 130px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
+      .ab-section { padding: 130px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
       .ab-section--flush { border-top: 0; }
       .ab-section--tight { padding: 90px 0; }
 
       .ab-eyebrow {
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.28em;
-        text-transform: uppercase;
-        color: #00A8FF;
-        margin: 0 0 22px;
+        font-size: 11px; font-weight: 500;
+        letter-spacing: 0.28em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 22px;
       }
-
       .ab-h2 {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(34px, 5vw, 68px);
-        line-height: 1.02;
-        letter-spacing: -0.03em;
-        font-weight: 700;
-        color: #FFFFFF;
-        margin: 0 0 32px;
-        max-width: 900px;
+        line-height: 1.02; letter-spacing: -0.03em; font-weight: 700;
+        color: #FFFFFF; margin: 0 0 32px; max-width: 900px;
       }
       .ab-h2 em {
         font-style: normal;
         background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        -webkit-background-clip: text; background-clip: text; color: transparent;
       }
-
       .ab-lead {
         font-size: clamp(16px, 1.6vw, 20px);
         line-height: 1.6;
         color: rgba(255, 255, 255, 0.68);
-        max-width: 640px;
-        margin: 0;
+        max-width: 640px; margin: 0;
       }
-
       .ab-body {
-        font-size: 16px;
-        line-height: 1.75;
+        font-size: 16px; line-height: 1.75;
         color: rgba(255, 255, 255, 0.62);
       }
       .ab-body p { margin: 0 0 22px; }
       .ab-body p:last-child { margin-bottom: 0; }
       .ab-body strong { color: #FFFFFF; font-weight: 600; }
 
-      /* ---------- Hero ---------- */
+      /* ---------- HERO with background video ---------- */
       .ab-hero {
-        padding: 160px 0 120px;
         position: relative;
+        min-height: 92vh;
+        padding: 180px 0 140px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        isolation: isolate;
+      }
+      .ab-hero__media {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
         overflow: hidden;
       }
-      .ab-hero__inner { max-width: 1100px; }
+      .ab-hero__video-fallback {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(120% 90% at 22% 12%, rgba(0, 102, 255, 0.30) 0%, transparent 55%),
+          radial-gradient(120% 100% at 100% 100%, rgba(0, 217, 255, 0.22) 0%, transparent 55%),
+          #050505;
+        animation: abHeroShift 24s ease-in-out infinite alternate;
+      }
+      @keyframes abHeroShift {
+        0%   { transform: scale(1)    translate(0, 0); }
+        100% { transform: scale(1.08) translate(-2%, -2%); }
+      }
+      .ab-hero__video {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        filter: saturate(0.85) contrast(1.05);
+        transition: opacity 1.1s ease;
+        will-change: opacity;
+        pointer-events: none;
+      }
+      .ab-hero__video.is-ready { opacity: 0.5; }
+      .ab-hero__video.is-missing { display: none; }
+
+      .ab-hero__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(180deg, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.78) 70%, #050505 100%),
+          radial-gradient(90% 70% at 15% 20%, rgba(0, 102, 255, 0.18) 0%, transparent 60%);
+      }
+      .ab-hero__grid {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image:
+          linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        background-size: 72px 72px;
+        -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+        mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+        opacity: 0.5;
+      }
+      .ab-hero__noise {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.035;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+        mix-blend-mode: overlay;
+      }
+
+      .ab-hero__inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 60px;
+        align-items: center;
+        width: 100%;
+      }
+      .ab-hero__content { max-width: 660px; }
       .ab-hero__title {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: clamp(44px, 8vw, 124px);
-        line-height: 0.94;
-        letter-spacing: -0.035em;
-        font-weight: 700;
-        margin: 0 0 40px;
-        color: #FFFFFF;
+        font-size: clamp(44px, 7.5vw, 116px);
+        line-height: 0.94; letter-spacing: -0.04em; font-weight: 700;
+        color: #FFFFFF; margin: 0 0 32px;
       }
       .ab-hero__title em {
         font-style: normal;
         background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        -webkit-background-clip: text; background-clip: text; color: transparent;
       }
       .ab-hero__text {
-        font-size: clamp(16px, 1.7vw, 20px);
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.62);
-        max-width: 680px;
+        font-size: clamp(16px, 1.6vw, 19px);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0 0 36px;
+        max-width: 560px;
+      }
+      .ab-hero__meta {
+        list-style: none; padding: 0; margin: 0;
+        display: flex; flex-wrap: wrap; gap: 22px;
+        font-size: 12.5px; letter-spacing: 0.04em;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .ab-hero__meta li { display: inline-flex; align-items: center; gap: 10px; }
+      .ab-hero__meta li::before {
+        content: ""; width: 6px; height: 6px;
+        border-radius: 50%; background: #00A8FF;
+        box-shadow: 0 0 12px rgba(0,168,255,0.8);
+      }
+
+      /* Floating abstract tiles */
+      .ab-hero__showcase {
+        position: relative;
+        min-height: 500px;
+      }
+      .ab-hero__tile {
+        position: absolute;
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.12);
+        background:
+          linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%),
+          #0A0A0A;
+        box-shadow: 0 30px 60px -25px rgba(0,0,0,0.9), 0 0 0 1px rgba(0,168,255,0.08) inset;
+        overflow: hidden;
+        backdrop-filter: blur(6px);
+      }
+      .ab-hero__tile svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+      .ab-hero__tile--a {
+        top: 0; left: 5%;
+        width: 60%; height: 58%;
+        transform: rotate(-5deg);
+        animation: abFloat 9s ease-in-out infinite alternate;
+        z-index: 3;
+      }
+      .ab-hero__tile--b {
+        top: 30%; right: 0;
+        width: 56%; height: 54%;
+        transform: rotate(4deg);
+        animation: abFloat 10s ease-in-out -1.5s infinite alternate;
+        z-index: 2;
+      }
+      .ab-hero__tile--c {
+        bottom: 0; left: 12%;
+        width: 50%; height: 42%;
+        transform: rotate(-2deg);
+        animation: abFloat 11s ease-in-out -3s infinite alternate;
+        z-index: 4;
+      }
+      @keyframes abFloat {
+        0%   { transform: translateY(0) rotate(-4deg); }
+        100% { transform: translateY(-14px) rotate(-3deg); }
+      }
+
+      /* ---------- Buttons ---------- */
+      .ab-btn {
+        display: inline-flex; align-items: center; gap: 10px;
+        padding: 15px 26px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px; font-weight: 600; letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        text-decoration: none; cursor: pointer;
+        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+      }
+      .ab-btn::after { content: "→"; font-size: 14px; transition: transform 0.25s ease; }
+      .ab-btn:hover {
+        border-color: rgba(0, 168, 255, 0.7);
+        background: rgba(0, 168, 255, 0.08);
+        transform: translateY(-1px);
+      }
+      .ab-btn:hover::after { transform: translateX(4px); }
+      .ab-btn--solid {
+        background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%);
+        border-color: transparent;
+      }
+      .ab-btn--solid:hover {
+        background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%);
+        box-shadow: 0 14px 34px -12px rgba(0, 168, 255, 0.6);
+      }
+
+      /* ---------- Stat band ---------- */
+      .ab-stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.012);
+      }
+      .ab-stat {
+        padding: 44px 32px;
+        border-right: 1px solid rgba(255,255,255,0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .ab-stat:last-child { border-right: 0; }
+      .ab-stat__value {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(30px, 3.4vw, 44px);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+      .ab-stat__value em {
+        font-style: normal;
+        background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      .ab-stat__label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.45);
       }
 
       /* ---------- Two-column editorial layout ---------- */
@@ -135,10 +308,7 @@
         gap: 80px;
         align-items: start;
       }
-      .ab-split__side {
-        position: sticky;
-        top: 120px;
-      }
+      .ab-split__side { position: sticky; top: 120px; }
       .ab-split__side .ab-eyebrow { margin-bottom: 18px; }
       .ab-split__side .ab-h2 { margin-bottom: 0; }
 
@@ -151,26 +321,18 @@
       .ab-philosophy__quote {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(30px, 4.6vw, 60px);
-        line-height: 1.18;
-        letter-spacing: -0.025em;
-        font-weight: 500;
-        color: #FFFFFF;
-        margin: 0 auto 36px;
-        max-width: 960px;
+        line-height: 1.18; letter-spacing: -0.025em;
+        font-weight: 500; color: #FFFFFF;
+        margin: 0 auto 36px; max-width: 960px;
       }
-      .ab-philosophy__quote em {
-        font-style: normal;
-        color: #00A8FF;
-      }
+      .ab-philosophy__quote em { font-style: normal; color: #00A8FF; }
       .ab-philosophy__note {
-        font-size: 15px;
-        line-height: 1.7;
+        font-size: 15px; line-height: 1.7;
         color: rgba(255, 255, 255, 0.5);
-        max-width: 620px;
-        margin: 0 auto;
+        max-width: 620px; margin: 0 auto;
       }
 
-      /* ---------- Principles grid ---------- */
+      /* ---------- Principles ---------- */
       .ab-principles {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -183,33 +345,26 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
       .ab-principle:nth-child(2n) {
-        padding-left: 48px;
-        padding-right: 0;
+        padding-left: 48px; padding-right: 0;
         border-left: 1px solid rgba(255, 255, 255, 0.08);
       }
       .ab-principle__num {
         display: inline-block;
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 12px;
-        font-weight: 600;
+        font-size: 12px; font-weight: 600;
         letter-spacing: 0.24em;
-        color: #00A8FF;
-        margin: 0 0 16px;
+        color: #00A8FF; margin: 0 0 16px;
       }
       .ab-principle__title {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 22px;
-        font-weight: 600;
+        font-size: 22px; font-weight: 600;
         letter-spacing: -0.01em;
-        color: #FFFFFF;
-        margin: 0 0 12px;
+        color: #FFFFFF; margin: 0 0 12px;
       }
       .ab-principle__desc {
-        font-size: 15px;
-        line-height: 1.65;
+        font-size: 15px; line-height: 1.65;
         color: rgba(255, 255, 255, 0.55);
-        margin: 0;
-        max-width: 420px;
+        margin: 0; max-width: 420px;
       }
 
       /* ---------- Positioning band ---------- */
@@ -233,20 +388,17 @@
       .ab-position__label {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(20px, 2.2vw, 28px);
-        font-weight: 600;
-        letter-spacing: -0.015em;
-        color: #FFFFFF;
-        margin: 0 0 14px;
+        font-weight: 600; letter-spacing: -0.015em;
+        color: #FFFFFF; margin: 0 0 14px;
         line-height: 1.25;
       }
       .ab-position__desc {
-        font-size: 15px;
-        line-height: 1.65;
+        font-size: 15px; line-height: 1.65;
         color: rgba(255, 255, 255, 0.55);
         margin: 0;
       }
 
-      /* ---------- Process list ---------- */
+      /* ---------- Process ---------- */
       .ab-process {
         margin-top: 60px;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -263,28 +415,23 @@
       .ab-process__step:hover { padding-left: 12px; }
       .ab-process__num {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 13px;
-        font-weight: 600;
+        font-size: 13px; font-weight: 600;
         letter-spacing: 0.24em;
         color: #00A8FF;
       }
       .ab-process__title {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(20px, 2.4vw, 30px);
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        color: #FFFFFF;
-        margin: 0;
-        line-height: 1.2;
+        font-weight: 600; letter-spacing: -0.02em;
+        color: #FFFFFF; margin: 0; line-height: 1.2;
       }
       .ab-process__desc {
-        font-size: 15px;
-        line-height: 1.65;
+        font-size: 15px; line-height: 1.65;
         color: rgba(255, 255, 255, 0.55);
         margin: 0;
       }
 
-      /* ---------- Founder block ---------- */
+      /* ---------- Founder ---------- */
       .ab-founder {
         padding: 140px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -299,7 +446,7 @@
         position: relative;
         aspect-ratio: 4 / 5;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 12px;
+        border-radius: 14px;
         overflow: hidden;
         background:
           radial-gradient(120% 100% at 20% 0%, rgba(0, 102, 255, 0.18) 0%, transparent 60%),
@@ -310,10 +457,14 @@
         justify-content: center;
       }
       .ab-founder__portrait img {
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
         object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.9s ease;
       }
+      .ab-founder__portrait img.is-loaded { opacity: 1; }
       .ab-founder__portrait::after {
         content: "Portrait placeholder";
         font-family: 'Space Grotesk', sans-serif;
@@ -322,33 +473,28 @@
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.35);
       }
+      .ab-founder__portrait img.is-loaded ~ * { display: none; }
+
       .ab-founder__name {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(32px, 4vw, 52px);
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        color: #FFFFFF;
-        margin: 0 0 12px;
+        font-weight: 700; letter-spacing: -0.03em;
+        color: #FFFFFF; margin: 0 0 12px;
         line-height: 1.05;
       }
       .ab-founder__role {
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: #00A8FF;
-        margin: 0 0 32px;
+        font-size: 13px; font-weight: 500;
+        letter-spacing: 0.2em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 32px;
       }
       .ab-founder__bio {
-        font-size: 16px;
-        line-height: 1.75;
+        font-size: 16px; line-height: 1.75;
         color: rgba(255, 255, 255, 0.62);
         margin: 0 0 22px;
       }
       .ab-founder__vision {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 17px;
-        line-height: 1.55;
+        font-size: 17px; line-height: 1.55;
         color: #FFFFFF;
         padding: 22px 26px;
         border-left: 2px solid #00A8FF;
@@ -356,44 +502,7 @@
         margin: 30px 0 34px;
       }
       .ab-founder__actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      /* ---------- Buttons (page-scoped, complement .btn) ---------- */
-      .ab-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 15px 26px;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 999px;
-        text-decoration: none;
-        transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
-      }
-      .ab-btn::after { content: "→"; font-size: 14px; transition: transform 0.25s ease; }
-      .ab-btn:hover {
-        border-color: rgba(0, 168, 255, 0.7);
-        background: rgba(0, 168, 255, 0.08);
-        transform: translateY(-1px);
-      }
-      .ab-btn:hover::after { transform: translateX(4px); }
-
-      .ab-btn--solid {
-        background: linear-gradient(120deg, #0066FF 0%, #00A8FF 100%);
-        border-color: transparent;
-      }
-      .ab-btn--solid:hover {
-        background: linear-gradient(120deg, #0077FF 0%, #00CFFF 100%);
-        box-shadow: 0 14px 34px -12px rgba(0, 168, 255, 0.6);
+        display: flex; flex-wrap: wrap; gap: 12px;
       }
 
       /* ---------- Team preview ---------- */
@@ -419,6 +528,7 @@
         transform: translateY(-3px);
       }
       .ab-team-card__photo {
+        position: relative;
         aspect-ratio: 1 / 1;
         background:
           radial-gradient(100% 100% at 30% 20%, rgba(0, 102, 255, 0.18) 0%, transparent 60%),
@@ -427,7 +537,17 @@
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
       }
+      .ab-team-card__photo img {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.7s ease;
+      }
+      .ab-team-card__photo img.is-loaded { opacity: 1; }
       .ab-team-card__photo::after {
         content: "Photo";
         font-family: 'Space Grotesk', sans-serif;
@@ -436,26 +556,21 @@
         text-transform: uppercase;
         color: rgba(255, 255, 255, 0.3);
       }
+      .ab-team-card__photo img.is-loaded ~ * { display: none; }
       .ab-team-card__body { padding: 26px 24px 30px; }
       .ab-team-card__name {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 18px; font-weight: 600;
         letter-spacing: -0.01em;
-        color: #FFFFFF;
-        margin: 0 0 6px;
+        color: #FFFFFF; margin: 0 0 6px;
       }
       .ab-team-card__role {
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: #00A8FF;
-        margin: 0 0 14px;
+        font-size: 12px; font-weight: 500;
+        letter-spacing: 0.16em; text-transform: uppercase;
+        color: #00A8FF; margin: 0 0 14px;
       }
       .ab-team-card__desc {
-        font-size: 14px;
-        line-height: 1.6;
+        font-size: 14px; line-height: 1.6;
         color: rgba(255, 255, 255, 0.55);
         margin: 0;
       }
@@ -465,7 +580,7 @@
         justify-content: center;
       }
 
-      /* ---------- Capabilities grid ---------- */
+      /* ---------- Capabilities ---------- */
       .ab-capabilities {
         padding: 130px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -492,14 +607,11 @@
       .ab-capability:nth-child(4n):hover { padding-left: 24px; padding-right: 8px; }
       .ab-capability__name {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 16px; font-weight: 600;
         letter-spacing: -0.01em;
-        color: #FFFFFF;
-        margin: 0;
+        color: #FFFFFF; margin: 0;
       }
       .ab-capability:hover .ab-capability__name { color: #00A8FF; }
-
       .ab-capabilities__cta { margin-top: 56px; }
 
       /* ---------- Why band ---------- */
@@ -519,24 +631,19 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
       .ab-why__item:nth-child(2n) {
-        padding-left: 48px;
-        padding-right: 0;
+        padding-left: 48px; padding-right: 0;
         border-left: 1px solid rgba(255, 255, 255, 0.08);
       }
       .ab-why__title {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 22px;
-        font-weight: 600;
+        font-size: 22px; font-weight: 600;
         letter-spacing: -0.01em;
-        color: #FFFFFF;
-        margin: 0 0 12px;
+        color: #FFFFFF; margin: 0 0 12px;
       }
       .ab-why__desc {
-        font-size: 15px;
-        line-height: 1.65;
+        font-size: 15px; line-height: 1.65;
         color: rgba(255, 255, 255, 0.55);
-        margin: 0;
-        max-width: 460px;
+        margin: 0; max-width: 460px;
       }
 
       /* ---------- Final CTA ---------- */
@@ -548,56 +655,53 @@
       .ab-cta__title {
         font-family: 'Space Grotesk', sans-serif;
         font-size: clamp(40px, 6.4vw, 92px);
-        line-height: 1.02;
-        letter-spacing: -0.03em;
-        font-weight: 700;
-        color: #FFFFFF;
+        line-height: 1.02; letter-spacing: -0.03em;
+        font-weight: 700; color: #FFFFFF;
         margin: 0 0 26px;
       }
       .ab-cta__title em {
         font-style: normal;
         background: linear-gradient(120deg, #0066FF 0%, #00D9FF 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        -webkit-background-clip: text; background-clip: text; color: transparent;
       }
       .ab-cta__text {
         font-size: clamp(16px, 1.6vw, 19px);
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.58);
-        max-width: 560px;
-        margin: 0 auto 44px;
+        line-height: 1.6; color: rgba(255, 255, 255, 0.58);
+        max-width: 560px; margin: 0 auto 44px;
       }
       .ab-cta__actions {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 14px;
+        display: flex; justify-content: center; flex-wrap: wrap; gap: 14px;
       }
+
+      /* ---------- Reveal ---------- */
+      [data-ab-reveal] {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.9s cubic-bezier(0.2,0.8,0.2,1), transform 0.9s cubic-bezier(0.2,0.8,0.2,1);
+        will-change: opacity, transform;
+      }
+      [data-ab-reveal].is-visible { opacity: 1; transform: none; }
 
       /* ---------- Responsive ---------- */
       @media (max-width: 960px) {
         .ab-section { padding: 90px 0; }
         .ab-section--tight { padding: 70px 0; }
-        .ab-hero { padding: 120px 0 80px; }
-        .ab-split,
-        .ab-founder__grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
+        .ab-hero { padding: 130px 0 90px; min-height: auto; }
+        .ab-hero__inner { grid-template-columns: 1fr; gap: 60px; }
+        .ab-hero__showcase { min-height: 420px; }
+        .ab-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .ab-stat:nth-child(2n) { border-right: 0; }
+        .ab-stat:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .ab-split, .ab-founder__grid { grid-template-columns: 1fr; gap: 40px; }
         .ab-split__side { position: static; }
         .ab-position__list { grid-template-columns: 1fr; }
-        .ab-position__item,
-        .ab-position__item:not(:first-child) {
+        .ab-position__item, .ab-position__item:not(:first-child) {
           padding: 30px 0;
           border-right: 0;
           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         .ab-position__item:last-child { border-bottom: 0; }
-        .ab-process__step {
-          grid-template-columns: 60px 1fr;
-          gap: 20px;
-        }
+        .ab-process__step { grid-template-columns: 60px 1fr; gap: 20px; }
         .ab-process__desc { grid-column: 2; }
         .ab-team__grid { grid-template-columns: 1fr; }
         .ab-capabilities__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -611,33 +715,32 @@
         .ab-cta { padding: 100px 0 110px; }
       }
       @media (max-width: 560px) {
-        .ab-hero { padding: 100px 0 60px; }
+        .ab-hero { padding: 110px 0 70px; }
+        .ab-hero__showcase { min-height: 340px; }
         .ab-principles { grid-template-columns: 1fr; }
-        .ab-principle,
-        .ab-principle:nth-child(2n) {
-          padding: 34px 0;
-          border-left: 0;
-        }
+        .ab-principle, .ab-principle:nth-child(2n) { padding: 34px 0; border-left: 0; }
         .ab-why__grid { grid-template-columns: 1fr; }
-        .ab-why__item,
-        .ab-why__item:nth-child(2n) {
-          padding: 30px 0;
-          border-left: 0;
-        }
+        .ab-why__item, .ab-why__item:nth-child(2n) { padding: 30px 0; border-left: 0; }
         .ab-capabilities__grid { grid-template-columns: 1fr; }
-        .ab-capability,
-        .ab-capability:nth-child(2n),
-        .ab-capability:nth-child(4n) {
+        .ab-capability, .ab-capability:nth-child(2n), .ab-capability:nth-child(4n) {
           padding: 26px 0;
           border-right: 0;
         }
         .ab-capability:hover { padding-left: 0; color: inherit; }
+        .ab-stats { grid-template-columns: 1fr; }
+        .ab-stat, .ab-stat:nth-child(2n), .ab-stat:nth-child(-n+2) {
+          border-right: 0;
+          border-bottom: 1px solid rgba(255,255,255,0.08);
+          padding: 32px 0;
+        }
+        .ab-stat:last-child { border-bottom: 0; }
         .ab-btn { width: 100%; justify-content: space-between; }
         .ab-cta__actions .ab-btn { justify-content: center; }
       }
-
       @media (prefers-reduced-motion: reduce) {
+        .ab-hero__video, .ab-hero__video-fallback, .ab-hero__tile { animation: none; transition: none; }
         .ab-capability, .ab-team-card, .ab-btn, .ab-process__step { transition: none; }
+        [data-ab-reveal] { opacity: 1; transform: none; transition: none; }
       }
     </style>
   </head>
@@ -706,23 +809,79 @@
     </div>
 
     <!-- ============ MAIN ============ -->
-    <main id="main" class="page-shell">
+    <main id="main">
 
-      <!-- ---------- 1. Hero ---------- -->
+      <!-- ============================================================
+           1. HERO — video + floating abstract tiles
+           ============================================================ -->
       <section class="ab-hero">
+        <div class="ab-hero__media" aria-hidden="true">
+          <div class="ab-hero__video-fallback"></div>
+          <video
+            class="ab-hero__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            disablepictureinpicture
+            poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'><defs><radialGradient id='g' cx='50%25' cy='50%25'><stop offset='0' stop-color='%230066FF' stop-opacity='0.35'/><stop offset='1' stop-color='%23050505'/></radialGradient></defs><rect width='1600' height='900' fill='%23050505'/><rect width='1600' height='900' fill='url(%23g)'/></svg>">
+            <source src="assets/video/about.webm" type="video/webm" />
+            <source src="assets/videos/about.mp4" type="video/mp4" />
+          </video>
+          <div class="ab-hero__grid"></div>
+          <div class="ab-hero__noise"></div>
+          <div class="ab-hero__overlay"></div>
+        </div>
+
         <div class="container ab-hero__inner">
-          <p class="ab-eyebrow" data-reveal>About NoExaTech</p>
-          <h1 class="ab-hero__title" data-reveal>
-            We build technology<br>
-            <em>around the business.</em>
-          </h1>
-          <p class="ab-hero__text" data-reveal>
-            NoExaTech helps businesses turn ideas, challenges, and opportunities into
-            digital products and technology solutions — without forcing the business to
-            adapt to the technology.
-          </p>
+          <div class="ab-hero__content">
+            <p class="ab-eyebrow" data-ab-reveal>About NoExaTech</p>
+            <h1 class="ab-hero__title" data-ab-reveal>
+              We build technology<br>
+              <em>around the business.</em>
+            </h1>
+            <p class="ab-hero__text" data-ab-reveal>
+              NoExaTech helps businesses turn ideas, challenges, and opportunities
+              into digital products and technology solutions — without forcing the
+              business to adapt to the technology.
+            </p>
+            <ul class="ab-hero__meta" data-ab-reveal>
+              <li>Business first</li>
+              <li>One technology partner</li>
+              <li>Built to evolve</li>
+            </ul>
+          </div>
+
+          <div class="ab-hero__showcase" aria-hidden="true">
+            <div class="ab-hero__tile ab-hero__tile--a" data-tile="structure"></div>
+            <div class="ab-hero__tile ab-hero__tile--b" data-tile="flow"></div>
+            <div class="ab-hero__tile ab-hero__tile--c" data-tile="grid"></div>
+          </div>
         </div>
       </section>
+
+      <!-- ============================================================
+           2. STAT BAND
+           ============================================================ -->
+      <div class="ab-stats" data-ab-reveal>
+        <div class="ab-stat">
+          <span class="ab-stat__value"><em>08</em></span>
+          <span class="ab-stat__label">Service Areas</span>
+        </div>
+        <div class="ab-stat">
+          <span class="ab-stat__value"><em>07</em></span>
+          <span class="ab-stat__label">Process Steps</span>
+        </div>
+        <div class="ab-stat">
+          <span class="ab-stat__value"><em>04</em></span>
+          <span class="ab-stat__label">Core Principles</span>
+        </div>
+        <div class="ab-stat">
+          <span class="ab-stat__value"><em>01</em></span>
+          <span class="ab-stat__label">Point of Contact</span>
+        </div>
+      </div>
 
       <!-- ---------- 2. Our Story ---------- -->
       <section class="ab-section ab-section--flush" aria-labelledby="ab-story-title">
@@ -731,7 +890,7 @@
             <p class="ab-eyebrow">Our Story</p>
             <h2 class="ab-h2" id="ab-story-title">Why NoExaTech exists.</h2>
           </div>
-          <div class="ab-body" data-reveal>
+          <div class="ab-body" data-ab-reveal>
             <p>
               NoExaTech started from a simple frustration: too many digital projects
               begin with the technology and only later ask what the business actually
@@ -763,44 +922,36 @@
       <section class="ab-philosophy" aria-labelledby="ab-philosophy-title">
         <div class="container">
           <p class="ab-eyebrow" style="text-align:center;">What We Believe</p>
-          <h2 class="ab-philosophy__quote" id="ab-philosophy-title" data-reveal>
+          <h2 class="ab-philosophy__quote" id="ab-philosophy-title" data-ab-reveal>
             Understand the business first.<br>
             <em>Build technology around the business.</em>
           </h2>
-          <p class="ab-philosophy__note" data-reveal>
+          <p class="ab-philosophy__note" data-ab-reveal>
             We don't believe every business needs the same technology. The right
             solution should fit the business, the users, the goals, and the budget —
             not the other way around.
           </p>
 
-          <div class="ab-principles" data-reveal>
+          <div class="ab-principles" data-ab-reveal>
             <article class="ab-principle">
               <span class="ab-principle__num">01</span>
               <h3 class="ab-principle__title">Business First</h3>
-              <p class="ab-principle__desc">
-                Understand the problem before choosing the technology.
-              </p>
+              <p class="ab-principle__desc">Understand the problem before choosing the technology.</p>
             </article>
             <article class="ab-principle">
               <span class="ab-principle__num">02</span>
               <h3 class="ab-principle__title">Purpose Built</h3>
-              <p class="ab-principle__desc">
-                Build solutions around actual requirements, not assumptions.
-              </p>
+              <p class="ab-principle__desc">Build solutions around actual requirements, not assumptions.</p>
             </article>
             <article class="ab-principle">
               <span class="ab-principle__num">03</span>
               <h3 class="ab-principle__title">Quality Matters</h3>
-              <p class="ab-principle__desc">
-                Focus on useful, polished, reliable digital experiences.
-              </p>
+              <p class="ab-principle__desc">Focus on useful, polished, reliable digital experiences.</p>
             </article>
             <article class="ab-principle">
               <span class="ab-principle__num">04</span>
               <h3 class="ab-principle__title">Long-Term Thinking</h3>
-              <p class="ab-principle__desc">
-                Build relationships, not just one-time projects.
-              </p>
+              <p class="ab-principle__desc">Build relationships, not just one-time projects.</p>
             </article>
           </div>
         </div>
@@ -809,19 +960,19 @@
       <!-- ---------- 4. What NoExaTech Is ---------- -->
       <section class="ab-position" aria-labelledby="ab-position-title">
         <div class="container">
-          <p class="ab-eyebrow" data-reveal>What NoExaTech Is</p>
-          <h2 class="ab-h2" id="ab-position-title" data-reveal>
+          <p class="ab-eyebrow" data-ab-reveal>What NoExaTech Is</p>
+          <h2 class="ab-h2" id="ab-position-title" data-ab-reveal>
             A technology company.<br>
             A digital product studio.<br>
             A creative digital agency.
           </h2>
-          <p class="ab-lead" data-reveal>
+          <p class="ab-lead" data-ab-reveal>
             We work across development, design, digital growth, automation, and custom
             technology — under one brand, with one point of contact, and one
             understanding of the business.
           </p>
 
-          <div class="ab-position__list" data-reveal>
+          <div class="ab-position__list" data-ab-reveal>
             <div class="ab-position__item">
               <h3 class="ab-position__label">Technology Company</h3>
               <p class="ab-position__desc">
@@ -850,12 +1001,12 @@
       <!-- ---------- 5. How We Work ---------- -->
       <section class="ab-section" aria-labelledby="ab-process-title">
         <div class="container">
-          <p class="ab-eyebrow" data-reveal>How We Work</p>
-          <h2 class="ab-h2" id="ab-process-title" data-reveal>
+          <p class="ab-eyebrow" data-ab-reveal>How We Work</p>
+          <h2 class="ab-h2" id="ab-process-title" data-ab-reveal>
             A process built around <em>understanding.</em>
           </h2>
 
-          <ol class="ab-process" data-reveal>
+          <ol class="ab-process" data-ab-reveal>
             <li class="ab-process__step">
               <span class="ab-process__num">01</span>
               <h3 class="ab-process__title">Discover</h3>
@@ -898,11 +1049,11 @@
       <!-- ---------- 6. Founder ---------- -->
       <section class="ab-founder" aria-labelledby="ab-founder-title">
         <div class="container ab-founder__grid">
-              <div class="ab-founder__portrait" role="img" aria-label="Portrait of Muhammad Harmain">
-                <img src="assets/images/team/founder.jpg" alt="Portrait of Muhammad Harmain" loading="lazy" onerror="this.hidden=true" />
-              </div>
+          <div class="ab-founder__portrait" role="img" aria-label="Portrait of Muhammad Harmain">
+            <img data-lazy="assets/images/team/founder.jpg" alt="Portrait of Muhammad Harmain" loading="lazy" decoding="async" />
+          </div>
 
-          <div data-reveal>
+          <div data-ab-reveal>
             <p class="ab-eyebrow">Founder</p>
             <h2 class="ab-founder__name" id="ab-founder-title">Muhammad Harmain</h2>
             <p class="ab-founder__role">Founder &amp; CEO — NoExaTech</p>
@@ -919,12 +1070,7 @@
             </blockquote>
 
             <div class="ab-founder__actions">
-              <a
-                class="ab-btn"
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >LinkedIn</a>
+              <a class="ab-btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <a class="ab-btn" href="contact.html">Contact</a>
             </div>
           </div>
@@ -934,40 +1080,42 @@
       <!-- ---------- 7. Team preview ---------- -->
       <section class="ab-team" aria-labelledby="ab-team-title">
         <div class="container">
-          <p class="ab-eyebrow" data-reveal>Our Team</p>
-          <h2 class="ab-h2" id="ab-team-title" data-reveal>
+          <p class="ab-eyebrow" data-ab-reveal>Our Team</p>
+          <h2 class="ab-h2" id="ab-team-title" data-ab-reveal>
             The people behind <em>NoExaTech.</em>
           </h2>
-          <p class="ab-lead" data-reveal>
+          <p class="ab-lead" data-ab-reveal>
             Great digital products are built by people who understand technology,
             creativity, and the problems businesses actually face.
           </p>
 
-          <div class="ab-team__grid" data-reveal>
+          <div class="ab-team__grid" data-ab-reveal>
             <article class="ab-team-card">
-              <div class="ab-team-card__photo" role="img" aria-label="Team member photo placeholder"></div>
+              <div class="ab-team-card__photo" role="img" aria-label="Team member photo">
+                <img data-lazy="assets/images/team/founder.jpg" alt="Muhammad Harmain" loading="lazy" decoding="async" />
+              </div>
               <div class="ab-team-card__body">
-                <h3 class="ab-team-card__name">Team Member Name</h3>
-                <p class="ab-team-card__role">Role</p>
-                <p class="ab-team-card__desc">Short description of what this person does at NoExaTech.</p>
+                <h3 class="ab-team-card__name">Muhammad Harmain</h3>
+                <p class="ab-team-card__role">Founder &amp; CEO</p>
+                <p class="ab-team-card__desc">Leads direction, client solutions, and product thinking.</p>
               </div>
             </article>
 
             <article class="ab-team-card">
               <div class="ab-team-card__photo" role="img" aria-label="Team member photo placeholder"></div>
               <div class="ab-team-card__body">
-                <h3 class="ab-team-card__name">Team Member Name</h3>
-                <p class="ab-team-card__role">Role</p>
-                <p class="ab-team-card__desc">Short description of what this person does at NoExaTech.</p>
+                <h3 class="ab-team-card__name">Coming Soon</h3>
+                <p class="ab-team-card__role">Design Lead</p>
+                <p class="ab-team-card__desc">Shapes interfaces, systems, and visual direction.</p>
               </div>
             </article>
 
             <article class="ab-team-card">
               <div class="ab-team-card__photo" role="img" aria-label="Team member photo placeholder"></div>
               <div class="ab-team-card__body">
-                <h3 class="ab-team-card__name">Team Member Name</h3>
-                <p class="ab-team-card__role">Role</p>
-                <p class="ab-team-card__desc">Short description of what this person does at NoExaTech.</p>
+                <h3 class="ab-team-card__name">Coming Soon</h3>
+                <p class="ab-team-card__role">Growth Lead</p>
+                <p class="ab-team-card__desc">Runs campaigns, content, and audience strategy.</p>
               </div>
             </article>
           </div>
@@ -981,12 +1129,12 @@
       <!-- ---------- 8. What We Do ---------- -->
       <section class="ab-capabilities" aria-labelledby="ab-capabilities-title">
         <div class="container">
-          <p class="ab-eyebrow" data-reveal>What We Do</p>
-          <h2 class="ab-h2" id="ab-capabilities-title" data-reveal>
+          <p class="ab-eyebrow" data-ab-reveal>What We Do</p>
+          <h2 class="ab-h2" id="ab-capabilities-title" data-ab-reveal>
             One partner. <em>Many capabilities.</em>
           </h2>
 
-          <div class="ab-capabilities__grid" data-reveal>
+          <div class="ab-capabilities__grid" data-ab-reveal>
             <a class="ab-capability" href="services.html"><p class="ab-capability__name">Web Development</p></a>
             <a class="ab-capability" href="services.html"><p class="ab-capability__name">Software</p></a>
             <a class="ab-capability" href="services.html"><p class="ab-capability__name">Business Systems</p></a>
@@ -1006,12 +1154,12 @@
       <!-- ---------- 9. Why Businesses Work With Us ---------- -->
       <section class="ab-why" aria-labelledby="ab-why-title">
         <div class="container">
-          <p class="ab-eyebrow" data-reveal>Why NoExaTech</p>
-          <h2 class="ab-h2" id="ab-why-title" data-reveal>
+          <p class="ab-eyebrow" data-ab-reveal>Why NoExaTech</p>
+          <h2 class="ab-h2" id="ab-why-title" data-ab-reveal>
             Why businesses <em>work with us.</em>
           </h2>
 
-          <div class="ab-why__grid" data-reveal>
+          <div class="ab-why__grid" data-ab-reveal>
             <div class="ab-why__item">
               <h3 class="ab-why__title">Understand Before Building</h3>
               <p class="ab-why__desc">We start with the business problem, not the tech stack.</p>
@@ -1035,14 +1183,14 @@
       <!-- ---------- 10. Final CTA ---------- -->
       <section class="ab-cta" aria-labelledby="ab-cta-title">
         <div class="container">
-          <h2 class="ab-cta__title" id="ab-cta-title" data-reveal>
+          <h2 class="ab-cta__title" id="ab-cta-title" data-ab-reveal>
             Have an idea worth building?<br>
             <em>Let's talk.</em>
           </h2>
-          <p class="ab-cta__text" data-reveal>
+          <p class="ab-cta__text" data-ab-reveal>
             Let's understand it, shape it, and turn it into something real.
           </p>
-          <div class="ab-cta__actions" data-reveal>
+          <div class="ab-cta__actions" data-ab-reveal>
             <a class="ab-btn ab-btn--solid" href="#" data-nx-modal>Start a Project</a>
             <a class="ab-btn" href="work.html">Explore Our Work</a>
           </div>
@@ -1082,6 +1230,8 @@
               <li><a href="work.html">Work</a></li>
               <li><a href="process.html">Process</a></li>
               <li><a href="team.html">Team</a></li>
+              <li><a href="credentials.html">Credentials</a></li>
+              <li><a href="store.html">Store</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
@@ -1107,6 +1257,8 @@
     <!-- ============ SCRIPTS ============ -->
     <script src="assets/js/config.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/about.js" defer></script>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="assets/js/animations.js?v=3" defer></script>
