@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Team Page
+   NovExa Tech — Team Page
    Roster · Portrait SVG fallbacks · Lazy images · Filter ·
    Reveal animations · Hero video · Hero tiles
    ============================================================ */
@@ -22,80 +22,17 @@
       discipline: 'technology',
       disciplineLabel: 'Technology',
       badge: 'Founder',
-      description: 'Leads strategy, client direction, and product thinking across the studio.',
+      description: 'Shapes studio strategy, client partnerships, and the product direction behind every engagement.',
       image: 'assets/images/team/founder.jpg'
     },
     {
       id: 't02',
       name: 'Asim Malik',
-      role: 'Editor',
-      discipline: 'Design and Creative',
-      disciplineLabel: 'Design and Creative',
-      description: 'Works on mobile and cross-platform applications.',
+      role: 'Video Editor & Creative Specialist',
+      discipline: 'design',
+      disciplineLabel: 'Design & Creative',
+      description: 'Turns ideas, footage, and campaign goals into clear, engaging visual stories.',
       image: 'assets/images/team/asim.jpg'
-    },
-    {
-      id: 't03',
-      name: 'Coming Soon',
-      role: 'Software Developer',
-      discipline: 'technology',
-      disciplineLabel: 'Technology',
-      description: 'Handles custom systems, integrations, and back-end logic.',
-      image: ''
-    },
-    {
-      id: 't04',
-      name: 'Coming Soon',
-      role: 'UI/UX Designer',
-      discipline: 'design',
-      disciplineLabel: 'Design',
-      description: 'Designs user interfaces, flows, and product experiences.',
-      image: ''
-    },
-    {
-      id: 't05',
-      name: 'Coming Soon',
-      role: 'Graphic Designer',
-      discipline: 'design',
-      disciplineLabel: 'Design',
-      description: 'Creates brand visuals, social creatives, and print assets.',
-      image: ''
-    },
-    {
-      id: 't06',
-      name: 'Coming Soon',
-      role: 'Video Editor',
-      discipline: 'design',
-      disciplineLabel: 'Creative',
-      description: 'Produces reels, promotional videos, and campaign content.',
-      image: ''
-    },
-    {
-      id: 't07',
-      name: 'Coming Soon',
-      role: 'Digital Marketer',
-      discipline: 'growth',
-      disciplineLabel: 'Growth',
-      description: 'Plans campaigns and manages digital growth across channels.',
-      image: ''
-    },
-    {
-      id: 't08',
-      name: 'Coming Soon',
-      role: 'Meta Ads Specialist',
-      discipline: 'growth',
-      disciplineLabel: 'Growth',
-      description: 'Runs Facebook and Instagram campaigns, targeting, and optimization.',
-      image: ''
-    },
-    {
-      id: 't09',
-      name: 'Coming Soon',
-      role: 'Content Specialist',
-      discipline: 'growth',
-      disciplineLabel: 'Growth',
-      description: 'Shapes messaging, social content, and audience strategy.',
-      image: ''
     }
   ];
 
@@ -297,7 +234,7 @@
       video.classList.remove('is-missing');
     }
     function markMissing(reason) {
-      if (reason) console.info('[NoExaTech Team] Hero video unavailable:', reason);
+      if (reason) console.info('[NovExa Tech Team] Hero video unavailable:', reason);
       video.classList.add('is-missing');
       video.classList.remove('is-ready');
     }

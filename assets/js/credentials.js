@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Credentials Page
+   NovExa Tech — Credentials Page
    Certificate SVG mockups · Real image support · Lazy loading ·
    Featured spotlight · Filter · Reveal · Hero video
    ============================================================ */
@@ -23,7 +23,7 @@
       category: 'ai',
       categoryLabel: 'AI',
       verifyUrl: 'https://www.life-global.org/',
-      description: 'A short professional program covering critical thinking frameworks, AI-era decision making, and reasoning under ambiguity. Completed by the NoExaTech founder as part of ongoing learning.',
+      description: 'A short professional program covering critical thinking frameworks, AI-era decision making, and reasoning under ambiguity. Completed by the NovExa Tech founder as part of ongoing learning.',
       image: ''
     },
     {
@@ -485,7 +485,7 @@
       video.classList.remove('is-missing');
     }
     function markMissing(reason) {
-      if (reason) console.info('[NoExaTech Credentials] Hero video unavailable:', reason);
+      if (reason) console.info('[NovExa Tech Credentials] Hero video unavailable:', reason);
       video.classList.add('is-missing');
       video.classList.remove('is-ready');
     }

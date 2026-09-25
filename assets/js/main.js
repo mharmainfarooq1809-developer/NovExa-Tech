@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Main Script
+   NovExa Tech — Main Script
    Header, mobile menu, scroll progress, back-to-top, stats,
    socials, WhatsApp forms (Contact + Start a Project).
    Uses Lenis when available (exposed by animations.js).
@@ -57,19 +57,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Stats & socials ---------- */
+  /* ============================================================
+     Stats — supports two markup patterns:
+       • Homepage  → .ix-stats__grid  →  .ix-stats__item  / .ix-stat__value
+       • Other     → [data-stats]     →  .stat            / .stat__value
+     ============================================================ */
   const renderStats = () => {
     const container = document.querySelector('[data-stats]');
     const config = window.siteConfig?.stats;
     if (!container || !config) return;
-    container.innerHTML = config.map(item => `
-      <div class="stat">
-        <p class="stat__value">${item.value}</p>
-        <p class="stat__label">${item.label}</p>
-      </div>
-    `).join('');
+
+    /* Detect which markup the current page expects */
+    const isHomepage = container.classList.contains('ix-stats__grid');
+
+    if (isHomepage) {
+      container.innerHTML = config.map(item => `
+        <div class="ix-stats__item">
+          <p class="ix-stat__value">${item.value}</p>
+          <p class="ix-stat__label">${item.label}</p>
+        </div>
+      `).join('');
+    } else {
+      container.innerHTML = config.map(item => `
+        <div class="stat">
+          <p class="stat__value">${item.value}</p>
+          <p class="stat__label">${item.label}</p>
+        </div>
+      `).join('');
+    }
   };
 
+  /* ---------- Footer socials ---------- */
   const renderSocials = () => {
     const socialList = document.querySelector('[data-social]');
     const socials = window.siteConfig?.socials;
@@ -77,6 +95,31 @@ document.addEventListener('DOMContentLoaded', () => {
     socialList.innerHTML = socials.map(item => `
       <li><a href="${item.href}" target="_blank" rel="noreferrer" aria-label="${item.label}">${item.label}</a></li>
     `).join('');
+  };
+
+  /* ---------- Contact page social pills (reads siteConfig.socials) ---------- */
+  const renderSocialPills = () => {
+    const host = document.querySelector('[data-social-pills]');
+    const socials = window.siteConfig?.socials;
+    if (!host || !Array.isArray(socials)) return;
+
+    /* Map short labels to full names */
+    const NAME_MAP = {
+      IG: 'Instagram',
+      LI: 'LinkedIn',
+      TT: 'TikTok',
+      X:  'X',
+      WA: 'WhatsApp'
+    };
+
+    /* Skip WhatsApp on the contact page (it has its own dedicated block) */
+    host.innerHTML = socials
+      .filter((s) => s.label !== 'WA')
+      .map((s) => {
+        const name = NAME_MAP[s.label] || s.label;
+        return `<a href="${s.href}" target="_blank" rel="noopener noreferrer">${name}</a>`;
+      })
+      .join('');
   };
 
   /* ---------- Reveal on scroll ---------- */
@@ -126,10 +169,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const initWhatsAppLinks = () => {
     if (!waNumber) return;
     document.querySelectorAll('[data-whatsapp-link]').forEach((el) => {
-      el.href = `https://wa.me/${waNumber}`;
+      const customMsg = el.getAttribute('data-whatsapp-message');
+      const base = `https://wa.me/${waNumber}`;
+      el.href = customMsg ? `${base}?text=${encodeURIComponent(customMsg)}` : base;
       el.target = '_blank';
       el.rel = 'noopener';
-      el.textContent = waDisplay || el.textContent;
+
+      /* Only replace text if this is a plain inline link (not a card / button) */
+      const isCard = el.classList.contains('ctc-action') || el.classList.contains('ctc-path');
+      if (!isCard && !el.textContent.trim()) {
+        el.textContent = waDisplay;
+      }
     });
   };
 
@@ -151,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Open WhatsApp with message ---------- */
   const openWhatsApp = (message, btn) => {
     if (!waNumber) {
-      console.warn('[NoExaTech] WhatsApp number is not configured in siteConfig.contact.whatsapp');
+      console.warn('[NovExa Tech] WhatsApp number is not configured in siteConfig.contact.whatsapp');
       return;
     }
     const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
@@ -203,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const buildContactMessage = ({ name, email, projectType, details }) =>
-    'Hello NoExaTech,\n\n' +
+    'Hello NovExa Tech,\n\n' +
     "I'd like to request a consultation for a project.\n\n" +
     `Name: ${name}\n` +
     `Email: ${email}\n` +
@@ -301,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lines.push(label + ':', v, '');
     };
 
-    lines.push('Hello NoExaTech,', '', "I'd like to discuss a project.", '');
+    lines.push('Hello NovExa Tech,', '', "I'd like to discuss a project.", '');
 
     push('NAME', d.fullName);
     push('BUSINESS', d.companyName);
@@ -365,6 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Init everything ---------- */
   renderStats();
   renderSocials();
+  renderSocialPills();
   initWhatsAppLinks();
   initConsultationForm();
   initProjectBriefForm();

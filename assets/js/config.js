@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Central Configuration
+   NovExa Tech — Central Configuration
    ============================================================ */
 window.siteConfig = {
   stats: [
@@ -10,17 +10,15 @@ window.siteConfig = {
   ],
 
   socials: [
-    { label: 'IG', href: 'https://www.instagram.com/' },
-    { label: 'LI', href: 'https://www.linkedin.com/' },
-    { label: 'WA', href: 'https://wa.me/923143927745' },
-    { label: 'X',  href: 'https://x.com/' }
+    { label: 'IG', href: 'https://www.instagram.com/nove_xatech?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==' },
+    { label: 'WA', href: 'https://wa.me/923143927745' }
   ],
 
   contact: {
     email: 'novexatech1809@gmail.com',
 
     /* WhatsApp — digits only, no +, spaces, dashes.
-       Replace this with the real NoExaTech number. */
+       Replace this with the real NovExa Tech number. */
     whatsapp: '923143927745',
 
     /* Optional pretty display */

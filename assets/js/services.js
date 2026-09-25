@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Services Page
+   NovExa Tech — Services Page
    Floating hero tiles · Reveal animations · Hero video
    ============================================================ */
 (function () {
@@ -205,7 +205,7 @@
       video.classList.remove('is-missing');
     }
     function markMissing(reason) {
-      if (reason) console.info('[NoExaTech Services] Hero video unavailable:', reason);
+      if (reason) console.info('[NovExa Tech Services] Hero video unavailable:', reason);
       video.classList.add('is-missing');
       video.classList.remove('is-ready');
     }

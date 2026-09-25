@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Digital Store
+   NovExa Tech — Digital Store
    Products · Lazy loading · Bento visuals · Spotlight ·
    Filters · Product modal · WhatsApp checkout · FAQ
    ============================================================ */
@@ -755,7 +755,7 @@
     if (bundle) {
       var divider = '━━━━━━━━━━━━━━━━━━';
       var msg = [
-        'Hello NoExaTech,', '',
+        'Hello NovExa Tech,', '',
         'I am interested in the Complete Collection bundle.', '',
         divider,
         'BUNDLE REQUEST',
@@ -799,7 +799,7 @@
   function buildOrderMessage(product, buyer) {
     var divider = '━━━━━━━━━━━━━━━━━━';
     var lines = [];
-    lines.push('Hello NoExaTech,', '');
+    lines.push('Hello NovExa Tech,', '');
     lines.push("I'd like to purchase a digital product from your store.", '');
     lines.push(divider); lines.push('PRODUCT'); lines.push(divider, '');
     lines.push('Name: ' + product.name);
@@ -912,7 +912,7 @@
 
     /* Hide only on a real failure */
     function markMissing(reason) {
-      if (reason) console.info('[NoExaTech Store] Hero video unavailable:', reason);
+      if (reason) console.info('[NovExa Tech Store] Hero video unavailable:', reason);
       video.classList.add('is-missing');
       video.classList.remove('is-ready');
     }

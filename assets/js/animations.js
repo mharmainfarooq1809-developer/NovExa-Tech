@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Homepage Animation System
+   NovExa Tech — Homepage Animation System
    GSAP + ScrollTrigger + Lenis
    ============================================================ */
 (function () {
@@ -288,7 +288,11 @@
   }
 
   /* ============================================================
-     6. SERVICES — hover preview following cursor (★★★★)
+     6. SERVICES — hover preview with images (★★★★)
+     Builds a floating preview tile that follows the cursor and
+     swaps its image based on which row is hovered.
+     Each row should carry:
+       data-preview-image="assets/images/services/foo.jpg"
      ============================================================ */
   function animServices() {
     var section = document.querySelector('.ix-services');
@@ -296,6 +300,7 @@
     var list = section.querySelector('.ix-services__list');
     if (!list) return;
 
+    /* Reveal rows sequentially */
     gsap.from(list.children, {
       autoAlpha: 0,
       y: 30,
@@ -305,32 +310,80 @@
       scrollTrigger: { trigger: list, start: 'top 80%' }
     });
 
+    /* Desktop-only hover preview */
     if (window.matchMedia('(hover: none)').matches) return;
     if (window.matchMedia('(max-width: 960px)').matches) return;
 
+    var rows = section.querySelectorAll('.ix-service');
+    if (!rows.length) return;
+
+    /* ---- Build the preview tile with one <img> per service ---- */
     var preview = document.createElement('div');
     preview.className = 'ix-service-preview';
-    preview.innerHTML = '<span>Preview</span>';
+
+    var label = document.createElement('span');
+    label.textContent = 'Preview';
+    preview.appendChild(label);
+
+    var images = [];
+    rows.forEach(function (row, i) {
+      var src = row.getAttribute('data-preview-image');
+      if (!src) { images.push(null); return; }
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      /* First image active by default so the tile is never empty */
+      if (i === 0) img.classList.add('is-active');
+      preview.appendChild(img);
+      images.push(img);
+    });
+
     section.appendChild(preview);
 
+    /* Smooth follow */
     var pv  = gsap.quickTo(preview, 'x', { duration: 0.55, ease: 'power3.out' });
     var pvY = gsap.quickTo(preview, 'y', { duration: 0.55, ease: 'power3.out' });
 
     section.addEventListener('mousemove', function (e) {
       var r = section.getBoundingClientRect();
+      /* Offset so the tile floats just up-and-right of the cursor */
       pv(e.clientX - r.left + 20);
-      pvY(e.clientY - r.top - 60);
+      pvY(e.clientY - r.top - 80);
     });
 
-    section.querySelectorAll('.ix-service').forEach(function (row) {
+    /* ---- Row hover: show / hide + swap image ---- */
+    rows.forEach(function (row, index) {
       row.addEventListener('mouseenter', function () {
-        gsap.to(preview, { autoAlpha: 1, scale: 1, duration: 0.35, ease: 'power3.out' });
-        gsap.fromTo(row.querySelector('.ix-service__arrow'),
-          { x: -6, autoAlpha: 0.6 },
-          { x: 0, autoAlpha: 1, duration: 0.35, ease: 'power2.out' });
+        /* Swap active image */
+        images.forEach(function (img, i) {
+          if (!img) return;
+          img.classList.toggle('is-active', i === index);
+        });
+
+        gsap.to(preview, {
+          autoAlpha: 1,
+          scale: 1,
+          duration: 0.35,
+          ease: 'power3.out'
+        });
+
+        var arrow = row.querySelector('.ix-service__arrow');
+        if (arrow) {
+          gsap.fromTo(arrow,
+            { x: -6, autoAlpha: 0.6 },
+            { x: 0, autoAlpha: 1, duration: 0.35, ease: 'power2.out' });
+        }
       });
+
       row.addEventListener('mouseleave', function () {
-        gsap.to(preview, { autoAlpha: 0, scale: 0.94, duration: 0.28 });
+        gsap.to(preview, {
+          autoAlpha: 0,
+          scale: 0.94,
+          duration: 0.28,
+          ease: 'power2.out'
+        });
       });
     });
   }
@@ -484,7 +537,7 @@
   }
 
   /* ============================================================
-     10. WHY NOEXATECH — magnetic hover (★★★)
+     10. WHY NOVEXA TECH — magnetic hover (★★★)
      ============================================================ */
   function animWhy() {
     var items = document.querySelectorAll('.ix-why__item');

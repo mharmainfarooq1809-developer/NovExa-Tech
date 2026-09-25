@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Work Page
+   NovExa Tech — Work Page
    Hero project tiles · Placeholder SVG mockups · Lazy loading ·
    Filters · Case study modal · Reveal animations · Hero video
    ============================================================ */
@@ -14,70 +14,70 @@
      ============================================================ */
   var PROJECTS = {
     p01: {
-      title: 'Project Title',
-      category: 'Website Development',
-      categoryLabel: 'Website',
-      image: '',
-      challenge: 'Placeholder — the business problem this project set out to solve.',
-      approach: 'Placeholder — how NoExaTech approached the problem, scoped the work, and chose the technology.',
-      solution: 'Placeholder — what was built and how it fits the business.',
-      features: ['Feature placeholder', 'Feature placeholder', 'Feature placeholder', 'Feature placeholder'],
-      technologies: ['Technology', 'Technology', 'Technology']
-    },
-    p02: {
-      title: 'Project Title',
-      category: 'Business Management System',
-      categoryLabel: 'System',
-      image: '',
-      challenge: 'Placeholder — the business problem this project set out to solve.',
-      approach: 'Placeholder — how NoExaTech approached the problem, scoped the work, and chose the technology.',
-      solution: 'Placeholder — what was built and how it fits the business.',
-      features: ['Feature placeholder', 'Feature placeholder', 'Feature placeholder', 'Feature placeholder'],
-      technologies: ['Technology', 'Technology', 'Technology']
-    },
-    p03: {
-      title: 'Project Title',
-      category: 'E-Commerce',
-      categoryLabel: 'E-Commerce',
-      image: '',
-      challenge: 'Placeholder — the business problem this project set out to solve.',
-      approach: 'Placeholder — how NoExaTech approached the problem, scoped the work, and chose the technology.',
-      solution: 'Placeholder — what was built and how it fits the business.',
-      features: ['Feature placeholder', 'Feature placeholder', 'Feature placeholder', 'Feature placeholder'],
-      technologies: ['Technology', 'Technology', 'Technology']
-    },
-    p04: {
-      title: 'Project Title',
+      title: 'Aniwear',
       category: 'Web Application',
       categoryLabel: 'Web App',
-      image: '',
-      challenge: 'Placeholder — the business problem this project set out to solve.',
-      approach: 'Placeholder — how NoExaTech approached the problem, scoped the work, and chose the technology.',
-      solution: 'Placeholder — what was built and how it fits the business.',
-      features: ['Feature placeholder', 'Feature placeholder', 'Feature placeholder', 'Feature placeholder'],
-      technologies: ['Technology', 'Technology', 'Technology']
+      image: 'assets/images/projects/aw.PNG',
+      challenge: 'Keeping a wardrobe organised is difficult when clothing, outfit ideas, and care reminders live in different places.',
+      approach: 'We shaped the experience around the everyday journey: add an item, group it into a wardrobe, then use the catalogue to plan what to wear.',
+      solution: 'Aniwear is a calm personal wardrobe hub that turns a clothing collection into an easy-to-browse, useful digital inventory.',
+      features: ['Clothing catalogue', 'Wardrobe categories', 'Outfit inspiration', 'Wear and care tracking'],
+      technologies: ['Responsive web UI', 'Product design', 'Content modelling']
+    },
+    p02: {
+      title: 'Union Enterprises',
+      category: 'Business Management System',
+      categoryLabel: 'System',
+      image: 'assets/images/projects/ue.PNG',
+      challenge: 'Trade and clearing teams need a reliable view of shipments, documents, and next actions without switching between disconnected tools.',
+      approach: 'We organised the product around the operational flow, prioritising clear status information and quick access to the records teams use most.',
+      solution: 'A digital trade and clearing workspace that centralises shipment visibility, documentation, and logistics coordination.',
+      features: ['Shipment tracking', 'Document management', 'Clearance workflows', 'Operations dashboard'],
+      technologies: ['Responsive web UI', 'Workflow design', 'Data dashboard']
+    },
+    p03: {
+      title: 'Popcorn Hub',
+      category: 'Booking Platform',
+      categoryLabel: 'Booking',
+      image: 'assets/images/projects/movie.PNG',
+      challenge: 'Moviegoers need a quick, engaging route from discovering a film to finding a showtime and completing a booking.',
+      approach: 'We used familiar cinema cues and a clear navigation structure to make showtimes, theatres, bookings, and account tools easy to reach.',
+      solution: 'Popcorn Hub is a movie discovery and booking platform with a cinematic presentation and a practical customer journey.',
+      features: ['Now-showing discovery', 'Showtime browsing', 'Theatre directory', 'Booking dashboard'],
+      technologies: ['Responsive web UI', 'UX design', 'Booking flow design']
+    },
+    p04: {
+      title: 'Performance Automotive Experience',
+      category: 'Web Application',
+      categoryLabel: 'Web App',
+      image: 'assets/images/projects/taha1.jpeg',
+      challenge: 'A premium automotive concept needs an experience that conveys atmosphere and aspiration while keeping key information easy to explore.',
+      approach: 'We led with immersive imagery and built a focused visual hierarchy that preserves clarity across desktop and mobile screens.',
+      solution: 'A high-impact automotive digital experience built to present vehicles, campaigns, and brand stories with confidence.',
+      features: ['Immersive hero content', 'Responsive layouts', 'Campaign storytelling', 'Focused calls to action'],
+      technologies: ['Responsive web UI', 'Visual direction', 'Interaction design']
     },
     p05: {
-      title: 'Project Title',
+      title: 'Digital Product Interface',
       category: 'UI/UX Design',
       categoryLabel: 'UI/UX',
-      image: '',
-      challenge: 'Placeholder — the business problem this project set out to solve.',
-      approach: 'Placeholder — how NoExaTech approached the problem, scoped the work, and chose the technology.',
-      solution: 'Placeholder — what was built and how it fits the business.',
-      features: ['Feature placeholder', 'Feature placeholder', 'Feature placeholder', 'Feature placeholder'],
-      technologies: ['Technology', 'Technology', 'Technology']
+      image: 'assets/images/projects/taha2.jpeg',
+      challenge: 'Complex digital products can feel difficult before a user has even found the first useful action.',
+      approach: 'We established a consistent interface language, then used hierarchy, spacing, and reusable patterns to make the product easier to scan and use.',
+      solution: 'A flexible UI/UX direction that gives a digital product a stronger visual system and a clearer path through its core tasks.',
+      features: ['Interface system', 'Responsive screens', 'Component patterns', 'User-flow refinement'],
+      technologies: ['UI design', 'UX design', 'Design system']
     },
     p06: {
-      title: 'Project Title',
+      title: 'Custom Operations Platform',
       category: 'Custom Software',
       categoryLabel: 'Software',
-      image: '',
-      challenge: 'Placeholder — the business problem this project set out to solve.',
-      approach: 'Placeholder — how NoExaTech approached the problem, scoped the work, and chose the technology.',
-      solution: 'Placeholder — what was built and how it fits the business.',
-      features: ['Feature placeholder', 'Feature placeholder', 'Feature placeholder', 'Feature placeholder'],
-      technologies: ['Technology', 'Technology', 'Technology']
+      image: 'assets/images/projects/taha5.jpeg',
+      challenge: 'Growing operations need software that reflects the way teams actually work rather than forcing them into generic processes.',
+      approach: 'We mapped the key operational touchpoints and translated them into a practical interface with room to evolve as requirements change.',
+      solution: 'A tailored software concept that brings key operational tasks together in one purposeful, scalable workspace.',
+      features: ['Tailored workflows', 'Centralised workspace', 'Role-aware views', 'Scalable information structure'],
+      technologies: ['Product strategy', 'UX design', 'Custom software architecture']
     }
   };
 
@@ -282,6 +282,27 @@
       var holder = card.querySelector('.wk-card__placeholder');
       if (!holder || !proj) return;
       holder.innerHTML = mockFor(proj.category);
+
+      var image = card.querySelector('[data-lazy]');
+      var title = card.querySelector('.wk-card__title');
+      var category = card.querySelector('.wk-card__cat');
+      var description = card.querySelector('.wk-card__desc');
+      var tech = card.querySelector('.wk-card__tech');
+      if (image && proj.image) {
+        image.setAttribute('data-lazy', proj.image);
+        image.alt = proj.title + ' preview';
+      }
+      if (title) title.textContent = proj.title;
+      if (category) category.textContent = proj.category;
+      if (description) description.textContent = proj.solution;
+      if (tech) {
+        tech.innerHTML = '';
+        proj.technologies.forEach(function (item) {
+          var tag = document.createElement('span');
+          tag.textContent = item;
+          tech.appendChild(tag);
+        });
+      }
     });
   }
 
@@ -445,7 +466,7 @@
       video.classList.remove('is-missing');
     }
     function markMissing(reason) {
-      if (reason) console.info('[NoExaTech Work] Hero video unavailable:', reason);
+      if (reason) console.info('[NovExa Tech Work] Hero video unavailable:', reason);
       video.classList.add('is-missing');
       video.classList.remove('is-ready');
     }

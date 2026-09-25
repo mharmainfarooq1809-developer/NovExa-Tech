@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Cursor Light
+   NovExa Tech — Cursor Light
    Ambient blue glow that follows the cursor on desktop.
    Purely decorative. Skipped on touch + reduced-motion.
    ============================================================ */

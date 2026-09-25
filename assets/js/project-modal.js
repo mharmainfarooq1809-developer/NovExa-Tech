@@ -1,6 +1,6 @@
 /* ============================================================
-   NoExaTech — Project Consultation Modal
-   Package-aware. Static, no backend, Vercel-compatible.
+   NovExa Tech — Project Consultation Modal
+  Package-aware. Static, no backend, Apache-compatible.
    ============================================================ */
 (function () {
   'use strict';
@@ -49,7 +49,7 @@
         document.body.appendChild(bootScript);
       })
       .catch(function (error) {
-        console.error('[NoExaTech] Project modal failed to load:', error);
+        console.error('[NovExa Tech] Project modal failed to load:', error);
       });
     return;
   }
@@ -141,6 +141,40 @@
         'Custom workflows, roles, and reporting',
         'Integrations with existing tools / APIs',
         'Scalable architecture with long-term maintenance in mind'
+      ]
+    },
+    'Website Redesign': {
+      type: 'Individual Services & Creative Solutions',
+      price: 'From PKR 10,000',
+      purpose: 'A sharper, more useful version of your existing site',
+      features: [
+        'Modern UI/UX redesign',
+        'Responsive layout improvements',
+        'Visual hierarchy and layout refinement',
+        'Basic performance optimization'
+      ]
+    },
+    'Video Editing & Reels': {
+      type: 'Individual Services & Creative Solutions',
+      price: 'From PKR 2,500 / video',
+      purpose: 'Short-form edits built for attention and action',
+      features: [
+        'Short-form video editing',
+        'Reels and Shorts',
+        'Captions and subtitles',
+        'Transitions and brand elements'
+      ]
+    },
+    'Website Maintenance': {
+      type: 'Individual Services & Creative Solutions',
+      price: 'From PKR 5,000 / month',
+      purpose: 'Steady technical care after launch',
+      features: [
+        'Website updates',
+        'Bug fixes',
+        'Content updates',
+        'Basic security checks',
+        'Performance monitoring'
       ]
     },
     'Design Starter': {
@@ -537,7 +571,7 @@
 
   function packageMessage(pkg, pkgId, data) {
     var lines = [];
-    lines.push('Hello NoExaTech,', '');
+    lines.push('Hello NovExa Tech,', '');
     lines.push('I would like to request a consultation for the following package:', '');
 
     lines.push(DIVIDER);
@@ -600,7 +634,7 @@
 
   function customMessage(data) {
     var lines = [];
-    lines.push('Hello NoExaTech,', '');
+    lines.push('Hello NovExa Tech,', '');
     lines.push('I would like to request a project consultation.', '');
 
     lines.push(DIVIDER);

@@ -1,0 +1,8 @@
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+Redirect 302 /credentials.html /construction.html
+Redirect 302 /store.html /construction.html
+
+RewriteEngine On
+RewriteRule ^careers/?$ /construction.html [R=302,L]

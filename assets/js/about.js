@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — About Page
+   NovExa Tech — About Page
    Abstract SVG tiles · Lazy images · Reveal · Hero video
    ============================================================ */
 (function () {
@@ -243,7 +243,7 @@
       video.classList.remove('is-missing');
     }
     function markMissing(reason) {
-      if (reason) console.info('[NoExaTech About] Hero video unavailable:', reason);
+      if (reason) console.info('[NovExa Tech About] Hero video unavailable:', reason);
       video.classList.add('is-missing');
       video.classList.remove('is-ready');
     }

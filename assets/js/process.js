@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Process Page
+   NovExa Tech — Process Page
    Hero process tiles · Reveal animations · Hero video
    ============================================================ */
 (function () {
@@ -187,7 +187,7 @@
       video.classList.remove('is-missing');
     }
     function markMissing(reason) {
-      if (reason) console.info('[NoExaTech Process] Hero video unavailable:', reason);
+      if (reason) console.info('[NovExa Tech Process] Hero video unavailable:', reason);
       video.classList.add('is-missing');
       video.classList.remove('is-ready');
     }

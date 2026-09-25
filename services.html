@@ -3,22 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Services | NoExaTech</title>
-    <meta name="description" content="Websites, e-commerce, graphic design, Meta marketing, and combined growth packages from NoExaTech. Start small, scale when ready." />
+    <title>Services | NovExa Tech</title>
+    <meta name="description" content="Websites, e-commerce, graphic design, Meta marketing, and combined growth packages from NovExa Tech. Start small, scale when ready." />
     <meta name="theme-color" content="#050505" />
-    <link rel="canonical" href="https://noexatech.vercel.app/services.html" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://novexatech.10001mb.com/services.html" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="NoExaTech" />
-    <meta property="og:title" content="Services | NoExaTech" />
+    <meta property="og:site_name" content="NovExa Tech" />
+    <meta property="og:title" content="Services | NovExa Tech" />
     <meta property="og:description" content="Solutions built around your business — websites, e-commerce, design, Meta marketing, and growth packages." />
-    <meta property="og:url" content="https://noexatech.vercel.app/services.html" />
-    <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
-
+    <meta property="og:url" content="https://novexatech.10001mb.com/services.html" />
+    <meta property="og:image" content="https://novexatech.10001mb.com/assets/images/logo/og.png" />
+    <meta property="og:image:alt" content="NovExa Tech logo" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Services | NoExaTech" />
-    <meta name="twitter:description" content="Solutions built around your business." />
-    <meta name="twitter:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+    <meta name="twitter:title" content="Services | NovExa Tech" />
+    <meta name="twitter:description" content="Explore NovExa Tech website, software, design, marketing, e-commerce, and individual services." />
+    <meta name="twitter:image" content="https://novexatech.10001mb.com/assets/images/logo/og.png" />
+
 
     <link rel="icon" href="assets/images/logo/og.png?v=3" type="image/png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -30,6 +32,22 @@
 
     <link rel="stylesheet" href="assets/css/main.css?v=3" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "NovExa Tech services",
+      "url": "https://novexatech.10001mb.com/services.html",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "Website Development", "provider": { "@id": "https://novexatech.10001mb.com/#organization" } } },
+        { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "Advanced Web and E-Commerce", "provider": { "@id": "https://novexatech.10001mb.com/#organization" } } },
+        { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "Graphic Design", "provider": { "@id": "https://novexatech.10001mb.com/#organization" } } },
+        { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "Meta Marketing", "provider": { "@id": "https://novexatech.10001mb.com/#organization" } } },
+        { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "Individual Services and Creative Solutions", "provider": { "@id": "https://novexatech.10001mb.com/#organization" } } }
+      ]
+    }
+    </script>
 
     <style>
       /* ============================================================
@@ -322,6 +340,10 @@
       .sv-sub__title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; color: #FFFFFF; margin: 0 0 8px; }
       .sv-sub__desc { font-size: 14.5px; line-height: 1.6; color: rgba(255, 255, 255, 0.55); margin: 0 0 32px; max-width: 640px; }
 
+      .sv-custom { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 46px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+      .sv-custom__text { margin: 0; font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, 0.62); }
+      .sv-custom__text strong { display: block; margin-bottom: 4px; font-family: 'Space Grotesk', sans-serif; font-size: 18px; color: #FFFFFF; }
+
       /* ---------- Routing ---------- */
       .sv-route { padding: 130px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
       .sv-route__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: 60px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
@@ -457,6 +479,8 @@
           padding: 32px 0;
         }
         .sv-stat:last-child { border-bottom: 0; }
+        .sv-custom { align-items: stretch; flex-direction: column; }
+        .sv-custom .sv-btn { width: 100%; justify-content: center; }
         .nx-project-modal__summary-features { grid-template-columns: 1fr; }
       }
 
@@ -487,7 +511,7 @@
     <!-- ============ HEADER ============ -->
     <header class="site-header" id="site-header">
       <div class="container site-header__inner">
-        <a class="brand" href="index.html" aria-label="NoExaTech — home">
+        <a class="brand" href="index.html" aria-label="NovExa Tech — home">
           <span class="brand__mark" aria-hidden="true">
             <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
               <path d="M5 27V5l22 22V5" stroke="url(#nlg)" stroke-width="2.6" stroke-linecap="square"/>
@@ -498,7 +522,7 @@
               </defs>
             </svg>
           </span>
-          <span class="brand__name">NOEXATECH</span>
+          <span class="brand__name">NOVEXA TECH</span>
         </a>
 
         <nav class="nav" aria-label="Primary">
@@ -564,7 +588,6 @@
             preload="auto"
             disablepictureinpicture
             poster="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'><defs><radialGradient id='g' cx='50%25' cy='50%25'><stop offset='0' stop-color='%230066FF' stop-opacity='0.35'/><stop offset='1' stop-color='%23050505'/></radialGradient></defs><rect width='1600' height='900' fill='%23050505'/><rect width='1600' height='900' fill='url(%23g)'/></svg>">
-            <source src="assets/video/services.webm" type="video/webm" />
             <source src="assets/videos/about.mp4" type="video/mp4" />
           </video>
           <div class="sv-hero__grid"></div>
@@ -581,7 +604,7 @@
             </h1>
             <p class="sv-hero__text" data-sv-reveal>
               From websites and e-commerce to creative design and digital growth,
-              NoExaTech provides practical technology and digital solutions that can
+              NovExa Tech provides practical technology and digital solutions that can
               start small and scale as your business grows.
             </p>
             <div class="sv-hero__actions" data-sv-reveal>
@@ -905,7 +928,7 @@
 
           <div class="sv-note" data-sv-reveal>
             <p class="sv-note__text">
-              <strong>Ad spend is separate from the NoExaTech management fee.</strong>
+              <strong>Ad spend is separate from the NovExa Tech management fee.</strong>
               The amounts above cover content and campaign management only — the
               advertising budget itself is paid directly to Meta.
             </p>
@@ -1029,6 +1052,75 @@
         </div>
       </section>
 
+      <!-- 07 — Individual Services & Creative Solutions -->
+      <section class="sv-section" aria-labelledby="sv-individual-title">
+        <div class="container">
+          <header class="sv-head" data-sv-reveal>
+            <span class="sv-head__num" aria-hidden="true">07</span>
+            <div class="sv-head__body">
+              <h2 class="sv-head__title" id="sv-individual-title">Individual Services &amp; Creative Solutions</h2>
+              <p class="sv-head__desc">
+                Focused services for businesses that need one clear improvement,
+                one creative deliverable, or reliable support without a full package.
+              </p>
+            </div>
+          </header>
+
+          <div class="sv-packages" data-sv-reveal>
+            <article class="sv-card">
+              <p class="sv-card__label">Website Redesign</p>
+              <h3 class="sv-card__name">A sharper, more useful version of your existing site</h3>
+              <div class="sv-card__price"><span class="sv-card__price-from">From</span><span class="sv-card__price-value">PKR 10,000</span></div>
+              <ul class="sv-card__list">
+                <li>Modern UI/UX redesign</li>
+                <li>Responsive layout improvements</li>
+                <li>Visual hierarchy and layout refinement</li>
+                <li>Basic performance optimization</li>
+              </ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-package="Website Redesign">Start a Project</button>
+            </article>
+
+            <article class="sv-card sv-card--featured">
+              <p class="sv-card__label">Video Editing &amp; Reels</p>
+              <h3 class="sv-card__name">Short-form edits built for attention and action</h3>
+              <div class="sv-card__price"><span class="sv-card__price-from">From</span><span class="sv-card__price-value">PKR 2,500</span><span class="sv-card__price-suffix">/ video</span></div>
+              <ul class="sv-card__list">
+                <li>Short-form video editing</li>
+                <li>Reels and Shorts</li>
+                <li>Captions and subtitles</li>
+                <li>Transitions and brand elements</li>
+              </ul>
+              <button class="sv-btn sv-btn--solid" type="button" data-nx-modal
+                data-package="Video Editing &amp; Reels">Start a Project</button>
+            </article>
+
+            <article class="sv-card">
+              <p class="sv-card__label">Website Maintenance</p>
+              <h3 class="sv-card__name">Steady technical care after launch</h3>
+              <div class="sv-card__price"><span class="sv-card__price-from">From</span><span class="sv-card__price-value">PKR 5,000</span><span class="sv-card__price-suffix">/ month</span></div>
+              <ul class="sv-card__list">
+                <li>Website updates</li>
+                <li>Bug fixes</li>
+                <li>Content updates</li>
+                <li>Basic security checks</li>
+                <li>Performance monitoring</li>
+              </ul>
+              <button class="sv-btn" type="button" data-nx-modal
+                data-package="Website Maintenance">Start a Project</button>
+            </article>
+          </div>
+
+          <div class="sv-custom" data-sv-reveal>
+            <p class="sv-custom__text">
+              <strong>Need something more specific?</strong>
+              Tell us what you want to build and we'll shape the right project around it.
+            </p>
+            <button class="sv-btn sv-btn--solid" type="button" data-nx-modal>Custom Project</button>
+          </div>
+        </div>
+      </section>
+
       <!-- Routing -->
       <section class="sv-route" aria-labelledby="sv-route-title">
         <div class="container">
@@ -1064,7 +1156,7 @@
             </a>
             <a class="sv-route__item" href="#" data-nx-modal>
               <p class="sv-route__q">Not sure yet?</p>
-              <p class="sv-route__a">Talk to NoExaTech <span class="sv-route__arrow">→</span></p>
+              <p class="sv-route__a">Talk to NovExa Tech <span class="sv-route__arrow">→</span></p>
             </a>
           </div>
         </div>
@@ -1099,7 +1191,7 @@
             </li>
             <li data-num="04">
               Meta advertising spend is paid directly to Meta and is separate from
-              the NoExaTech management fee.
+              the NovExa Tech management fee.
             </li>
           </ul>
         </div>
@@ -1119,7 +1211,7 @@
           </p>
           <div class="sv-cta__actions" data-sv-reveal>
             <button class="sv-btn sv-btn--solid" type="button" data-nx-modal>Start a Project</button>
-            <a class="sv-btn" href="contact.html">Talk to NoExaTech</a>
+            <a class="sv-btn" href="contact.html">Talk to NovExa Tech</a>
           </div>
         </div>
       </section>
@@ -1131,7 +1223,7 @@
       <div class="container">
         <div class="footer__top">
           <div class="footer__brand">
-            <a class="brand" href="index.html" aria-label="NoExaTech — home">
+            <a class="brand" href="index.html" aria-label="NovExa Tech — home">
               <span class="brand__mark" aria-hidden="true">
                 <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
                   <path d="M5 27V5l22 22V5" stroke="url(#flg)" stroke-width="2.6" stroke-linecap="square"/>
@@ -1142,7 +1234,7 @@
                   </defs>
                 </svg>
               </span>
-              <span class="brand__name">NOEXATECH</span>
+              <span class="brand__name">NOVEXA TECH</span>
             </a>
             <p class="footer__tagline">“New Ideas. Powered by Technology.”</p>
             <button class="btn btn--primary btn--sm footer__cta" type="button" data-nx-modal>Start a Project</button>
@@ -1171,7 +1263,7 @@
         </div>
 
         <div class="footer__bottom">
-          <p>© <span data-year>2026</span> NoExaTech. All rights reserved.</p>
+          <p>© <span data-year>2026</span> NovExa Tech. All rights reserved.</p>
           <p class="footer__built">Designed &amp; built in-house.</p>
         </div>
       </div>

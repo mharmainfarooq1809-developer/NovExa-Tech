@@ -3,24 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NoExaTech — Premium Technology &amp; Digital Product Studio</title>
-    <meta name="description" content="NoExaTech is a technology company and digital product studio. We build websites, software, business systems, and digital experiences around how your business actually works." />
+    <title>NovExa Tech — Premium Technology &amp; Digital Product Studio</title>
+    <meta name="description" content="NovExa Tech is a technology company and digital product studio. We build websites, software, business systems, and digital experiences around how your business actually works." />
     <meta name="theme-color" content="#050505" />
-    <link rel="canonical" href="https://noexatech.vercel.app/" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://novexatech.10001mb.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="NoExaTech" />
-    <meta property="og:title" content="NoExaTech — New Ideas. Powered by Technology." />
+    <meta property="og:site_name" content="NovExa Tech" />
+    <meta property="og:title" content="NovExa Tech — New Ideas. Powered by Technology." />
     <meta property="og:description" content="We turn ideas, business challenges, and opportunities into technology that moves businesses forward." />
-    <meta property="og:url" content="https://noexatech.vercel.app/" />
-    <meta property="og:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
-
-    <!-- Twitter -->
+    <meta property="og:url" content="https://novexatech.10001mb.com/" />
+    <meta property="og:image" content="https://novexatech.10001mb.com/assets/images/logo/og.png" />
+    <meta property="og:image:alt" content="NovExa Tech logo" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="NoExaTech — New Ideas. Powered by Technology." />
-    <meta name="twitter:description" content="Technology &amp; digital product studio. We build what's next." />
-    <meta name="twitter:image" content="https://noexatech.vercel.app/assets/images/logo/og.png" />
+    <meta name="twitter:title" content="NovExa Tech — New Ideas. Powered by Technology." />
+    <meta name="twitter:description" content="NovExa Tech builds websites, software, business systems, and digital experiences around how businesses work." />
+    <meta name="twitter:image" content="https://novexatech.10001mb.com/assets/images/logo/og.png" />
+
 
     <link rel="icon" href="assets/images/logo/og.png?v=3" type="image/png" />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -40,13 +41,17 @@
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
-      "name": "NoExaTech",
+      "@id": "https://novexatech.10001mb.com/#organization",
+      "name": "NovExa Tech",
       "slogan": "New Ideas. Powered by Technology.",
-      "url": "https://noexatech.vercel.app/",
+      "url": "https://novexatech.10001mb.com/",
+      "logo": "https://novexatech.10001mb.com/assets/images/logo/og.png",
       "email": "novexatech1809@gmail.com",
       "description": "Technology and digital product studio building websites, custom software, business management systems, UI/UX design, digital marketing, and automation solutions.",
       "areaServed": "Worldwide",
       "knowsAbout": ["Web Development","Software Development","Business Management Systems","UI/UX Design","Digital Marketing","Automation"],
+      "sameAs": ["https://www.instagram.com/nove_xatech?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="],
+      "contactPoint": { "@type": "ContactPoint", "contactType": "customer support", "email": "novexatech1809@gmail.com", "availableLanguage": "English" },
       "founder": { "@type": "Person", "name": "Muhammad Harmain", "jobTitle": "Founder & CEO" }
     }
     </script>
@@ -532,9 +537,17 @@
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
       }
+      .ix-work-card__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.45s ease;
+      }
+      .ix-work-card:hover .ix-work-card__image { transform: scale(1.04); }
       .ix-work-card__visual::after {
-        content: "Project Visual";
+        content: "";
         font-family: 'Space Grotesk', sans-serif;
         font-size: 10px;
         letter-spacing: 0.28em;
@@ -710,7 +723,6 @@
         max-width: 640px;
         margin: 0 0 30px;
       }
-      /* Horizontal connecting line for the process grid */
       .ix-process__grid-wrap { position: relative; }
       .ix-process__grid-wrap::before {
         content: "";
@@ -726,7 +738,7 @@
         pointer-events: none;
       }
 
-      /* ---------- Why NoExaTech ---------- */
+      /* ---------- Why NovExa Tech ---------- */
       .ix-why {
         padding: 130px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -933,7 +945,7 @@
     <a class="visually-hidden" href="#main">Skip to content</a>
 
     <!-- ============ LOADER ============ -->
-    <div class="loader" id="loader" role="status" aria-live="polite" aria-label="Loading NoExaTech">
+    <div class="loader" id="loader" role="status" aria-live="polite" aria-label="Loading NovExa Tech">
       <div class="loader__inner">
         <div class="loader__logo">NOEXA<span>TECH</span></div>
         <div class="loader__bar"><span class="loader__bar-fill"></span></div>
@@ -947,7 +959,7 @@
     <!-- ============ HEADER ============ -->
     <header class="site-header" id="site-header">
       <div class="container site-header__inner">
-        <a class="brand" href="index.html" aria-label="NoExaTech — home">
+        <a class="brand" href="index.html" aria-label="NovExa Tech — home">
           <span class="brand__mark" aria-hidden="true">
             <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
               <path d="M5 27V5l22 22V5" stroke="url(#nlg)" stroke-width="2.6" stroke-linecap="square"/>
@@ -958,7 +970,7 @@
               </defs>
             </svg>
           </span>
-          <span class="brand__name">NOEXATECH</span>
+          <span class="brand__name">NOVEXA TECH</span>
         </a>
 
         <nav class="nav" aria-label="Primary">
@@ -1010,14 +1022,14 @@
       <!-- 1 — HERO -->
       <section class="ix-hero" aria-labelledby="ix-hero-title">
         <div class="ix-hero__bg" aria-hidden="true">
-          <img class="ix-hero__image" src="assets/images/logo/og.png" alt="" />
+          <img class="ix-hero__image" src="assets/images/logo/og.png" width="500" height="500" alt="NovExa Tech logo" />
           <div class="ix-hero__grid"></div>
           <div class="ix-hero__glow"></div>
           <div class="ix-hero__sweep"></div>
         </div>
 
         <div class="container ix-hero__inner">
-          <p class="ix-eyebrow" data-reveal>NoExaTech — Technology &amp; Digital Product Studio</p>
+          <p class="ix-eyebrow" data-reveal>NovExa Tech — Technology &amp; Digital Product Studio</p>
 
           <h1 class="ix-hero__title" id="ix-hero-title" data-reveal>
             We build<br>
@@ -1077,18 +1089,18 @@
         </div>
       </section>
 
-      <!-- 3 — ABOUT NOEXATECH -->
+      <!-- 3 — ABOUT NOVEXA TECH -->
       <section class="ix-about" aria-labelledby="ix-about-title">
         <div class="container ix-about__grid">
           <div>
-            <p class="ix-eyebrow" data-reveal>About NoExaTech</p>
+            <p class="ix-eyebrow" data-reveal>About NovExa Tech</p>
             <h2 class="ix-h2" id="ix-about-title" data-reveal>
               Technology built <em>around your business.</em>
             </h2>
           </div>
           <div class="ix-about__body" data-reveal>
             <p>
-              NoExaTech is a technology and digital product studio helping businesses
+              NovExa Tech is a technology and digital product studio helping businesses
               turn ideas into practical digital solutions — from websites and business
               systems to custom software, automation, and digital experiences.
             </p>
@@ -1097,7 +1109,7 @@
               Then we design and build the technology that fits — not the other way
               around.
             </p>
-            <a class="ix-btn" href="about.html">Discover NoExaTech</a>
+            <a class="ix-btn" href="about.html">Discover NovExa Tech</a>
           </div>
         </div>
       </section>
@@ -1117,7 +1129,8 @@
 
           <ul class="ix-services__list" data-reveal>
             <li>
-              <a class="ix-service" href="services.html">
+              <a class="ix-service" href="services.html"
+                 data-preview-image="assets/images/services/web-development.jpg">
                 <span class="ix-service__num">01</span>
                 <h3 class="ix-service__title">Web Development</h3>
                 <p class="ix-service__desc">Modern websites and web applications designed around business goals.</p>
@@ -1125,7 +1138,8 @@
               </a>
             </li>
             <li>
-              <a class="ix-service" href="services.html">
+              <a class="ix-service" href="services.html"
+                 data-preview-image="assets/images/services/business.jpg">
                 <span class="ix-service__num">02</span>
                 <h3 class="ix-service__title">Business Systems</h3>
                 <p class="ix-service__desc">Custom management systems that simplify everyday operations.</p>
@@ -1133,7 +1147,8 @@
               </a>
             </li>
             <li>
-              <a class="ix-service" href="services.html">
+              <a class="ix-service" href="services.html"
+                 data-preview-image="assets/images/services/ui-ux.jpg">
                 <span class="ix-service__num">03</span>
                 <h3 class="ix-service__title">UI/UX Design</h3>
                 <p class="ix-service__desc">Interfaces designed to make digital products clear, useful, and engaging.</p>
@@ -1141,7 +1156,8 @@
               </a>
             </li>
             <li>
-              <a class="ix-service" href="services.html">
+              <a class="ix-service" href="services.html"
+                 data-preview-image="assets/images/services/marketing.jpg">
                 <span class="ix-service__num">04</span>
                 <h3 class="ix-service__title">Digital Marketing</h3>
                 <p class="ix-service__desc">Performance-focused campaigns and creative digital content.</p>
@@ -1149,15 +1165,17 @@
               </a>
             </li>
             <li>
-              <a class="ix-service" href="services.html">
+              <a class="ix-service" href="services.html"
+                 data-preview-image="assets/images/services/ai.jpg">
                 <span class="ix-service__num">05</span>
-                <h3 class="ix-service__title">Automation</h3>
-                <p class="ix-service__desc">Smarter workflows that reduce repetitive manual work.</p>
+                <h3 class="ix-service__title">Artificial Intelligence</h3>
+                <p class="ix-service__desc">Intelligent solutions that drive innovation and efficiency.</p>
                 <span class="ix-service__arrow" aria-hidden="true">→</span>
               </a>
             </li>
             <li>
-              <a class="ix-service" href="services.html">
+              <a class="ix-service" href="services.html"
+                 data-preview-image="assets/images/services/solution.jpg">
                 <span class="ix-service__num">06</span>
                 <h3 class="ix-service__title">Custom Solutions</h3>
                 <p class="ix-service__desc">Technology designed specifically around unique business requirements.</p>
@@ -1182,53 +1200,57 @@
           </div>
 
           <div class="ix-work__grid" data-reveal>
-            <article class="ix-work-card">
+            <a class="ix-work-card" href="work.html">
               <div class="ix-work-card__visual" aria-hidden="true">
+                <img class="ix-work-card__image" src="assets/images/projects/aw.PNG" width="1873" height="892" alt="Aniwear wardrobe web application interface" loading="lazy" decoding="async">
                 <span class="ix-work-card__badge">Project 01</span>
               </div>
               <div class="ix-work-card__body">
-                <p class="ix-work-card__cat">Business Management System</p>
-                <h3 class="ix-work-card__title">Project Title</h3>
-                <p class="ix-work-card__desc">Project description will be added once the real details are supplied.</p>
-                <span class="ix-work-card__cta">View Project</span>
+                <p class="ix-work-card__cat">Web Application</p>
+                <h3 class="ix-work-card__title">Aniwear</h3>
+                <p class="ix-work-card__desc">A personal wardrobe platform that helps people catalogue clothing, plan outfits, and get more value from what they own.</p>
+                <span class="ix-work-card__cta">View Case Study</span>
               </div>
-            </article>
+            </a>
 
-            <article class="ix-work-card">
+            <a class="ix-work-card" href="work.html">
               <div class="ix-work-card__visual" aria-hidden="true">
+                <img class="ix-work-card__image" src="assets/images/projects/ue.PNG" width="1830" height="924" alt="Union Enterprises business management system interface" loading="lazy" decoding="async">
                 <span class="ix-work-card__badge">Project 02</span>
               </div>
               <div class="ix-work-card__body">
-                <p class="ix-work-card__cat">Web Application</p>
-                <h3 class="ix-work-card__title">Project Title</h3>
-                <p class="ix-work-card__desc">Project description will be added once the real details are supplied.</p>
-                <span class="ix-work-card__cta">View Project</span>
+                <p class="ix-work-card__cat">Business Management System</p>
+                <h3 class="ix-work-card__title">Union Enterprises</h3>
+                <p class="ix-work-card__desc">A digital trade and clearance platform that brings shipment tracking, documentation, and operational updates into one place.</p>
+                <span class="ix-work-card__cta">View Case Study</span>
               </div>
-            </article>
+            </a>
 
-            <article class="ix-work-card">
+            <a class="ix-work-card" href="work.html">
               <div class="ix-work-card__visual" aria-hidden="true">
+                <img class="ix-work-card__image" src="assets/images/projects/movie.PNG" width="1893" height="913" alt="Popcorn Hub movie booking platform interface" loading="lazy" decoding="async">
                 <span class="ix-work-card__badge">Project 03</span>
               </div>
               <div class="ix-work-card__body">
-                <p class="ix-work-card__cat">E-Commerce Platform</p>
-                <h3 class="ix-work-card__title">Project Title</h3>
-                <p class="ix-work-card__desc">Project description will be added once the real details are supplied.</p>
-                <span class="ix-work-card__cta">View Project</span>
+                <p class="ix-work-card__cat">Booking Platform</p>
+                <h3 class="ix-work-card__title">Popcorn Hub</h3>
+                <p class="ix-work-card__desc">A cinema discovery and booking experience designed to make browsing showtimes, theatres, and seats feel straightforward.</p>
+                <span class="ix-work-card__cta">View Case Study</span>
               </div>
-            </article>
+            </a>
 
-            <article class="ix-work-card">
+            <a class="ix-work-card" href="work.html">
               <div class="ix-work-card__visual" aria-hidden="true">
+                <img class="ix-work-card__image" src="assets/images/projects/jw.PNG" width="1838" height="933" alt="Aurum digital product interface" loading="lazy" decoding="async">
                 <span class="ix-work-card__badge">Project 04</span>
               </div>
               <div class="ix-work-card__body">
-                <p class="ix-work-card__cat">Digital Experience</p>
-                <h3 class="ix-work-card__title">Project Title</h3>
-                <p class="ix-work-card__desc">Project description will be added once the real details are supplied.</p>
-                <span class="ix-work-card__cta">View Project</span>
+                <p class="ix-work-card__cat">E-Commerce Experience</p>
+                <h3 class="ix-work-card__title">Aurum</h3>
+                <p class="ix-work-card__desc">A refined jewellery storefront that gives a handcrafted collection the visual space and navigation clarity it deserves.</p>
+                <span class="ix-work-card__cta">View Case Study</span>
               </div>
-            </article>
+            </a>
           </div>
         </div>
       </section>
@@ -1316,10 +1338,10 @@
         </div>
       </section>
 
-      <!-- 8 — WHY NOEXATECH -->
+      <!-- 8 — WHY NOVEXA TECH -->
       <section class="ix-why" aria-labelledby="ix-why-title">
         <div class="container">
-          <p class="ix-eyebrow" data-reveal>Why NoExaTech</p>
+          <p class="ix-eyebrow" data-reveal>Why NovExa Tech</p>
           <h2 class="ix-h2" id="ix-why-title" data-reveal>
             Why businesses <em>work with us.</em>
           </h2>
@@ -1391,7 +1413,7 @@
           </p>
           <div class="ix-cta__actions" data-reveal>
             <a class="ix-btn ix-btn--solid" href="#" data-nx-modal>Start a Project</a>
-            <a class="ix-btn" href="contact.html">Contact NoExaTech</a>
+            <a class="ix-btn" href="contact.html">Contact NovExa Tech</a>
           </div>
         </div>
       </section>
@@ -1403,7 +1425,7 @@
       <div class="container">
         <div class="footer__top">
           <div class="footer__brand">
-            <a class="brand" href="index.html" aria-label="NoExaTech — home">
+            <a class="brand" href="index.html" aria-label="NovExa Tech — home">
               <span class="brand__mark" aria-hidden="true">
                 <svg viewBox="0 0 32 32" width="24" height="24" fill="none">
                   <path d="M5 27V5l22 22V5" stroke="url(#flg)" stroke-width="2.6" stroke-linecap="square"/>
@@ -1414,7 +1436,7 @@
                   </defs>
                 </svg>
               </span>
-              <span class="brand__name">NOEXATECH</span>
+              <span class="brand__name">NOVEXA TECH</span>
             </a>
             <p class="footer__tagline">“New Ideas. Powered by Technology.”</p>
             <a class="btn btn--primary btn--sm footer__cta" href="#" data-nx-modal>Start a Project</a>
@@ -1441,7 +1463,7 @@
         </div>
 
         <div class="footer__bottom">
-          <p>© <span data-year>2026</span> NoExaTech. All rights reserved.</p>
+          <p>© <span data-year>2026</span> NovExa Tech. All rights reserved.</p>
           <p class="footer__built">Designed &amp; built in-house.</p>
         </div>
       </div>

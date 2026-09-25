@@ -1,0 +1,5 @@
+# NovExa Tech crawler policy
+User-agent: *
+Allow: /
+
+Sitemap: https://novexatech.10001mb.com/sitemap.xml

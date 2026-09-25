@@ -1,5 +1,5 @@
 /* ============================================================
-   NoExaTech — Contact Page
+   NovExa Tech — Contact Page
    Hero contact tiles · Reveal animations · Hero video
    ============================================================ */
 (function () {
@@ -197,7 +197,7 @@
       video.classList.remove('is-missing');
     }
     function markMissing(reason) {
-      if (reason) console.info('[NoExaTech Contact] Hero video unavailable:', reason);
+      if (reason) console.info('[NovExa Tech Contact] Hero video unavailable:', reason);
       video.classList.add('is-missing');
       video.classList.remove('is-ready');
     }
